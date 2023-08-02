@@ -1,0 +1,19 @@
+﻿<section class="breadcrumbs" aria-label="Breadcrumbs">
+    <div class="container">
+        <ul>
+            @for (int i = 0; i < Model.SiteMapNodes.Count; i++)
+            {
+                var node = Model.SiteMapNodes[i];
+
+                if (i == Model.SiteMapNodes.Count - 1)
+                {
+                    <li class="active">@node.Title</li>
+                }
+                else
+                {
+                    <li><a href="@node.Url" title="BreadCrumb - @node.Title">@node.Title</a></li>
+                }
+            }
+        </ul>
+    </div>
+</section>

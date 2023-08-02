@@ -1,0 +1,16 @@
+<div id="our-work" class="row">
+    {% for i in range(0, 9) -%}
+    <div class="col col-12 col-md-4">
+        {% include "../cards/work-item-card.html" %}
+    </div>
+    {%- endfor %}
+</div>
+
+<div class="action-group text-center">
+    <a href="#" class="btn btn-outline-secondary" title="Previous">
+        Previous
+    </a>
+    <a href="#" class="btn btn-outline-secondary" title="Next">
+        Next
+    </a>
+</div>

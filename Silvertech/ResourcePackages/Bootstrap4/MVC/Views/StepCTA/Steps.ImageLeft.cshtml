@@ -1,0 +1,59 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+@{
+    var imageClass = Model.SelectedSizeUrl.IsNullOrEmpty() ? "no-image" : "";
+}
+
+<section class="steps-cta image-left @imageClass" aria-label="step callouts">
+    <div class="container">
+
+        <div class="steps-wrapper">
+
+            <!-- Text Column -->
+            <div class="text-col">
+
+                <div class="step">
+                    <div class="step-number">@Model.HeadingTwo</div>
+                    <div class="step-title">@Model.Heading</div>
+                </div>
+
+                <div class="description">
+                    @if (!Model.ClientSpotlightHeading.IsNullOrEmpty())
+                    {
+                        <div class="client-spotlight">
+                            <p class="headline">@Model.ClientSpotlightHeading</p>
+                            <img src="@Model.ImageTwoUrl" alt="@Model.ImageTwoAlternativeText" title="@Model.ImageTwoTitle">
+                        </div>
+                    }
+
+                    @Model.Description
+                </div>
+
+                @if (!Model.ActionName.IsNullOrEmpty())
+                {
+                    <div class="cta">
+                        <a href="@Model.ActionUrl" class="btn btn-primary" target="@Model.ActionTarget" title="@Model.ActionTitle">@Model.ActionName</a>
+                    </div>
+                }
+
+                @if (!Model.ActionTwoName.IsNullOrEmpty())
+                {
+                    <div class="cta">
+                        <a href="@Model.ActionTwoUrl" class="btn btn-primary" target="@Model.ActionTwoTarget" title="@Model.ActionTwoTitle">@Model.ActionTwoName</a>
+                    </div>
+                }
+
+            </div>
+
+            @if (!Model.SelectedSizeUrl.IsNullOrEmpty())
+            {
+                <div class="photo-wrapper lazy-load-bg">
+                    <div class="photo lazy-load-bg" style="background-image:url('@Model.SelectedSizeUrl');"></div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</section>

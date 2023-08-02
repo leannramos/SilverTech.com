@@ -1,0 +1,155 @@
+{% set pageTitle = "Portfolio Landing" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "blue" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Lora2.jpg" %}
+	{% set heroHeadline = "Work." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "We have worked with hundreds of clients in a variety of industries including tourism, healthcare, banking, commerce, and more!" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Filter By -->
+	<div class="filters industry-filter">
+		<div class="container">
+
+			<div class="filter-wrapper">
+				<label for="filterByCategory">Search by Industry:</label>
+				<select name="filterByCategory" id="filterByCategory">
+					<option value="">Select an Industry</option>
+					<option value="Financial">Financial</option>
+					<option value="Healthcare">Healthcare</option>
+					<option value="Travel & Tourism">Travel & Tourism</option>
+					<option value="Utilities">Utilities</option>
+					<option value="Manufacturing">Manufacturing</option>
+					<option value="Government">Government</option>
+					<option value="Education">Education</option>
+				</select>
+
+				<button type="submit" class="btn btn-secondary">SEARCH</button>				
+			</div>	
+
+		</div>
+	</div>
+
+	<!-- Client CTA (right image) -->
+	{% set clientCTA_ImageAlign = "image-right" %}
+	{% set clientCTA_SectionTitle = "Financial Services" %}
+	{% set clientCTA_MainImage = "girl-and-dog.jpg" %}
+	{% set clientCTA_clientLogo = "cutx.png" %}
+	{% set clientCTA_ClientName = "Credit Union of Texas" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+	
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "kentucky-bank.png" %}
+	{% set logoPreviews_logo2 = "ahcu-white-logo.png" %}
+	{% set logoPreviews_logo3 = "ucb-white-logo.png" %}
+	{% set logoPreviews_logo4 = "alcu-white-logo.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL FINANCIAL SERVICES CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+	<!-- Client CTA (left image) -->
+	{% set clientCTA_ImageAlign = "image-left" %}
+	{% set clientCTA_SectionTitle = "Healthcare" %}
+	{% set clientCTA_MainImage = "xavier-mouton-photographie-ry_sD0P1ZL0-unsplash.jpg" %}
+	{% set clientCTA_clientLogo = "cmc.png" %}
+	{% set clientCTA_ClientName = "Catholic Medical Center" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "lawrence-general.png" %}
+	{% set logoPreviews_logo2 = "renown-health.png" %}
+	{% set logoPreviews_logo3 = "copley-hospital.png" %}
+	{% set logoPreviews_logo4 = "york-hospital.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL HEALTHCARE CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+	<!-- Client CTA (right image) -->
+	{% set clientCTA_ImageAlign = "image-right" %}
+	{% set clientCTA_SectionTitle = "Travel & Tourism" %}
+	{% set clientCTA_MainImage = "sergei-akulich-w_Z94g8ht8s-unsplash.jpg" %}
+	{% set clientCTA_clientLogo = "be-outdoors.png" %}
+	{% set clientCTA_ClientName = "Appalachian Mountain Club" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "kentucky-bank.png" %}
+	{% set logoPreviews_logo2 = "ahcu-white-logo.png" %}
+	{% set logoPreviews_logo3 = "ucb-white-logo.png" %}
+	{% set logoPreviews_logo4 = "alcu-white-logo.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL Travel & Tourism CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+	<!-- Client CTA (left image) -->
+	{% set clientCTA_ImageAlign = "image-left" %}
+	{% set clientCTA_SectionTitle = "Utilities" %}
+	{% set clientCTA_MainImage = "american-public-power-association-513dBrMJ_5w-unsplash.jpg" %}
+	{% set clientCTA_clientLogo = "pepco-logo-white.png" %}
+	{% set clientCTA_ClientName = "Pepco" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "lawrence-general.png" %}
+	{% set logoPreviews_logo2 = "renown-health.png" %}
+	{% set logoPreviews_logo3 = "copley-hospital.png" %}
+	{% set logoPreviews_logo4 = "york-hospital.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL Utilities CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+	<!-- Client CTA (right image) -->
+	{% set clientCTA_ImageAlign = "image-right" %}
+	{% set clientCTA_SectionTitle = "Manufacturing" %}
+	{% set clientCTA_MainImage = "xi-wang-vevOKBpCI5E-unsplash.jpg" %}
+	{% set clientCTA_clientLogo = "gems-logo-white.png" %}
+	{% set clientCTA_ClientName = "Gems Sensors & Controls" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "kentucky-bank.png" %}
+	{% set logoPreviews_logo2 = "ahcu-white-logo.png" %}
+	{% set logoPreviews_logo3 = "ucb-white-logo.png" %}
+	{% set logoPreviews_logo4 = "alcu-white-logo.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL Manufacturing CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+	<!-- Client CTA (left image) -->
+	{% set clientCTA_ImageAlign = "image-left" %}
+	{% set clientCTA_SectionTitle = "Government" %}
+	{% set clientCTA_MainImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+	{% set clientCTA_clientLogo = "visitNH.png" %}
+	{% set clientCTA_ClientName = "Visit New Hampshire" %}
+	{% set clientCTA_ButtonText = "Case Study" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_logo1 = "lawrence-general.png" %}
+	{% set logoPreviews_logo2 = "renown-health.png" %}
+	{% set logoPreviews_logo3 = "copley-hospital.png" %}
+	{% set logoPreviews_logo4 = "york-hospital.png" %}
+	{% set logoPreviews_ctaText = "SEE ALL Government CLIENTS" %}
+	{% set logoPreviews_MultipleRows = "false" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+@{
+    string linkText = !Model.ActionName.IsNullOrEmpty() ? Model.ActionName : "LEARN MORE";
+}
+
+<a href="@Model.ActionUrl" class="item" title="@Model.Heading">
+
+    <div class="icon">
+
+        @if (!Model.SvgMarkup.IsNullOrEmpty())
+        {
+            @Html.Raw(Model.SvgMarkup)
+        }
+        else
+        {
+            <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText" title="@Model.ImageTitle" />
+        }
+
+    </div>
+
+    <h2 class="title">@Model.Heading</h2>
+    <div class="learn-more">@linkText</div>
+</a>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Frontend Templates | Silvertech, Inc</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="theme-color" content="#14609d">
+        
+        <!-- FB/Twitter OG -->
+        <meta property="og:image" content="/library/img/logo.png" />
+        <meta property="og:title" content="Company Name" />
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa explicabo eum necessitatibus, distinctio dolore corporis." />
+        <meta property="og:site_name" content="Lorem ipsum dolor.">
+        <meta property="og:url" content="https://www.site.com/">
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@company" />
+        <meta name="twitter:title" content="Company Name" />
+        <meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, ipsam." />
+        <meta name="twitter:image" content="/library/img/logo.png" />
+
+        <!-- CSS -->        
+        <link rel="stylesheet" href="/library/css/core.css">
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Passion+One|Permanent+Marker" rel="preload stylesheet" as="fetch">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
+        <!-- Fav Icon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/library/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/library/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/library/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/library/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/library/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/library/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/library/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/library/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/library/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/library/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/library/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/library/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/library/img/favicon/favicon-16x16.png">
+        <meta name="msapplication-TileImage" content="/library/img/favicon/ms-icon-144x144.png">
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+        <script>!window.jQuery && document.write('<script src="/library/js/jquery-3.3.1.min.js"><\/script>')</script>
+</head>
+
+<body>
+    
+        <section id="tracking-consent-dialog" class="gdp" >
+	<div class="container">
+		<div class="row">
+
+			<div class="message">
+				By continuing to browse, you consent to our use of cookies. To know more, please refer to our <a href="/privacy-policy.html" title="privacy policy">Privacy Policy</a>.
+			</div>
+
+			<div class="cta">
+			    <button type="button" onclick="TrackingConsentManager.updateUserConsent(true)" id="tracking-consent-dialog-accept" class="btn btn-quaternary">Accept & Continue</button>				
+			</div>
+
+		</div>
+	</div>	    
+</section>
+    
+    <a class="sr-only sr-only-focusable" href="#content" title="Skip to main content">Skip to main content</a>
+    
+    <div class="page-wrapper">
+        <!-- Notes:  add class "blue" to .site-header to change the hover of the menu toggle -->
+<header class="site-header ">
+
+	<div class="open-menu ">
+		<a onclick="javascript:void();" class="open-menu-btn" title="Toggle Menu">
+			<span class="text">Menu </span>
+			<div class="bars">
+				<span class="bar bar1"></span>
+				<span class="bar bar2"></span>
+				<span class="bar bar3"></span>
+			</div>			
+		</a>
+	</div>
+
+	<div class="close-menu" tabindex="0" aria-label="close menu" role="button">Close 
+		<span class="icon"></span>
+	</div>
+
+	<!-- Menu -->
+	<nav class="main-menu">
+	<div class="wrapper">
+		
+		<div class="menu-content">
+			
+			<!-- Menu Search (Mobile) -->
+			<div class="search-site mobile">
+				<form action="">
+					<div class="input-group">
+						<label for="menuSearch" class="sr-only">Search our site</label>
+					  	<input type="search" class="form-control" placeholder="Search our site" aria-label="Search our site" aria-describedby="menuSearch">
+					  	<div class="input-group-append">
+					    	<button class="icon" type="button" id="menuSearch"><i class="fas fa-search"></i></button>
+					  	</div>
+					</div>
+				</form>
+			</div>
+			
+			<!-- Menu Links -->
+			<ul class="nav-links">
+				<li><a href="" title="Services">Services</a></li>
+				<li><a href="" title="Work">Work</a></li>
+				<li><a href="" title="Technology">Technology</a></li>
+				<li><a href="" title="Playbook">Playbook</a></li>
+			</ul>
+
+			<!-- Sub Links -->
+			<ul class="sub-links">
+				<li><a href="" title="About Us">About Us</a></li>
+				<li><a href="" title="Contact Us">Contact Us</a></li>
+			</ul>
+
+			<!-- Menu Search (desktop) -->
+			<div class="search-site desktop">
+				<div class="input-group">
+					<label for="menuSearch" class="sr-only">Search our site</label>
+				  	<input type="search" class="form-control" placeholder="Search our site" aria-label="Search our site" aria-describedby="menuSearch">
+				  	<div class="input-group-append">
+				    	<button class="icon" type="submit" id="menuSearch"><i class="fas fa-search"></i></button>
+				  	</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</nav>
+
+	<div class="container">	
+		
+		<div class="logo">
+			<a href="/" title="Go back to homepage of Silvertech, Inc">
+				<img src="/library/img/logo.png" alt="Silvertech Logo">
+			</a>
+		</div>
+	</div>
+
+	
+</header>
+
+
+        
+        <div id="content">
+            
+
+	<!-- Hero Contact -->
+	<section class="hero-homepage" aria-label="page banner content">
+	<div class="background"></div>	
+
+	<div class="content-wrapper">
+		
+		<div class="container">
+
+            <div id="stwc_caption1" class="caption captionVisible">
+                <h1 class="headline">Come win with us.</h1>
+                <h2 class="subheadline">SilverTech wins a W3 Gold award for the design & development of the CUTX website.</h2>
+                <a href="/case-studies/cutx" title="Click to read the Credit Union of Texas Case Study" class="cta-btn btn btn-quaternary">CUTX Case Study</a>
+            </div>
+
+            <div id="stwc_caption2" class="caption">
+                <h1 class="headline">Change the game.</h1>
+                <h2 class="subheadline">With SilverTech as your technology partner.</h2>
+                With big ideas and advanced tech chops, we raise the bar on delivering the best, user friendly digital experiences.
+            </div>
+
+            <ul class="heroPages">
+                <li id="pauseBtn" class="button paused"></li>
+                <li id="heroPage1" data-page="1" class="heroPage active">1</li>
+                <li id="heroPage2" data-page="2" class="heroPage"></li>
+                <li class="button down-assist icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content">
+                </li>
+            </ul>
+            
+        </div>
+
+		<!-- Mosaic Tiles -->
+		<!-- Mosaic Tiles -->
+<section class="mosaic-tiles">
+	<div class="wrapper">
+		
+		<!-- Image 1 -->
+
+		<!-- Overlays -->
+        <div id="stwc_container">
+            <svg xmlns="http://www.w3.org/2000/svg" id="STWC" xmlns:xlink="http://www.w3.org/1999/xlink" width="1647.14" height="1119.39" viewBox="0 -10 1547.14 2139.39">
+                <defs>
+                    <pattern id="img1" patternUnits="userSpaceOnUse" width="1547.14" height="2119.39">
+                        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://aruba.bynder.com/m/53b902a616f27b58/desktop_square_retina-Rodgers-Beach.jpg" x="0" y="-200" width="3547.14" height="3819.39"></image>
+                    </pattern>
+                    <pattern id="img2" patternUnits="userSpaceOnUse" width="2947.14" height="2919.39">
+                        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://3.bp.blogspot.com/-7lsQ0j1TdmQ/XIWcVV7vaYI/AAAAAAAAIP0/4eHjlG50Fu0-82a9g9azwrCgzVl6BmtRgCHMYCw/s1600/scenic-wallpaper-and-background-image-1280x800-id192319.jpg" x="-300" y="-800" width="3547.14" height="4019.39"></image>
+                    </pattern>
+                    <!--Lens flare effect that's a little much:
+            <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop stop-color="#FFF" offset="0%">
+                  <animate id="color" attributeName="stop-color" from="#fff" to="#fce669" dur="0.8s" begin="10s" fill="freeze" />
+                </stop>
+                <stop stop-color="#fff" offset="100%" />
+              </linearGradient>
+
+
+              <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop stop-color="white" offset="-10%">
+                  <animate attributeName="offset" values="-.05;.95" dur="10s" begin="color.end" repeatCount="indefinite" />
+                </stop>
+                <stop stop-color="black" offset="-5%">
+                  <animate attributeName="offset" values="0;1" dur="10s" begin="color.end" repeatCount="indefinite" />
+                </stop>
+                <stop stop-color="white" offset="0%">
+                  <animate attributeName="offset" values=".05;1.05" dur="10s" begin="color.end" repeatCount="indefinite" />
+                </stop>
+              </linearGradient>
+
+
+              <mask id="myShiningMask">
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#shine)" />
+              </mask>-->
+                </defs>
+                <g id="Artboard_2" data-name="Artboard � 2">
+                    <path id="Path_4" data-name="Path 4" d="M368.777,134.317,648.55,397.454,736.8,23.5l555.616,528.228L1208.789,928.81l272.537,265.337L1303.77,1934.225,567.217,2152.2l-270.1-260.423L-64.145,1998.928l86.705-365.9L383,1521.693,107.957,1260.779l86.337-374.05L557.2,772.87,280.24,507.513Z" transform="translate(67 -29)"></path>
+                    <g id="Triangles" data-name="Group 741" transform="translate(-9.261 -15)">
+                        <path id="tri_19" mask="url(#myShiningMask)" class="triangle" d="M98.756,0,365.091,266.487,0,364.863Z" transform="matrix(1, -0.027, 0.027, 1, 0.111, 1621.604)" style="fill:rgb(112,115,114)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_6" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M0,104.823,367.446,0,271.4,373.236Z" transform="matrix(1, -0.027, 0.027, 1, 265.893, 768.015)" style="fill:rgb(230,83,0)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_17" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M0,100.544,363.757,0,266.548,367.833Z" transform="matrix(1, -0.027, 0.027, 1, 95.629, 1517.498)" style="fill:rgb(146,153,144)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_2" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M99.116,0,372.871,272.659,273.226,645.223,0,373.869Z" transform="matrix(1, -0.027, 0.027, 1, 345.266, 121.09)" style="fill:rgb(112,115,114)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_9" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M98.092,0,366.761,267.357l-96.9,373.519L0,370.005Z" transform="matrix(1, -0.027, 0.027, 1, 171.397, 874.446)" style="fill:rgb(193,197,200)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_12" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M98.659,0,371.416,273.731,274.077,643.515,0,372.55Z" transform="matrix(1, -0.027, 0.027, 1, 447.573, 1134.026)" style="fill:rgb(0,116,129)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_18" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M97.267,0,369.779,268.337,270.047,635.8,0,368.6Z" transform="matrix(1, -0.027, 0.027, 1, 362.082, 1509.691)" style="fill:rgb(32,41,69)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_8" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M96.7,0,370.234,271.661,271.12,644.48,0,373.325Z" transform="matrix(1, -0.027, 0.027, 1, 537.241, 759.139)" style="fill:rgb(146,153,144)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_11" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M98.307,0l273.14,276.9L0,375.582Z" transform="matrix(1, -0.027, 0.027, 1, 815.078, 1023.095)" style="fill:rgb(32,41,69)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_21" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M99.355,0,368.9,271.16,0,367.635Z" transform="matrix(1, -0.027, 0.027, 1, 639.403, 1770.008)" style="fill:rgb(193,197,200)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_5" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M0,99.945,370.96,0l-98.67,373.827Z" transform="matrix(1, -0.027, 0.027, 1, 633.482, 658.472)" style="fill:rgb(193,197,200)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <g data-name="iStock-936932526" transform="matrix(1, -0.027, 0.027, 1, 821.832, 1298.394)" style="fill:rgb(230,83,0)" stroke-linejoin="round">
+                            <path id="tri_14" mask="url(#myShiningMask)" class="triangle" d="M 272.3705749511719 372.5592346191406 L 184.0419616699219 283.7143859863281 L 2.883799314498901 101.3473587036133 L 370.1107788085938 2.124356985092163 L 272.3705749511719 372.5592346191406 Z" stroke="none"></path>
+                            <path d="M 367.9988708496094 4.248809814453125 L 5.767547607421875 102.1220092773438 L 185.105712890625 282.6567993164063 L 271.5881958007813 369.6447448730469 L 367.9988708496094 4.248809814453125 M 372.2226257324219 -3.0517578125e-05 L 273.1529235839844 375.4736938476563 L 182.9782104492188 284.7719421386719 L 0 100.5727844238281 L 372.2226257324219 -3.0517578125e-05 Z" stroke="none" fill="#fff"></path>
+                        </g>
+                        <path id="tri_20" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M99.144,0,367.435,266.01,0,366.563Z" transform="matrix(1, -0.027, 0.027, 1, 1006.062, 1664.794)" style="fill:rgb(32,41,69)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_3" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M98.047,0,369.036,273.813,0,373.56Z" transform="matrix(1, -0.027, 0.027, 1, 625.944, 385.039)" style="fill:rgb(0,116,129)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_16" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M97.754,0,368.586,272.176,269.775,637.783,0,366.886Z" transform="matrix(1, -0.027, 0.027, 1, 728.661, 1400.58)" style="fill:rgb(112,115,114)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_15" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M98.023,0,368.144,269.3l-99.7,366.425L0,369.746Z" transform="matrix(1, -0.027, 0.027, 1, 1094.736, 1291.691)" style="fill:rgb(0,116,129)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_7" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M100.608,0,372.871,271.418,272.678,646.328,0,372.628Z" transform="matrix(1, -0.027, 0.027, 1, 903.824, 651.783)" style="fill:rgb(112,115,114)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_1" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M99.116,0,372.871,272.659,272.609,647.973,0,373.869Z" transform="matrix(1, -0.027, 0.027, 1, 713.412, 10.086)" style="fill:rgb(193,197,200)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <g data-name="iStock-936932526" transform="matrix(1, -0.027, 0.027, 1, 991.846, 271.288)" style="fill:rgb(146,153,144)" stroke-linejoin="round">
+                            <path id="tri_4" mask="url(#myShiningMask)" class="triangle" d="M 275.1575622558594 651.02197265625 L 1.671615600585938 376.3762512207031 L 101.2117919921875 2.920965194702148 L 370.8841552734375 276.3829040527344 L 275.1575622558594 651.02197265625 Z" stroke="none"></path>
+                            <path d="M 101.9856262207031 5.84197998046875 L 3.343109130859375 375.9290771484375 L 274.3578491210938 648.093017578125 L 369.2209777832031 276.8327941894531 L 101.9856262207031 5.84197998046875 M 100.4379577636719 0 L 372.5472106933594 275.9331665039063 L 275.9573669433594 653.9509887695313 L -6.103515625e-05 376.8234252929688 L 100.4379577636719 0 Z" stroke="none" fill="#fff"></path>
+                        </g>
+                        <path id="tri_10" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M100.443,0,366.977,274.249,0,372Z" transform="matrix(1, -0.027, 0.027, 1, 1184.051, 915.861)" style="fill:rgb(32,41,69)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                        <path id="tri_13" mask="url(#myShiningMask)" class="triangle" data-name="iStock-936932526" d="M0,98.513,369.012,0,271.36,368.105Z" transform="matrix(1, -0.027, 0.027, 1, 1188.805, 1190.091)" style="fill:rgb(193,197,200)" stroke="#fff" stroke-linejoin="round" stroke-width="3"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+		<!-- Image 2 -->
+	
+
+	</div>
+</section>	
+		
+	</div>
+	
+</section>
+<div id="hero-scroll-to"></div>
+
+	<div class="container">
+
+		<p>&nbsp;</p>
+
+		<h3>Static HTML Templates</h3>
+		
+		<div class="templateList">
+			
+			<!-- Notes:  Put page comp into photoshop, and resize image and put 300px for height and let width be whatever.   -->
+
+			<a href="/home.html" title="">
+				Homepage<br>
+				<img src="/library/img/comps/homepage.jpg" alt="">
+			</a>
+
+			<a href="/contact-us.html" title="">
+				Contact Us<br>
+				<img src="/library/img/comps/contact-us.jpg" alt="">
+			</a>
+
+			<a href="/blog-listing.html" title="">
+				Blog Listing<br>
+				<img src="/library/img/comps/blog-listing.jpg" alt="">
+			</a>
+				
+			<a href="/blog-detail.html" title="">
+				Blog Detail<br>
+				<img src="/library/img/comps/blog-detail.jpg" alt="">
+			</a>
+
+			<a href="/landing.html" title="">
+				Generic Landing<br>
+				<img src="/library/img/comps/landing.jpg" alt="">
+			</a>
+
+			<a href="/portfolio-landing.html" title="">
+				Portfolio Landing<br>
+				<img src="/library/img/comps/portfolio-landing.jpg" alt="">
+			</a>
+
+			<a href="/case-study-detail.html" title="">
+				Case Study Detail<br>
+				<img src="/library/img/comps/case-study-detail.jpg" alt="">
+			</a>
+			
+			<a href="/portfolio-detail.html" title="">
+				Portfolio Detail (old)<br>
+				<img src="/library/img/comps/portfolio-detail.jpg" alt="">
+			</a>
+
+			<a href="/industry.html" title="">
+				Industry<br>
+				<img src="/library/img/comps/industry.jpg" alt="">
+			</a>
+
+			<a href="/about-us.html" title="">
+				About Us Landing<br>
+				<img src="/library/img/comps/about-us.jpg" alt="">
+			</a>
+
+			<a href="/newsletter.html" title="">
+				Newsletter<br>
+				<img src="/library/img/comps/newsletter.jpg" alt="">
+			</a>
+
+			<a href="/newsletter-archive.html" title="">
+				Newsletter Archive<br>
+				<img src="/library/img/comps/newsletter-archive.jpg" alt="">
+			</a>
+
+			<a href="/newsletter-detail.html" title="">
+				Newsletter Detail<br>
+				<img src="/library/img/comps/newsletter-detail.jpg" alt="">
+			</a>
+
+			<a href="/inner.html" title="">
+				Generic Inner<br>
+				<img src="/library/img/comps/inner.jpg" alt="">
+			</a>
+
+			<a href="/in-our-community.html" title="">
+				In Our Community<br>
+				<img src="/library/img/comps/in-our-community.jpg" alt="">
+			</a>
+
+			<a href="/careers.html" title="">
+				Careers<br>
+				<img src="/library/img/comps/careers.jpg" alt="">
+			</a>
+
+			<a href="/partners.html" title="">
+				Partners<br>
+				<img src="/library/img/comps/partners.jpg" alt="">
+			</a>
+
+			<a href="/services.html" title="">
+				Services<br>
+				<img src="/library/img/comps/services.jpg" alt="">
+			</a>
+
+			<a href="/services-detail.html" title="">
+				Services Detail<br>
+				<img src="/library/img/comps/services-detail.jpg" alt="">
+			</a>
+
+			<a href="/technology.html" title="">
+				Technology<br>
+				<img src="/library/img/comps/technology.jpg" alt="">
+			</a>
+
+			<a href="/work.html" title="">
+				Work<br>
+				<img src="/library/img/comps/work-comp.png" alt="">
+			</a>
+			
+		</div>		
+
+		<hr>
+		<h2 class="center">*** Generic Styles ***</h2>
+
+		<h1>This is an H1</h1>
+		<h2>This is an H2</h2>
+		<h3>This is an H3</h3>
+		<h4>This is an H4</h4>
+		<h5>This is an H5</h5>
+		<h6>This is an H6</h6>
+		<p>
+			This is default body text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias magnam at ipsa iure, eligendi corporis libero vero. Dicta, culpa, dolorum!
+		</p>
+		<a href="">This is default anchor link</a>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<p>Sample of default UL/LI</p>
+				<ul>
+					<li>Default Bullet List</li>
+					<li>Default Bullet List</li>
+					<li>Default Bullet List</li>
+				</ul>			
+			</div>
+			<div class="col-sm-6">
+				<p>Sample of default OL/LI</p>
+				<ol>
+					<li>Default Numbered List</li>
+					<li>Default Numbered List</li>
+					<li>Default Numbered List</li>
+				</ol>			
+			</div>
+		</div>
+
+		<hr>
+		<h2 class="center">*** Button Styles ***</h2>
+
+		<a href="" class="btn btn-primary">.btn-primary</a>
+		<a href="" class="btn btn-secondary">.btn-secondary</a>
+		<a href="" class="btn btn-tertiary">.btn-tertiary</a>
+
+		<hr>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+					<th>Header 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		
+	</div>
+
+
+        </div>            
+
+        <footer class="site-footer">
+	<div class="container-fluid">
+		<div class="row">
+			
+			<div class="main-photo">
+				<div class="photo lazy-load-bg" style="background-image:url(/library/img/Schoolhouse-from-Outside2-min.jpg);"></div>
+			</div>
+
+			<div class="footer-content">
+				
+				<!-- Office Locations -->
+				<section class="office-locations" aria-label="Silvertech Office Locations">
+
+					<!-- // Office -->
+					<div class="location">
+						<h2 class="city">Manchester</h2>
+						<div itemscope itemtype="http://schema.org/PostalAddress"> 
+							<div itemprop="streetAddress">196 Bridge Street</div>
+							<span itemprop="addressLocality">Manchester</span>, 
+							<span itemprop="addressRegion">NH</span> 
+							<span itemprop="postalCode">03104</span><br>
+							<div class="telephone" itemprop="telephone"><a href="tel:+16036696600" title="Call our Manchester Office"><i class="fas fa-phone"></i>603.669.6600</a></div> 
+						</div>
+					</div>
+
+					<!-- // Office -->
+					<div class="location">
+						<h2 class="city">Indianapolis</h2>
+						<div itemscope itemtype="http://schema.org/PostalAddress"> 
+							<div itemprop="streetAddress">9101 N. Wesleyan Road</div>
+							<span itemprop="addressLocality">Indianapolis</span>, 
+							<span itemprop="addressRegion">IN</span> 
+							<span itemprop="postalCode">46268</span><br>
+							<div class="telephone" itemprop="telephone"><a href="tel:+13178054376" title="Call our Indianapolis Office"><i class="fas fa-phone"></i>317.805.4376</a></div> 
+						</div>
+					</div>
+
+					<div class="office-photo">
+						<div class="photo lazy-load-bg" style="background-image:url('/library/img/ST-mug-min.jpg');"></div>
+					</div>
+
+				</section>
+
+				<!-- Quick Links -->
+				<section class="quicklinks" aria-label="quick-links">
+					<!-- Matching Sitefiniy  -->
+					<div class="quicklink-wrapper">
+						<div>
+							<div class="quicklink">
+								<h3 class="title">New Business</h3>
+								<a href="mailto:letstalk@silvertech.com" class="email" title="Email us about new business">letstalk@silvertech.com</a>
+							</div>
+
+							<div class="quicklink">
+								<h3 class="title">Careers</h3>
+								<a href="mailto:careers@silvertech.com" class="email" title="Email us about Careers">careers@silvertech.com</a>
+							</div>
+
+							<div class="quicklink">
+								<h3 class="title">Media Inquiries</h3>
+								<a href="mailto:press@silvertech.com" class="email" title="Email us about Media Inquiries">press@silvertech.com</a>
+							</div>							
+						</div>
+					</div>
+
+
+				</section>
+
+				<!-- Social Icons -->
+				<section class="follow-us" aria-label="follow us on these social sites">
+					<div class="wrapper">
+						<h2 class="title">Follow Us On Social!</h2>
+
+						<div class="social-icons">
+							<a href="https://twitter.com/silvertech" title="Follow us on Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.facebook.com/SilverTech" title="Follow us on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://www.linkedin.com/company/silvertech-inc-" title="Follow us on Linked In" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+							<a href="https://www.instagram.com/silvertech_inc/" title="Follow us on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</section>
+
+				<section class="copyright">
+					© SilverTech, Inc. 2019 | <a href="" title="Privacy Policy">Privacy Policy</a>, <a href="/careers.html" title="Careers">Careers</a>
+				</section>
+
+			</div>
+		
+		</div>		
+	</div>
+</footer>
+    </div>
+
+    <link rel="stylesheet" href="/library/css/app.css">
+    <!-- JS -->
+    <script src="/library/js/vendor/slick.min.js"></script>
+    <script src="/library/js/vendor/browser-polyfill.min.js"></script>
+    <script src="/library/js/vendor/svg4everybody.min.js"></script>
+    <script src="/library/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/library/js/vendor/jquery.instagramFeed.min.js"></script>
+    <!-- mainES6.js == debug file. main,js == production-->
+    <script src="/library/js/main.js"></script>
+</body>
+
+</html>

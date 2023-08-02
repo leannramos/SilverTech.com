@@ -1,0 +1,66 @@
+﻿@model Telerik.Sitefinity.Frontend.Search.Mvc.Models.ISearchResultsModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Services.Search.Data
+
+
+
+
+
+@foreach (var item in Model.Results.Data)
+{
+    //Item.GetValue("Link") is an absolute path. We need to formulate a url that does not contain the base url
+    var currentBaseUrl = new Uri(Request.Url, Url.Content("~")).ToString();
+    var navigateUrl = "/locations/" + item.GetValue("Link").ToString().Replace(currentBaseUrl, "");
+    var hasDriveThrough = false;
+    var hasAtm = false;
+    Boolean.TryParse(item.GetValue("HasDriveThrough").ToString(), out hasDriveThrough);
+    Boolean.TryParse(item.GetValue("HasAtm").ToString(), out hasAtm);
+    var optionsText = hasDriveThrough ? "Drive-up & " : "";
+    optionsText += hasAtm ? "Walk-up ATM" : " ATM";
+    <article class="location-item enable-on-map" data-lat="" data-lng="" data-address="@item.GetValue("StreetAddress"),
+                            @item.GetValue("City"), @item.GetValue("State") @item.GetValue("Zip")" aria-label="@item.GetValue("Title")">
+
+        <div class="photo">
+            <img src="@item.GetValue("LocationThumbnailImageUrl")" alt="@item.GetValue("LocationThumbnailImageAlt")">
+        </div>
+
+        <div class="bankInfo">
+
+            <a href="@navigateUrl" title="View more details on @item.GetValue("Title")">
+                <h3 class="location-title">@item.GetValue("Title")</h3>
+            </a>
+
+            <div class="bankAddress">
+                <p>@item.GetValue("StreetAddress")</p>
+                <p>@item.GetValue("City"), @item.GetValue("State") @item.GetValue("Zip")</p>
+                <p>@optionsText</p>
+            </div>
+
+            <div class="options">
+                Has @optionsText
+            </div>
+
+            <div class="ctas">
+                <a href="@item.GetValue("GoogleMapsLink")" class="btn btn-primary" title="Get Directions to @item.GetValue("Title")" target="_blank">Get Directions</a>
+                <a href="@navigateUrl" class="btn btn-tertiary" title="See Details About @item.GetValue("Title")">See Details</a>
+            </div>
+        </div>
+
+    </article>
+}
+
+
+
+
+
+
+<input type="hidden" data-sf-role="searchResOrderBy" value='@Request.QueryString["orderBy"]' />
+<input type="hidden" data-sf-role="searchResLanguage" value='@Request.QueryString["language"]' />
+<input type="hidden" data-sf-role="searchResIndexCatalogue" value='@Request.QueryString["indexCatalogue"]' />
+<input type="hidden" data-sf-role="searchResQuery" value='@Request.QueryString["searchQuery"]' />
+<input type="hidden" data-sf-role="searchResWordsMode" value='@Request.QueryString["wordsMode"]' />
+
+
+@Html.Script(Url.WidgetContent("Mvc/Scripts/SearchResults/Search-results.js"), "bottom")

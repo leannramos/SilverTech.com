@@ -1,0 +1,66 @@
+{% set pageTitle = "Generic Landing" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "blue" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Lucy1.jpg" %}
+	{% set heroHeadline = "Services." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "SilverTech provides a wide range of services from design to digital marketing to web development, we have what you need for your business to succeed lorem Ipsum dolor sit amet." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+	
+	<!-- Image CTA - Right Image -->
+	{% set imageCTA_layout = "image-right" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "john-schnobrich-2FPjlAyMQTA-unsplash.jpg" %}
+	{% set imageCTA_title = "User Experience & Design" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " %}
+	{% set imageCTA_btnText = "DEVELOPMENT" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+
+	<!-- Text CTA - box-left -->
+	{% set textCTA_layout = "box-left" %}
+	{% set textCTA_title = "Development & Technology Enablement" %}
+	{% set textCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set textCTA_btnText = "Development" %}
+	{% include "../UserControls/Modules/ctas/text-cta.html" %}
+
+	<!-- Image CTA - Left Image -->
+	{% set imageCTA_layout = "image-left" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "Lora1.jpg" %}
+	{% set imageCTA_title = "Digital Transformation" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set imageCTA_btnText = "DIGITAL TRANSFORMATION" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+
+	<!-- Text CTA - box-right -->
+	{% set textCTA_layout = "box-right" %}
+	{% set textCTA_title = "Hosting & Infrastructure Managed Services" %}
+	{% set textCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set textCTA_btnText = "MANAGED SERVICES" %}
+	{% include "../UserControls/Modules/ctas/text-cta.html" %}
+
+	<!-- Image CTA - Right Image -->
+	{% set imageCTA_layout = "image-right" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "social_img_1_1211x636_compressed-800x451.jpg" %}
+	{% set imageCTA_title = "Digital Marketing & Advertising" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " %}
+	{% set imageCTA_btnText = "DEVELOPMENT" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+	
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+
+<section class="download-cta" aria-label="download call to action">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="info-col col-lg-7">
+                <div class="subheadline">@Model.HeadingTwo</div>
+                <h2 class="headline">@Model.Heading</h2>
+            </div>
+
+            <div class="cta-col col-lg-5">
+                <a href="@Model.ActionUrl" target="@Model.ActionTarget" title="@Model.ActionTitle">@Model.ActionName <span class="icon"></span></a>
+            </div>
+
+        </div>
+    </div>
+</section>

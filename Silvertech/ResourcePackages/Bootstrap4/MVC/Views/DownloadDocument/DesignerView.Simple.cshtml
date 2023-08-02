@@ -1,0 +1,54 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<sf-media-field class="sf-Media--info modal-settings"
+                sf-auto-open-selector
+                sf-model="properties.Id.PropertyValue"
+                sf-media-type="documents"
+                sf-provider="properties.ProviderName.PropertyValue"
+                sf-media-settings="@SettingsHelpers.GetMediaSettings("Document")"></sf-media-field>
+
+<div class="form-group">
+    <label for="Title-text">
+        Title
+    </label>
+    <input id="Title-text" type="text" ng-model="properties.LinkTitle.PropertyValue" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="Sub-Title-text">
+        Sub Title
+    </label>
+    <input id="Sub-Title-text" type="text" ng-model="properties.LinkSubTitle.PropertyValue" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="Link-Text-text">
+        Link Text
+    </label>
+    <input id="Link-Text-text" type="text" ng-model="properties.LinkText.PropertyValue" class="form-control" />
+</div>
+
+<form name="imageProperties">
+    <div class="form-group">
+        <label for="templateName">@Html.Resource("Template")</label>
+        <div class="row">
+            <div class="col-xs-6">
+                <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                    @foreach (var viewName in Html.GetViewNames("DownloadDocument", @"(?<viewName>^DownloadDocument.*)$"))
+                    {
+                        <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <expander expander-title='@Html.Resource("MoreOptions")'>
+        <style-dropdown selected-class="properties.CssClass.PropertyValue" view-name="properties.TemplateName.PropertyValue"></style-dropdown>
+
+        <div class="form-group">
+            <label for="imageCssClass">@Html.Resource("CssClasses")</label>
+            <input type="text" id="imageCssClass" ng-model="properties.CssClass.PropertyValue" class="form-control" />
+        </div>
+    </expander>
+</form>

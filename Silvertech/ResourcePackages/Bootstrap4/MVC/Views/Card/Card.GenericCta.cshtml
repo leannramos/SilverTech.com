@@ -1,0 +1,32 @@
+@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<section class="generic-cta @Model.CssClass" aria-label="Generic CTA for @Html.HtmlSanitize(Model.Heading)">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9">
+                <div class="info-col">
+                    @if (!string.IsNullOrEmpty(Model.Heading))
+                    {
+                        <h2 class="headline">@Html.HtmlSanitize(Model.Heading)</h2>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.HeadingTwo))
+                    {
+                        <div class="blurb">
+                            @Html.HtmlSanitize(Model.HeadingTwo)
+                        </div>
+                    }
+                    </div>
+            </div>
+            <div class="col-lg-3">
+                @if (!string.IsNullOrEmpty(Model.ActionName))
+                {
+                    <div class="cta">
+                        <a href="@Model.ActionUrl" class="btn btn-quaternary" title="@Model.ActionTitle" target="@Model.ActionTarget">@Model.ActionName</a>
+                    </div>
+                }
+                </div>
+        </div>
+    </div>
+</section>

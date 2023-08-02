@@ -1,0 +1,88 @@
+﻿@using BankCore.Mvc.Models.LogFile;
+@using Telerik.Sitefinity.Security.Claims;
+@model LogModel
+
+@{
+    var identity = ClaimsManager.GetCurrentIdentity();
+    var roleManager = Telerik.Sitefinity.Security.RoleManager.GetManager();
+    var canView = roleManager.IsUserInRole(identity.UserId, "Developers");
+}
+
+
+@if (canView)
+{
+    <style>
+        .error-entry span {
+            display: block;
+        }
+
+        .error-entry {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+
+    <div class="sfDashboardWidgetWrp">
+        <h2 class="sfBlack">Log Report Viewer </h2>
+        <select id="filename-select">
+            @foreach(var fileName in Model.FileNames)
+            {
+                <option>@fileName</option>
+            }
+        </select>
+        <div class="dataWrapper">
+            <div class="container" style="height:400px; overflow-y:scroll; overflow-x:hidden">
+                @foreach (var error in Model.LogFiles)
+                {
+                <div class="error-entry" data-filename="@error.ParentFileName">
+                    @if (error.Timestamp != null)
+                    {
+                        <span><strong>Timestamp: </strong>@error.Timestamp</span>
+                    }
+                    <span><strong>Category: </strong>@error.Category.PrintString()</span>
+                    <span><strong>Severity: </strong>@error.Severity.PrintString()</span>
+                    @if (error.Exception != null)
+                    {
+                        <span><strong>Exception: </strong>@error.Exception</span>
+                    }
+                    @if (error.RequestedUrl != null)
+                    {
+                        <span><strong>Requested URL: </strong>@error.RequestedUrl</span>
+                    }
+                    @if (error.Message != null)
+                    {
+                        <span><strong>Message: </strong>@error.Message</span>
+                    }
+                    @if (error.StackTrace != null)
+                    {
+                        <hr />
+                        <span><strong>StackTrace: </strong>@Html.Raw(error.StackTrace.Replace("...", "<br />"))</span>
+                    }
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#filename-select').change(function () {
+            hideErrorLogs();
+        });
+
+        function hideErrorLogs() {
+            var selectedFileName = $("#filename-select option:selected").text();
+            $('.error-entry').each(function () {
+                var fileName = $(this).data("filename");
+                if (selectedFileName != fileName) {
+                    $(this).css("display", "none");
+                }
+                else {
+                    $(this).css("display", "block");
+                }
+            });
+        }
+    </script>
+}

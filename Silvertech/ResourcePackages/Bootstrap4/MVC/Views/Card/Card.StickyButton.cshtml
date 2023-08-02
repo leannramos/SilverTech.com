@@ -1,0 +1,14 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+@*Used to add a sticky button to any page.*@
+	<div class="download-case-study">
+		<div class="container">
+			<a href="@Model.ActionUrl" aria-label="@Model.ActionTitle" target="@Model.ActionTarget">
+				<i class="fa fa-download"></i>@Model.ActionName
+			</a>
+		</div>
+	</div>

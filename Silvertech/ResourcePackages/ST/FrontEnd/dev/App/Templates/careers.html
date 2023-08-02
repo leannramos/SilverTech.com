@@ -1,0 +1,98 @@
+{% set pageTitle = "Careers" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "green-horizontal" %}
+	{% set heroImage = "hero-staircase.jpg" %}
+	{% set heroSubheadline = "" %}
+	{% set heroHeadline = "Careers at SilverTech." %}
+	{% set heroShowDescription = "false" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Current Openings -->
+	{% include "../UserControls/Modules/current-openings.html" %}
+
+	<!-- Benefits -->
+	{% include "../UserControls/Modules/benefits.html" %}
+
+	<!-- Download CTA -->
+	{% set downloadCTA_subheadline = "Don’t see an opening in your area?" %}
+	{% set downloadCTA_headline = "" %}
+	{% set downloadCTA_btnText = "Submit Your Resume" %}
+	{% include "../UserControls/Modules/ctas/download-cta.html" %}	
+	
+	<!-- Instagram Cards -->
+	{% include "../UserControls/Modules/cards/instagram-cards.html" %}
+
+	<!-- Follow Social Accounts -->
+	{% include "../UserControls/Modules/follow-social-accounts.html" %}
+
+	<!-- Testimonial -->
+	<section class="testimonials" aria-label="Testimonial">
+
+		<!-- Notes:  add class .whiteBG or .greenBG to each <article> to change color theme -->
+		<article class="testimonial greenBG" aria-label="testimonial from Name 2">
+			<div class="container">
+				<div class="quote">
+					“ This could be a great spot for client testimonials that are about working with the team and more specific call outs if anyone on the team has been praised by a client lorem ipsum dolor sit amen consectetuer adipicising!”
+				</div>
+
+				<div class="company">Company Name</div>
+				<div class="name">Client First and Last Name Here</div>						
+			</div>
+		</article>
+
+	</section>
+
+	<!-- News Listing -->
+	<section class="news-listing" aria-label="news listing">
+		<div class="container">
+
+			<div class="headline-row row">
+				<h2 class="section-headline">From the Playbook</h2>				
+			</div>
+
+			<div class="listing-row row">
+
+				<!-- News Item -->
+				{% set newsCategory = "People & Culture" %}
+				{% set newsImage = "blog_featured_post-800x451.jpg" %}
+				{% set newsTitle = "SilverTech Starts 2019 with a Bang!" %}
+				{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy." %}
+				{% include "../UserControls/Modules/news-listing-item.html" %}
+
+				<!-- News Item -->
+				{% set newsCategory = "UX Strategy & Design" %}
+				{% set newsImage = "134-min.jpg" %}
+				{% set newsTitle = "Lessons Learned from the SilverTech Internship Program" %}
+				{% set newsDescription = "SilverTech partners with several colleges and universities to fuel our internship program and nurture local technical talent. Every summer, students from around the state and beyond come to SilverTech to contribute new ideas and helping hands as they look to further their education and kickstart their professional careers. Today, we have over a dozen graduates of the SilverTech internship program employed in our Manchester office." %}
+				{% include "../UserControls/Modules/news-listing-item.html" %}
+
+				<!-- News Item -->
+				{% set newsCategory = "People & Culture" %}
+				{% set newsImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+				{% set newsTitle = "Small Title" %}
+				{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." %}
+				{% include "../UserControls/Modules/news-listing-item.html" %}
+
+			</div>
+
+			<div class="cta-row row">
+				<a href="/portfolio-landing.html" title="The Playbook" class="cta-btn btn btn-primary">More from the playbook</a>	
+			</div>
+
+		</div>
+	</section>
+
+
+{% endblock %}

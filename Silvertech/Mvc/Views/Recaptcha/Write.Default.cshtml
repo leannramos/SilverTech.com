@@ -1,0 +1,31 @@
+﻿@model SitefinityWebApp.Mvc.Models.RecaptchaViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Services;
+
+@Html.Script(ScriptRef.JQuery, "top", false)
+
+@*<div data-sf-role="recaptcha-field" data-sitekey="@Model.DataSitekey" data-size="@Model.Size" data-type="@Model.DataType" data-theme="@Model.Theme"></div>*@
+
+<script type="text/javascript" src="//www.google.com/recaptcha/api.js" defer async></script>
+
+<div class="g-recaptcha" style="margin-bottom: 10px" data-sitekey="@Model.DataSitekey" data-callback="recaptchaCallback"></div>
+
+<strong id="recaptchaError" style="display: none; color: #ff3636; font-size: x-large;">Please fill out the recaptcha.</strong>
+
+<script>
+    $('form').on('submit', function () {
+        //alert('form submit called');
+
+        if (grecaptcha && grecaptcha.getResponse().length !== 0) {
+            $('#recaptchaError').hide();
+            return true;
+        }
+        else {
+            
+            $('#recaptchaError').show();
+            return false;
+        }
+    });
+</script>

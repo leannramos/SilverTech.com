@@ -1,0 +1,97 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+
+@*@Html.Script(ScriptRef.JQuery, "top")*@
+
+@Html.Script(ScriptRef.KendoAll, "top")
+
+
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.common-bootstrap.min.css" />
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.bootstrap.min.css" />
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Upload Files</label>
+            <input name="file" id="file" type="file" />
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        var saveUrl = window.location.href + '/uploadredirects';
+        
+
+        $("#file").kendoUpload({
+            multiple: false,
+            async: {
+                saveUrl: saveUrl,
+                autoUpload: false
+            }
+        });
+
+    })
+
+</script>
+
+@*The backend editor loads certain styles that you cannot remove at the very end of the processing pipeline.
+    These conflict with some core kendo styles and we're forced to override it in this smanner*@
+<style type="text/css">
+    .k-reset {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        outline: 0 !important;
+        text-decoration: none !important;
+        font-size: 100% !important;
+        list-style: none !important;
+    }
+    .k-widget {
+        border-style: solid !important;
+        border-width: 1px !important;
+        -webkit-appearance: none !important;
+    }
+    .k-dropzone {
+        border-style: solid !important;
+        border-width: 0 !important;
+        padding: .8em !important;
+        background-color: transparent !important;
+    }
+        .k-file {
+        border-style: solid !important;
+        border-width: 0 0 1px !important;
+        padding: .65em .17em .65em 1em !important;
+        white-space: nowrap !important;
+    }
+    .k-clear-selected {
+        margin-top: -5px !important;
+        border-radius: 0 0 0 4px !important;
+        display: inline-block !important;
+        width: 50% !important;
+        margin: 0 !important;
+        line-height: 1em !important;
+        padding: 1.214em 0 !important;
+        border: 0 !important;
+    }
+   .k-upload-selected {
+        margin-top: -5px !important;
+        border-radius: 0 0 0 4px !important;
+        display: inline-block !important;
+        width: 50% !important;
+        margin: 0 !important;
+        line-height: 1em !important;
+        padding: 1.214em 0 !important;
+        border: 0 !important;
+    }
+    .k-upload-files {
+        line-height: 2.66 !important;
+        border-style: solid !important;
+        border-width: 1px 0 0 !important;
+        padding-bottom: 5px !important;
+    }
+   
+</style>

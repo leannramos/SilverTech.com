@@ -1,0 +1,79 @@
+{% set pageTitle = "Case Study Detail" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "" %}
+	{% set heroCustomClasses = "case-study-detail" %}
+	{% set heroImage = "artem-beliaikin-e--geRd5eCQ-unsplash.jpg" %}
+	{% set heroHeadline = "Credit Union of Texas" %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "false" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "visitnh.png" %}
+	{% set heroShowGenericContent = "true" %}
+	<!-- Notes: Use Css class case-study-detail with the inner hero to get correct case study styling
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Project Overview (Not using anymore but keeping for now) -->
+	{# {% include "../UserControls/Modules/portfolio/project-overview.html" %}  #}
+
+	{% set backBtnURL = "/portfolio-landing.html" %}
+	{% set backBtnText = "Back to our work" %}
+	{% include "../UserControls/Modules/back-btn.html" %}
+
+	<!-- WYSIWYG -->
+	<section class="generic-content">
+		<div class="container">
+			
+			<h2>It takes  client/agency  collaboration  to  create  a  customer - friendly  conversion machine. </h2>
+			<p>
+				We’ve all been there.  That time when  you browsed online  information  about a product or service, and  next thing you know,  an ad pops up on your social feed of that exact item.  Or,  when you are shopping on sites like Amazon,  and  a product complementary to a  previous  purchase is suggested to you.  We call that meaningful content.   
+			</p>
+			<p>
+				Credit Union of Texas (CUTX)  understood  that  meaningful,  personalized content  is  crucial to  map  buyers to the right information at the right time.  They came to us looking to leverage digital channels  to improve their online experience and  to increase  product conversions.  SilverTech  was engaged to  help CUTX completely transform  the way their customers were able to conduct business  online.  By creating  personas,  detailed user journey maps,  customized content,  strong  calls-to-action,  and guided product selection tools, the  result  is  a  site that is  convenient, ADA accessible and easy to use.  
+			</p>
+			<p>
+				A conversion-machine,  the CUTX site  pushes the envelope  with  a build-and-price your own vehicle  wizard — integrated   with Kelley Blue Book — that  allows customers to find  a car, choose model and trim packages, get an  auto loan rate and apply for the loan,  all  without ever leaving the CUTX  website.
+			</p> 
+			<p>
+				Between the personalization features that  display more relevant content with each interaction,  lifestyle  pages that consolidate relevant products,  calculators,  and  helpful wizards  that  provide customers education and guidance,  you  won’t  recognize  the new CUTX site as  a traditional ‘bank’ website.  That’s  ok, because  today’s digital consumers expect  way more than  most  traditional  credit union  websites  offer. 
+			</p> 
+			<p>
+				Although we knew  the site would be a winner, we  were elated  at how quickly CUTX started  realizing  their success.  The numbers are so impressive,  SilverTech  and CUTX marketing execs have  even  been invited  to  speak  about their  rapid  growth  at  financial  industry conferences  and trade shows. 
+			</p>
+
+		</div>
+	</section>
+
+	<!-- V Shaped CTA -->
+	{% set vShapeCTA_Headline = "Services We Provided" %}
+	{% include "../UserControls/Modules/ctas/v-shaped-cta.html" %}
+
+	<!-- Case Studies Slider -->
+	{% include "../UserControls/Modules/portfolio/case-study-slider.html" %}
+
+	
+
+
+	<!-- The Results -->
+	{% set projectResults_showIntro = "true" %}
+	{% set projectResults_showIntroText = "false" %}
+	{% include "../UserControls/Modules/portfolio/project-results.html" %}
+
+	{% include "../UserControls/Modules/ctas/case-study-download-cta.html" %}
+	
+
+	<div class="download-case-study">
+		<div class="container">
+			<a href="#" aria-label="Download case study">
+				<i class="fa fa-download"></i> Download Full Case Study
+			</a>
+		</div>
+	</div>
+{% endblock %}

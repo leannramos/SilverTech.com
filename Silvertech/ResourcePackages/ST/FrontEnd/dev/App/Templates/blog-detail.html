@@ -1,0 +1,25 @@
+{% set pageTitle = "Blog Detail" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "blog-detail" %}
+	{% set heroImage = "hero2.jpg" %}
+	{% set heroHeadline = "Top 6 Product Updates Announced at Google Marketing Live 2019" %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "false" %}
+	{% set heroShowAuthor = "true" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "true" %}
+	{% set heroShowDownArrow = "false" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+	
+	<!-- Blog Detail -->
+	{% include "../UserControls/Modules/blogs/blog-detail.html" %}
+
+{% endblock %}

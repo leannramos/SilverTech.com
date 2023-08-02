@@ -1,0 +1,137 @@
+{% set pageTitle = "Newsletter Archive" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Lora2.jpg" %}
+	{% set heroSubheadline = "" %}
+	{% set heroHeadline = "What We're Up To." %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<section class="newsletter archive" aria-label="What We're Up To Newsletter">
+
+		
+		<!-- Back Button -->
+		<div class="page-back-btn row">
+			<div class="container">
+				<a href="/newsletter.html" class="btn btn-tertiary" title="BACK TO ABOUT US">BACK TO Latest News</a>			
+			</div>
+		</div>
+
+		<div class="headline-row row">
+			<div class="container">
+				<h2 class="section-headline">Past News & Events</h2>	
+			</div>
+		</div>
+
+		<!-- Filter By -->
+		<div class="filters">
+			<div class="container">
+
+				<div class="filter-wrapper">
+					<label for="filterByCategory">Filter By:</label>
+					<select name="filterByCategory" id="filterByCategory">
+						<option value="">Category</option>
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+						<option value="Option 4">Option 4</option>
+					</select>
+					
+				</div>	
+
+			</div>
+		</div>
+
+		<!-- News Listing -->
+		<section class="news-listing" aria-label="news listing">
+			<div class="container">
+
+
+				<div class="listing-row row">
+
+					<!-- News Item -->
+					{% set newsCategory = "Event" %}
+					{% set newsImage = "newsItem1.jpg" %}
+					{% set newsTitle = "Summertime at SilverTech Means Summer Games!!" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "joseph-gruenthal-XGC_1eH_ZGI-unsplash.jpg" %}
+					{% set newsTitle = "What to Do the Next Time Facebook Goes Down" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet" %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+					{% set newsTitle = "Small Title" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "Event" %}
+					{% set newsImage = "newsItem1.jpg" %}
+					{% set newsTitle = "Summertime at SilverTech Means Summer Games!!" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "joseph-gruenthal-XGC_1eH_ZGI-unsplash.jpg" %}
+					{% set newsTitle = "What to Do the Next Time Facebook Goes Down" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet" %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+					{% set newsTitle = "Small Title" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "Event" %}
+					{% set newsImage = "newsItem1.jpg" %}
+					{% set newsTitle = "Summertime at SilverTech Means Summer Games!!" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "joseph-gruenthal-XGC_1eH_ZGI-unsplash.jpg" %}
+					{% set newsTitle = "What to Do the Next Time Facebook Goes Down" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet" %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+					{% set newsTitle = "Small Title" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+				</div>
+
+				<!-- Pagination -->
+				{% include "../UserControls/MenuControls/pagination.html" %}
+
+			</div>
+		</section>
+
+	</section> <!-- end .newsletter -->
+
+{% endblock %}

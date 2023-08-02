@@ -1,0 +1,84 @@
+.current-openings {
+	@include greenGradientHorizontal();
+	padding:15px 0;
+
+	.section-title {
+		text-align: center;
+		color:#FFF;
+		margin:30px 0 20px 0;
+	}
+	.offices {
+		border-bottom:1px solid #FFF;
+		padding-bottom: 30px;
+	}
+	.office {
+		position:relative;
+		
+		.office-location {
+			color:#FFF;
+			@include font-size(39);
+			font-weight: 400;
+			padding:70px 20px 70px 100px;
+			
+			background-position:center left 60px;
+			background-repeat: no-repeat;
+			background-size: 100px 175px;
+			
+			&.new-hampshire { background-image: url('/library/img/NH-icon.png'); }
+			&.indiana { background-image: url('/library/img/indiana-icon.png'); }
+		}
+		.no-openings {
+			@include font-size(20);
+
+			.zilch { 
+				font-style:italic; 
+				margin-bottom: 5px;
+			}
+		}
+		.positions {
+			color:#FFF;
+			padding:20px 20px 20px 100px;
+
+			p { margin-bottom: 5px }
+			a {
+				color:#FFF;
+				text-align: left;
+
+				&:hover, &:focus, &:active { color:$tertiary; }
+			}
+			ul {
+				margin:0;
+				padding:0;
+				list-style:none;
+
+				li {
+					margin-bottom: 15px;
+
+					&:last-child { margin-bottom: 0; }
+				}
+			}			
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.current-openings {
+
+		.section-title { margin:0 0 5px 0; }
+		.offices { padding-bottom: 45px; }
+		.office {
+			.office-location {
+				padding:50px 0 50px 30px;
+				background-size: 55px 100px;
+				background-position:center left;
+				@include font-size(23);
+			}
+			.positions { padding:0 45px 0 0; }
+			.no-openings {
+				@include font-size(14);
+			}
+		}
+	}
+}

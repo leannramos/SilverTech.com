@@ -1,0 +1,17 @@
+:root:root:root:root:root .sfPageEditor .sf-backend-wrp {
+	.modal-dialog {
+		input[type=radio] {
+		    height: 20px !important;
+			width: 20px !important;
+			border: 1px solid #c2c2c2 !important;
+			border-radius: 50% !important;
+			margin-left: -25px !important;
+		}
+		
+		.btn {
+			&:before, &:after {
+				display: none;
+			}
+		}
+	}
+}

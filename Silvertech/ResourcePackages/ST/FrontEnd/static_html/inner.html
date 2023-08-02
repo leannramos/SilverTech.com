@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Generic Inner | Silvertech, Inc</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="theme-color" content="#14609d">
+        
+        <!-- FB/Twitter OG -->
+        <meta property="og:image" content="/library/img/logo.png" />
+        <meta property="og:title" content="Company Name" />
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa explicabo eum necessitatibus, distinctio dolore corporis." />
+        <meta property="og:site_name" content="Lorem ipsum dolor.">
+        <meta property="og:url" content="https://www.site.com/">
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@company" />
+        <meta name="twitter:title" content="Company Name" />
+        <meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, ipsam." />
+        <meta name="twitter:image" content="/library/img/logo.png" />
+
+        <!-- CSS -->        
+        <link rel="stylesheet" href="/library/css/core.css">
+
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Passion+One|Permanent+Marker" rel="preload stylesheet" as="fetch">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
+        <!-- Fav Icon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/library/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/library/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/library/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/library/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/library/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/library/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/library/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/library/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/library/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/library/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/library/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/library/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/library/img/favicon/favicon-16x16.png">
+        <meta name="msapplication-TileImage" content="/library/img/favicon/ms-icon-144x144.png">
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+        <script>!window.jQuery && document.write('<script src="/library/js/jquery-3.3.1.min.js"><\/script>')</script>
+</head>
+
+<body>
+    
+    <a class="sr-only sr-only-focusable" href="#content" title="Skip to main content">Skip to main content</a>
+    
+    <div class="page-wrapper">
+        <!-- Notes:  add class "blue" to .site-header to change the hover of the menu toggle -->
+<header class="site-header ">
+
+	<div class="open-menu ">
+		<a onclick="javascript:void();" class="open-menu-btn" title="Toggle Menu">
+			<span class="text">Menu </span>
+			<div class="bars">
+				<span class="bar bar1"></span>
+				<span class="bar bar2"></span>
+				<span class="bar bar3"></span>
+			</div>			
+		</a>
+	</div>
+
+	<div class="close-menu" tabindex="0" aria-label="close menu" role="button">Close 
+		<span class="icon"></span>
+	</div>
+
+	<!-- Menu -->
+	<nav class="main-menu">
+	<div class="wrapper">
+		
+		<div class="menu-content">
+			
+			<!-- Menu Search (Mobile) -->
+			<div class="search-site mobile">
+				<form action="">
+					<div class="input-group">
+						<label for="menuSearch" class="sr-only">Search our site</label>
+					  	<input type="search" class="form-control" placeholder="Search our site" aria-label="Search our site" aria-describedby="menuSearch">
+					  	<div class="input-group-append">
+					    	<button class="icon" type="button" id="menuSearch"><i class="fas fa-search"></i></button>
+					  	</div>
+					</div>
+				</form>
+			</div>
+			
+			<!-- Menu Links -->
+			<ul class="nav-links">
+				<li><a href="" title="Services">Services</a></li>
+				<li><a href="" title="Work">Work</a></li>
+				<li><a href="" title="Technology">Technology</a></li>
+				<li><a href="" title="Playbook">Playbook</a></li>
+			</ul>
+
+			<!-- Sub Links -->
+			<ul class="sub-links">
+				<li><a href="" title="About Us">About Us</a></li>
+				<li><a href="" title="Contact Us">Contact Us</a></li>
+			</ul>
+
+			<!-- Menu Search (desktop) -->
+			<div class="search-site desktop">
+				<div class="input-group">
+					<label for="menuSearch" class="sr-only">Search our site</label>
+				  	<input type="search" class="form-control" placeholder="Search our site" aria-label="Search our site" aria-describedby="menuSearch">
+				  	<div class="input-group-append">
+				    	<button class="icon" type="submit" id="menuSearch"><i class="fas fa-search"></i></button>
+				  	</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</nav>
+
+	<div class="container">	
+		
+		<div class="logo">
+			<a href="/" title="Go back to homepage of Silvertech, Inc">
+				<img src="/library/img/logo.png" alt="Silvertech Logo">
+			</a>
+		</div>
+	</div>
+
+	
+</header>
+
+
+        
+        <div id="content">
+            
+
+	<!-- Hero Inner -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Notes:  add class .green or .green-horizontal or .blue for gradient change.  Default is green -->
+<!-- Notes:  add class .blog-detail, .newsletter-detail, .reduce-title, or .blog-listing to <section> to change styling for those pages -->
+<section class="hero-inner green " aria-label="Inner Page Banner">
+	<div class="background"></div>
+
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="caption">
+
+				
+
+				
+					<div class="subheadline"></div>
+				
+
+				<h1 class="headline">Inner.</h1>
+
+				
+					<div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </div>
+				
+
+				
+
+				
+
+				
+
+				
+					//<div class="icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content"></div>
+				
+
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Hero Image -->
+	<div class="hero-image">
+		<div class="wrapper">
+			
+			<div class="image" style="background-image:url('/library/img/Lora2.jpg');"></div>
+		</div>
+	</div>
+	
+</section>
+
+<div id="hero-scroll-to"></div>
+
+	<!-- WYSIWYG -->
+	<div class="generic-content">
+		<div class="container">
+			<p>
+				If you’ve ever been to Google’s search page on your mobile device then you’ve likely seen the Google discover page. It generates content that is not only timely but also aligns with your interests right below the Google search bar.
+			</p>
+			<h2>WYSIWYG Content Here</h2>
+			<p>
+				Discovery ads will allow you to run your ad campaign on Google’s search page, Gmail, and YouTube. Google developed these ads because they’re a visually impactful ad format that is targeted based on audience data such as interests, in-market, and affinity, instead of search intent alone. This is a great opportunity for people outside of search campaigns to be exposed to your ads. 
+
+			</p>
+			<h3>On-going Digital Marketing Optimization & Management</h3>
+			<p>
+				Using a combination of monthly data analysis, campaign monitoring and optimization techniques, our team knows the right digital mix to help you get positive compounding performance improvements.  
+			</p>
+			<p>
+				Our monthly retainer plans are customized to a client’s needs and budget. Below, we’ve outlined a few ways clients choose to work with us.  If you’d like us to put together a plan based on your unique needs, contact us to chat with one of our Digital Marketing strategists today. 
+			</p>
+		</div>
+	</div>
+
+	<!-- Angle Cards -->
+	<!-- Notes:  add class on <article> for color theme... Optional classes are "light-green", "dark-green", "dark-blue", "orange", "gray" -->
+<section class="angle-cards" aria-label="angle cards">
+	<div class="container">
+		<div class="row">
+			
+			<!-- Card -->
+			<div class="col-md-6 col-lg-4">
+				<article class="angle-card light-green" aria-label="Get Started With Paid Media">
+
+					<header class="angle-header">
+						<div class="slant"></div>
+						<h2 class="headline">Get Started With Paid Media</h2>
+						<h3 class="subheadline">PLANS START AT $3,000/MONTH*</h3>
+					</header>
+
+					<div class="content">
+						<ul>
+							<li>Competitive paid media analysis </li>
+							<li>Keyword research (PPC and SEO) </li>
+							<li>Bid and budget planning </li>
+							<li>Strategic campaign plan </li>
+							<li>Creative brief </li>
+							<li>Campaign creation and configuration </li>
+							<li>Retargeting</li>
+							<li>GTM set up and container management </li>
+							<li>Text and display ad creation </li>
+							<li>Landing page </li>
+							<li>Monthly reporting </li>
+						</ul>						
+					</div>
+
+				</article>
+			</div>
+
+			<!-- Card -->
+			<div class="col-md-6 col-lg-4">
+				<article class="angle-card dark-green" aria-label="Get Started With Paid Media">
+
+					<header class="angle-header">
+						<div class="slant"></div>
+						<h2 class="headline">Get Started With Paid Media</h2>
+						<h3 class="subheadline">PLANS START AT $3,000/MONTH*</h3>
+					</header>
+
+					<div class="content">
+						<ul>
+							<li>Landing page development & optimization</li>
+							<li>Look-a-like targeting </li>
+							<li>Video editing (optimized for paid media placement)</li>
+							<li>On page search engine optimization  </li>
+							<li>A/B testing </li>
+							<li>More</li>
+						</ul>						
+					</div>
+
+				</article>
+			</div>
+
+			<!-- Card -->
+			<div class="col-md-6 col-lg-4">
+				<article class="angle-card dark-blue" aria-label="Get Started With Paid Media">
+
+					<header class="angle-header">
+						<div class="slant"></div>
+						<h2 class="headline">Lead Nurturing Plan</h2>
+					</header>
+
+					<div class="content">
+						<ul>
+							<li>Marketing automation tool implementation</li>
+							<li>Lead generation and nurturing strategy </li>
+							<li>Email marketing campaign development</li>
+							<li>Build automated workflows</li>
+							<li>Develop content (blog/social posts/emails)</li>
+							<li>Tracking and reporting set-up</li>
+							<li>Monthly report of findings and recommendations</li>
+						</ul>						
+					</div>
+
+				</article>
+			</div>
+
+			<!-- Card -->
+			<div class="col-md-6 col-lg-4">
+				<article class="angle-card orange" aria-label="Get Started With Paid Media">
+
+					<header class="angle-header">
+						<div class="slant"></div>
+						<h2 class="headline">Web Launch Promotion Plan</h2>
+						<h3 class="subheadline">$6,500/ONE-TIME ALL-IN FLAT FEE**</h3>
+					</header>
+
+					<div class="content">
+						<ul>
+							<li>Competitive paid media analysis </li>
+							<li>Keyword research (PPC and SEO) </li>
+							<li>Bid and budget planning </li>
+							<li>Strategic campaign plan </li>
+							<li>Creative brief </li>
+							<li>Campaign creation and configuration </li>
+							<li>Retargeting</li>
+							<li>GTM set up and container management </li>
+							<li>Text and display ad creation </li>
+							<li>Landing page </li>
+							<li>Monthly reporting </li>
+						</ul>						
+					</div>
+
+				</article>
+			</div>
+
+			<!-- Card -->
+			<div class="col-md-6 col-lg-4">
+				<article class="angle-card gray" aria-label="Get Started With Paid Media">
+
+					<header class="angle-header">
+						<div class="slant"></div>
+						<h2 class="headline">Web Content Personalization</h2>
+					</header>
+
+					<div class="content">
+						<ul>
+							<li>Landing page development & optimization</li>
+							<li>Look-a-like targeting </li>
+							<li>Video editing (optimized for paid media placement)</li>
+							<li>On page search engine optimization  </li>
+							<li>A/B testing </li>
+							<li>More</li>
+						</ul>						
+					</div>
+
+				</article>
+			</div>
+
+			
+
+		</div>
+	</div>
+</section>
+
+	<!-- Testimonial -->
+	<!-- Notes:  add class .whiteBG or .greenBG to each <article> to change color theme -->
+<section class="testimonials" aria-label="Testimonial">
+
+	<!-- Testimonial -->
+	<article class="testimonial whiteBG" aria-label="testimonial from Name">
+		<div class="container">
+			<div class="quote">
+				This could be a great spot for client testimonials that are about working with the team and more specific call outs if anyone on the team has been praised by a client lorem ipsum dolor sit amen consectetuer adipicising!
+			</div>
+
+			<div class="company">Company Name</div>
+			<div class="name">Client First and Last Name Here</div>						
+		</div>
+	</article>
+
+	<!-- Testimonial -->
+	<article class="testimonial greenBG" aria-label="testimonial from Name 2">
+		<div class="container">
+			<div class="quote">
+				Jeff and Eric dominated on the cornhole field during summer games, which may or may not have led to employees quitting.  The data is still being studied at this time, but Kudos to those 2 clowns for bringing their A Game!
+			</div>
+
+			<div class="company">Silvertech, Inc.</div>
+			<div class="name">John Doe</div>						
+		</div>
+	</article>
+
+</section>
+	
+	<!-- Featured Blog (Right Image) -->
+	
+	
+	<!-- Notes:  add class .green or .blue for gradient change.  Default is green -->
+<section class="featured-blog image-right" aria-label="Featured Blog">
+	<div class="background"></div>
+
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="caption">
+
+				<div class="subheadline">From the Playbook.</div>
+				<h1 class="headline">Top 6 Product Updates Announced at Google Marketing Live 2019</h1>
+				<div class="description">
+					Ahead of our upcoming webinar on Micro-Moments and Mobile-First Behavior, I had the pleasure of interviewing Timothy Williamson, Sales Engineer at Progress®, the company behind many mission-critical business applications including the Sitefinity Web Content Management platform and the Sitefinity Digital Experience Cloud.
+				</div>
+
+				<div class="cta">
+					<a href="" class="btn btn-quaternary" title="Read Post about Top 6 Product Updates Announced at Google Marketing Live 2019 ">READ POST</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog Image -->
+	<div class="blog-image">
+		<div class="wrapper">
+			<div class="image" style="background-image:url('/library/img/iStock-1065178846.jpg');"></div>
+		</div>
+	</div>
+	
+</section>
+
+	<!-- Featured Blog (Left Image) -->
+	
+	
+	<!-- Notes:  add class .green or .blue for gradient change.  Default is green -->
+<section class="featured-blog image-left" aria-label="Featured Blog">
+	<div class="background"></div>
+
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="caption">
+
+				<div class="subheadline">From the Playbook.</div>
+				<h1 class="headline">Top 6 Product Updates Announced at Google Marketing Live 2019</h1>
+				<div class="description">
+					Ahead of our upcoming webinar on Micro-Moments and Mobile-First Behavior, I had the pleasure of interviewing Timothy Williamson, Sales Engineer at Progress®, the company behind many mission-critical business applications including the Sitefinity Web Content Management platform and the Sitefinity Digital Experience Cloud.
+				</div>
+
+				<div class="cta">
+					<a href="" class="btn btn-quaternary" title="Read Post about Top 6 Product Updates Announced at Google Marketing Live 2019 ">READ POST</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog Image -->
+	<div class="blog-image">
+		<div class="wrapper">
+			<div class="image" style="background-image:url('/library/img/iStock-1065178846.jpg');"></div>
+		</div>
+	</div>
+	
+</section>
+
+	<!-- Image CTA - Right Image -->
+	
+	
+	
+	
+	
+	
+	<!-- Notes:  add class .image-right or .image-left to the <section> for layout changes.  default is image right -->
+<!-- Notes:  add class "no-end-angle" to remove angle from 1 side of the image -->
+<section class="image-cta image-right " aria-label="Image Call To Action">
+	<div class="container">
+		<div class="row">
+			
+			<div class="text-col col-lg-5">
+				
+				
+
+				<h2 class="headline">Call To Action</h2>
+
+				
+					<div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </div>
+				
+
+				
+					<div class="cta">
+						<a href="" class="btn btn-primary" title="">UI/UX Design</a>
+					</div>
+				
+			</div>			
+
+			<div class="photo-col col-lg-7">
+				<div class="photo-wrapper">
+					<div class="photo lazy-load-bg" style="background-image:url('/library/img/john-schnobrich-2FPjlAyMQTA-unsplash.jpg');"></div>
+				</div>
+				
+			</div>	
+
+		</div>
+	</div>
+</section>
+
+	<!-- Image CTA - Left Image -->
+	
+	
+	
+	
+	
+	
+	<!-- Notes:  add class .image-right or .image-left to the <section> for layout changes.  default is image right -->
+<!-- Notes:  add class "no-end-angle" to remove angle from 1 side of the image -->
+<section class="image-cta image-left " aria-label="Image Call To Action">
+	<div class="container">
+		<div class="row">
+			
+			<div class="text-col col-lg-5">
+				
+				
+
+				<h2 class="headline">Call to Action</h2>
+
+				
+					<div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</div>
+				
+
+				
+					<div class="cta">
+						<a href="" class="btn btn-primary" title="">DIGITAL TRANSFORMATION</a>
+					</div>
+				
+			</div>			
+
+			<div class="photo-col col-lg-7">
+				<div class="photo-wrapper">
+					<div class="photo lazy-load-bg" style="background-image:url('/library/img/Lora1.jpg');"></div>
+				</div>
+				
+			</div>	
+
+		</div>
+	</div>
+</section>
+	
+	<!-- Generic CTA -->
+	<section class="generic-cta" aria-label="Generic CTA Title">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-lg-9">
+				<div class="info-col">
+					<h2 class="headline">Contact Us Optional Header Here</h2>
+					<div class="blurb">
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+					</div>
+				</div>				
+			</div>
+
+			<div class="col-lg-3">
+				<div class="cta">
+					<a href="" class="btn btn-quaternary" title="Contact Us">Contact Us</a>
+				</div>				
+			</div>
+
+		</div>
+	</div>
+</section>
+
+	<!-- Newsletter CTA -->
+	<section class="subscribe-cta" aria-label="subscribe to newsletter">
+	<div class="container">
+		<div class="dingbat"></div>
+		<div class="row">
+			
+			<div class="info-col">
+				<h2 class="headline">Subscribe to our e-newsletter</h2>
+			</div>	
+
+			<div class="form-col">
+				<label for="newsletterEmail" class="sr-only">Enter your Email</label>
+				<input type="email" name="newsletterEmail" id="newsletterEmail" placeholder="Enter your email" required>
+				<button type="submit" class="btn btn-quaternary">SUBSCRIBE</button>
+			</div>	
+
+		</div>
+	</div>
+</section>
+
+	<!-- Download CTA -->
+	
+	
+	
+	<section class="download-cta" aria-label="download call to action">
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="info-col col-lg-7">
+				
+					<div class="subheadline">Download Our:</div>	
+				
+
+				
+					<h2 class="headline">“Marketing Term Cheat Sheet”</h2>				
+				
+			</div>
+
+			<div class="cta-col col-lg-5">
+				<a href="" title="Download Marketing Term Cheat Sheet">Download <span class="icon"></span></a>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+        </div>            
+
+        <footer class="site-footer">
+	<div class="container-fluid">
+		<div class="row">
+			
+			<div class="main-photo">
+				<div class="photo lazy-load-bg" style="background-image:url(/library/img/Schoolhouse-from-Outside2-min.jpg);"></div>
+			</div>
+
+			<div class="footer-content">
+				
+				<!-- Office Locations -->
+				<section class="office-locations" aria-label="Silvertech Office Locations">
+
+					<!-- // Office -->
+					<div class="location">
+						<h2 class="city">Manchester</h2>
+						<div itemscope itemtype="http://schema.org/PostalAddress"> 
+							<div itemprop="streetAddress">196 Bridge Street</div>
+							<span itemprop="addressLocality">Manchester</span>, 
+							<span itemprop="addressRegion">NH</span> 
+							<span itemprop="postalCode">03104</span><br>
+							<div class="telephone" itemprop="telephone"><a href="tel:+16036696600" title="Call our Manchester Office"><i class="fas fa-phone"></i>603.669.6600</a></div> 
+						</div>
+					</div>
+
+					<!-- // Office -->
+					<div class="location">
+						<h2 class="city">Indianapolis</h2>
+						<div itemscope itemtype="http://schema.org/PostalAddress"> 
+							<div itemprop="streetAddress">9101 N. Wesleyan Road</div>
+							<span itemprop="addressLocality">Indianapolis</span>, 
+							<span itemprop="addressRegion">IN</span> 
+							<span itemprop="postalCode">46268</span><br>
+							<div class="telephone" itemprop="telephone"><a href="tel:+13178054376" title="Call our Indianapolis Office"><i class="fas fa-phone"></i>317.805.4376</a></div> 
+						</div>
+					</div>
+
+					<div class="office-photo">
+						<div class="photo lazy-load-bg" style="background-image:url('/library/img/ST-mug-min.jpg');"></div>
+					</div>
+
+				</section>
+
+				<!-- Quick Links -->
+				<section class="quicklinks" aria-label="quick-links">
+					<!-- Matching Sitefiniy  -->
+					<div class="quicklink-wrapper">
+						<div>
+							<div class="quicklink">
+								<h3 class="title">New Business</h3>
+								<a href="mailto:letstalk@silvertech.com" class="email" title="Email us about new business">letstalk@silvertech.com</a>
+							</div>
+
+							<div class="quicklink">
+								<h3 class="title">Careers</h3>
+								<a href="mailto:careers@silvertech.com" class="email" title="Email us about Careers">careers@silvertech.com</a>
+							</div>
+
+							<div class="quicklink">
+								<h3 class="title">Media Inquiries</h3>
+								<a href="mailto:press@silvertech.com" class="email" title="Email us about Media Inquiries">press@silvertech.com</a>
+							</div>							
+						</div>
+					</div>
+
+
+				</section>
+
+				<!-- Social Icons -->
+				<section class="follow-us" aria-label="follow us on these social sites">
+					<div class="wrapper">
+						<h2 class="title">Follow Us On Social!</h2>
+
+						<div class="social-icons">
+							<a href="https://twitter.com/silvertech" title="Follow us on Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.facebook.com/SilverTech" title="Follow us on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://www.linkedin.com/company/silvertech-inc-" title="Follow us on Linked In" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+							<a href="https://www.instagram.com/silvertech_inc/" title="Follow us on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</section>
+
+				<section class="copyright">
+					© SilverTech, Inc. 2019 | <a href="" title="Privacy Policy">Privacy Policy</a>, <a href="/careers.html" title="Careers">Careers</a>
+				</section>
+
+			</div>
+		
+		</div>		
+	</div>
+</footer>
+    </div>
+
+    <link rel="stylesheet" href="/library/css/app.css">
+    <!-- JS -->
+    <script src="/library/js/vendor/slick.min.js"></script>
+    <script src="/library/js/vendor/browser-polyfill.min.js"></script>
+    <script src="/library/js/vendor/svg4everybody.min.js"></script>
+    <script src="/library/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/library/js/vendor/jquery.instagramFeed.min.js"></script>
+    <!-- mainES6.js == debug file. main,js == production-->
+    <script src="/library/js/main.js"></script>
+</body>
+
+</html>

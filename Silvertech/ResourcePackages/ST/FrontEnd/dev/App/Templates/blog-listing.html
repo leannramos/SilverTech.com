@@ -1,0 +1,26 @@
+{% set pageTitle = "Blog Listing" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "blue" %}
+	{% set heroCustomClasses = "blog-listing" %}
+	{% set heroImage = "Lucy1.jpg" %}
+	{% set heroHeadline = "Playbook." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "Digital Marketing & Technology Insights from the SilverTech Crew." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+	
+	<!-- Blog Detail -->
+	{% include "../UserControls/Modules/blogs/blog-listing.html" %}
+
+{% endblock %}

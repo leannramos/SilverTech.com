@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SitefinityWebApp.Custom.Sitefinity.Rates.RatesColumnService" Factory="Telerik.Sitefinity.Web.Services.WcfHostFactory" %>
+

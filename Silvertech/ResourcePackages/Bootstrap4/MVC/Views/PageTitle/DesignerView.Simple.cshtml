@@ -1,0 +1,17 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+
+<div class="form-group">
+    <label for="templateName">@Html.Resource("Template")</label>
+    <div class="row">
+        <div class="col-xs-6">
+            <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                @foreach (var viewName in Html.GetViewNames("PageTitle", @"(?<viewName>^PageTitle.*)$"))
+                {
+                    <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>

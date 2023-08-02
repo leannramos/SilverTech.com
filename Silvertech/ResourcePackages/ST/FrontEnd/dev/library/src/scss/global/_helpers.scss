@@ -1,0 +1,128 @@
+.sr-only {
+	position: absolute; 
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.generic-content {
+	padding:30px 0;
+
+	.container { padding:0; }
+}
+.sticky-scroll {
+
+	&.sticking {
+		position:fixed;
+	    top:0;
+	    width:100%;
+	    z-index:100;
+		
+	}
+}
+.fancybox-bg { background:rgb(255,255,255); }
+.darkOverlay .fancybox-bg { background:rgb(0,0,0,); }
+.videoWrapper {
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+	
+	iframe {
+	   left:0;
+	   top:0;
+	   height:100%;
+	   width:100%;
+	   position:absolute;
+	}
+}
+// background focal point options
+.bg-top-left { background-position: top left !important; }
+.bg-top-center { background-position: top center !important; }
+.bg-top-right { background-position: top right !important; }
+.bg-center-left { background-position: center left !important; }
+.bg-center-center { background-position: center center !important; }
+.bg-center-right { background-position: center right !important; }
+.bg-bottom-left { background-position: bottom left !important; }
+.bg-bottom-center { background-position: bottom center !important; }
+.bg-bottom-right { background-position: bottom right !important; }
+
+
+// slick slider overrides
+.slick-prev, .slick-next {
+	width: 23px;
+	height: 43px;
+
+	&:before { display:none; }
+	.arrow {
+		background: url('/library/img/sprites.png');
+		background-repeat: no-repeat; 
+		width: 23px;
+		height: 43px;
+		display: inline-block;
+	}
+}
+.slick-prev {
+	.arrow {
+		background-position: -67px -62px;
+	}
+}
+.slick-next {
+	.arrow { background-position: -95px -62px; }
+}
+
+
+// Sitefinity fixes
+.sf-search-results {
+
+    .media {
+        margin-bottom: 10px;
+
+        .media-body {
+            width: 100%;
+
+            a {
+                word-break: break-all;
+            }
+
+            p {
+                margin-bottom: 15px;
+
+                & ~ a {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.sf-Media--Info-image {
+    img {
+        min-width: 80px;
+        min-height: 80px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+	.generic-content { 
+		padding: 15px; 
+	}
+	.swap-cols-on-mobile {
+		& > [class^=col-] {
+			&:first-child { order:2; }
+			&:last-child { order:1; }
+		}
+	}
+}
+
+// prevent background images from loading if marked for lazy load.
+.lazy-load-bg {
+	background-image: none !important;
+}
+
+.img-load-lazy {
+	opacity: 0;
+}

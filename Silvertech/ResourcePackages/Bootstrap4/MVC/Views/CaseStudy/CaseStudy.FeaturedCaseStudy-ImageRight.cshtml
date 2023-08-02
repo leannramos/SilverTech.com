@@ -1,0 +1,47 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<section class="client-cta image-right" aria-label="step callouts">
+    <div class="container">
+
+        <div class="client-wrapper">
+
+            <!-- Text Column -->
+            <div class="text-col">
+
+                @if (!Model.HeadingTwo.IsNullOrEmpty())
+                {
+                    <h2 class="section-title">@Model.HeadingTwo</h2>
+                }
+                @if (!Model.Heading.IsNullOrEmpty())
+                {
+                    <h3 class="client-name">@Model.Heading</h3>
+                }
+
+                <div class="description">
+                    @Html.HtmlSanitize(Model.Description)
+                </div>
+                @if (!Model.ActionName.IsNullOrEmpty())
+                {
+                    <div class="cta">
+                        <a href="@Model.ActionUrl" class="btn btn-primary" target="@Model.ActionTarget" title="@Model.ActionTitle">@Model.ActionName</a>
+                    </div>
+                }
+
+            </div>
+
+            <div class="photo-wrapper lazy-load-bg">
+                <div class="photo lazy-load-bg" style="background-image:url('@Model.SelectedSizeUrl');"></div>
+                <div class="client-logo">
+                    <img class="img-load-lazy"
+                         data-src="@Model.ImageTwoUrl"
+                         data-srcset="@Model.ImageTwoUrl 2x, @Model.ImageTwoUrl 1x"
+                         alt="@Model.ImageTwoAlternativeText"
+                         title="@Model.ImageTwoTitle">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

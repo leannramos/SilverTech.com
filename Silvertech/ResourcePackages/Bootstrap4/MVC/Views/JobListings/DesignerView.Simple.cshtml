@@ -1,0 +1,37 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            Heading
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.Heading.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="javascript-text">
+            Javascript Source File
+        </label>
+        <input id="javascript-text" type="text" class="form-control" ng-model="properties.Javascript.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="heading2-text">
+            Heading 2
+        </label>
+        <input id="heading2-text" type="text" class="form-control" ng-model="properties.Heading2.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="javascript2-text">
+            Javascript Source File 2
+        </label>
+        <input id="javascript2-text" type="text" class="form-control" ng-model="properties.Javascript2.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="description-text-bottom">Bottom Description</label>
+        <sf-html-field id="description-text-bottom" class="kendo-content-block" sf-model="properties.Description.PropertyValue"></sf-html-field>
+    </div>
+</form>

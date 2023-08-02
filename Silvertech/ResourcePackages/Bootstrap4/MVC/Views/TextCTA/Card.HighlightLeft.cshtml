@@ -1,0 +1,24 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<section class="text-cta box-left" aria-label="text call to action">
+
+    <div class="box">
+        <div class="box-wrapper">
+            <h2 class="headline">@Model.Heading</h2>
+        </div>
+    </div>
+
+    <div class="text-content">
+
+        <div class="description">@Model.Description</div>
+        @if (!Model.ActionName.IsNullOrEmpty())
+        {
+
+            <div class="cta">
+                <a href="@Model.ActionUrl" class="btn btn-quaternary" target="@Model.ActionTarget" title="@Model.ActionTitle">@Model.ActionName</a>
+            </div>
+        }
+        </div>
+
+</section>

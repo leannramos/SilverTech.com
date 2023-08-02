@@ -1,0 +1,53 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Configuration;
+@using Common.CustomConfig;
+@using Telerik.Sitefinity.Taxonomies;
+@using Telerik.Sitefinity.Taxonomies.Model;
+
+@{
+    var imageUrl = "";
+    if (Model.Item.Fields.HeroImage != null)
+    {
+        imageUrl = Model.Item.Fields.HeroImage.Fields.MediaUrl;
+    }
+
+    var hideDate = false;
+
+    try
+    {
+        hideDate = Model.Item.Fields?.HideDate != null ? Model.Item.Fields?.HideDate : false;
+    }
+    catch { }
+
+    var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(Model.Item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, null);
+}
+
+<section class="image-cta image-right" aria-label="Image for @Model.Item.Fields.Title">
+    <div class="container">
+        <div class="row">
+
+            <div class="text-col col-lg-5">
+                @if (!hideDate)
+                {
+                    <div class="date">@Model.Item.GetDateTime("PublicationDate", "MM/dd/yy")</div>
+                }
+                <h2 class="headline">@Model.Item.Fields.Title</h2>
+            </div>
+
+            <div class="photo-col col-lg-7">
+                <div class="photo-wrapper">
+                    <div class="photo" style="background-image:url('@imageUrl');"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="generic-content">
+    <div class="container">
+        @Html.HtmlSanitize((string)Model.Item.Fields.Content)
+    </div>
+</div>

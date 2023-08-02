@@ -1,0 +1,109 @@
+{% set pageTitle = "What We're Up To (Newsletter)" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "blog_featured_post-800x451.jpg" %}
+	{% set heroSubheadline = "" %}
+	{% set heroHeadline = "What We're Up To." %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<section class="newsletter" aria-label="What We're Up To Newsletter">
+		
+		<!-- Back Button -->
+		<div class="page-back-btn row">
+			<div class="container">
+				<a href="/about-us.html" class="btn btn-tertiary" title="BACK TO ABOUT US">BACK TO ABOUT US</a>			
+			</div>
+		</div>
+
+		<!-- Image CTA - Right Image -->
+		{% set imageCTA_layout = "image-right" %}
+		{% set imageCTA_AdditionalClasses = "no-end-angle" %}
+		{% set imageCTA_date = "01-01-2019" %}
+		{% set imageCTA_imageFile = "john-schnobrich-2FPjlAyMQTA-unsplash.jpg" %}
+		{% set imageCTA_title = "SilverTech Just Acquired Bitwise in Indiana!" %}
+		{% set imageCTA_description = "" %}
+		{% set imageCTA_btnText = "" %}
+		{% include "../UserControls/Modules/ctas/image-cta.html" %}
+
+		<!-- WYSIWYG -->
+		<div class="generic-content">
+			<div class="container">
+				
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+				</p>
+				<p>
+					consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna ali
+				</p>
+				<p>
+					quyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+				</p>
+				<p>
+					nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+				</p>
+				<p>
+					takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren
+				</p>
+
+			</div>		
+		</div>
+
+		<!-- News Listing -->
+		<section class="news-listing" aria-label="news listing">
+			<div class="container">
+
+				<div class="headline-row row">
+					<h2 class="section-headline">More Recent Happenings</h2>				
+				</div>
+
+				<div class="listing-row row">
+
+					<!-- News Item -->
+					{% set newsCategory = "Event" %}
+					{% set newsImage = "newsItem1.jpg" %}
+					{% set newsTitle = "Summertime at SilverTech Means Summer Games!!" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "joseph-gruenthal-XGC_1eH_ZGI-unsplash.jpg" %}
+					{% set newsTitle = "What to Do the Next Time Facebook Goes Down" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet" %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+					<!-- News Item -->
+					{% set newsCategory = "News" %}
+					{% set newsImage = "naassom-azevedo-YB6GHYySdLc-unsplash.jpg" %}
+					{% set newsTitle = "Small Title" %}
+					{% set newsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." %}
+					{% include "../UserControls/Modules/news-listing-item.html" %}
+
+				</div>
+
+				<div class="cta-row row">
+					<a href="/newsletter-archive.html" title="The Archive" class="cta-btn btn btn-primary">The Archive</a>	
+				</div>
+
+			</div>
+		</section>
+
+	</section> <!-- end .newsletter -->
+
+{% endblock %}

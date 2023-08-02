@@ -1,0 +1,92 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+@using Telerik.Sitefinity.Frontend.Events.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Modules.Pages
+@using Telerik.Sitefinity.Web.DataResolving
+@using System.Globalization;
+
+@{
+    var itemCount = Model.Items.Count();
+    bool generateSideMarkup = itemCount > 1;
+}
+
+@foreach (var item in Model.Items)
+{
+    var featuredImageFields = item.Fields.FeaturedImage.Fields;
+    var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+
+    if (item == Model.Items.First())
+    {
+        <section class="featuredBlog @(@itemCount > 1 ? "col-md-5" : "singleBlog")" aria-label="Featured Blog">
+            <article class="blog" aria-label="Featured Blog Post - @item.Fields.Title">
+                @if (featuredImageFields != null)
+                {
+                    <div class="photo" style="background-image:url('@featuredImageFields.MediaUrl');" aria-label="@featuredImageFields.AlternativeText"></div>
+                }
+                <div class="blogInfo">
+                    <h2 class="title">@item.Fields.Title</h2>
+                    <div class="blogMeta">
+                        <div class="author">By: @item.Fields.Author</div>
+                        <div class="date">@item.Fields.PublicationDate.ToString("MM.dd.yy")</div>
+                    </div>
+
+                    <div class="summary">
+                        @Html.HtmlSanitize((string)@item.Fields.Summary)
+                    </div>
+                </div>
+
+                <div class="cta">
+                    <a href="@navigateUrl" title="Read More About @item.Fields.Title">
+                        <span>Read This Blog</span> <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </article>
+        </section>
+    }
+    else
+    {
+
+
+        if (generateSideMarkup)
+        {
+            @:<section class="upcomingBlogs col-md-7" aria-label="Smaller Blog Previews">
+                generateSideMarkup = false;
+            }
+            <article class="blog" aria-label="Featured Blog Post - @item.Fields.Title">
+                @if (featuredImageFields != null)
+                {
+                    <div class="photoWrapper col-sm-4">
+                        <div class="photo" style="background-image:url('@featuredImageFields.MediaUrl');" aria-label="@featuredImageFields.AlternativeText"></div>
+                    </div>
+                }
+                <div class="infoWrapper col-sm-8">
+
+                    <div class="blogInfo">
+                        <h2 class="title">@item.Fields.Title</h2>
+
+                        <div class="blogMeta">
+                            <div class="author">By: @item.Fields.Author</div>
+                            <div class="date">@item.Fields.PublicationDate.ToString("MM.dd.yy")</div>
+                        </div>
+
+                        <div class="summary">
+                            @Html.HtmlSanitize((string)@item.Fields.Summary)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta">
+                    <a href="@navigateUrl" title="Read More About @item.Fields.Title"><i class="fas fa-chevron-right"></i></a>
+                </div>
+
+            </article>
+
+            if (item == Model.Items.Last())
+            {
+            @:</section>
+
+
+        }
+
+    }
+}

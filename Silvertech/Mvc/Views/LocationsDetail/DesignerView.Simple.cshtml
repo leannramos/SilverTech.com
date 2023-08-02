@@ -1,0 +1,16 @@
+﻿<div class="form-group">
+
+
+    <label>Location: </label>
+    <sf-list-selector sf-dynamic-items-selector sf-master="true"
+                      sf-item-type="properties.ItemType.PropertyValue"
+                      sf-selected-item-id="locationId"
+                      sf-provider="" />
+</div>
+
+<div class="form-group">
+    <label>Layout:</label>
+    <select class="form-control" ng-model="properties.TemplateName.PropertyValue" ng-options="option for option in templates">
+        <option value="">Please select an option</option>
+    </select>
+</div>

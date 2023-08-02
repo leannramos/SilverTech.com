@@ -1,0 +1,35 @@
+// bootstrap overrides.  Sample Use:  
+
+// <div class="custom-control custom-checkbox">
+//   <input type="checkbox" class="custom-control-input" id="customCheck1">
+//   <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+// </div>
+
+.custom-checkbox {
+    padding-left:30px;
+    
+    .custom-control-label {
+        @include font-size(16);
+        font-weight: 400;
+
+        &:before {
+            left:-30px;
+            border-radius:0; 
+        }
+    }
+    .custom-control-input:checked~.custom-control-label {
+        &::before {
+            width:18px;
+            height:18px;
+            border-color:#adb5bd;
+            background-color:#FFF;
+        }
+        &::after {
+            background:#027683;
+            width:12px;
+            height:12px;
+            left:-27px;
+            top:7px;
+        }
+    }
+}

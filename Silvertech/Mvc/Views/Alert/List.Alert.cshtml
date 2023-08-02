@@ -1,0 +1,29 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Common.Helpers;
+
+
+@foreach (var alert in Model.Items.Take(2))
+{
+    <section class="alert @alert.Fields.AlertColor" aria-label="Site Wide Alert">
+        <div class="container">
+            <div class="alert-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                @try
+                {
+                    @alert.Fields.AlertTitle
+                }
+                catch (Exception e)
+                {
+                    Telerik.Sitefinity.Abstractions.Log.Write("Error while retreiving field 'AlertTitle' \n" + e.Message);
+                }
+            </div>
+
+            <div class="alert-description">
+                @Html.Raw(alert.Fields.AlertMessage)
+            </div>
+        </div>
+    </section>
+}

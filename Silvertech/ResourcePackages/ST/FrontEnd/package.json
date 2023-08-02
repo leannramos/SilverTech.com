@@ -1,0 +1,54 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Front End Starter Boilerplate",
+  "scripts": {
+    "start": "grunt"
+  },
+  "author": "Silvertech",
+  "repository": "https://silvertech.visualstudio.com/Front-End%20Starter%20Project",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.17.1",
+    "grunt": "^1.0.4",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-babel": "^6.0.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-express-server": "^0.5.3",
+    "grunt-nunjucks-2-html": "^2.2.0",
+    "grunt-open": "^0.2.4",
+    "grunt-prettify": "^0.4.0",
+    "grunt-rollup": "^6.0.0",
+    "grunt-sass": "^3.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "nunjucks": "^3.2.1"
+  },
+  "path": {
+    "src": {
+      "js": "dev/library/src/js",
+      "scss": "dev/library/src/scss",
+      "html": "dev/App"
+    },
+    "dest": {
+      "js": "dev/library/js",
+      "css": "dev/library/css",
+      "html": "dev/App"
+    }
+  },
+  "dependencies": {
+    "cli": "^1.0.1",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.4",
+    "jshint": "^2.10.2",
+    "ncp": "^2.0.0",
+    "node-sass": "^7.0.1",
+    "path": "^0.12.7"
+  }
+}

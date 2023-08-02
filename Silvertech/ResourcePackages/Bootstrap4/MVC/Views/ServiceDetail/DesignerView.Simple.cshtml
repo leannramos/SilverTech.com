@@ -1,0 +1,244 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            @Html.Resource("Heading")
+        </label>
+        <input id="heading-text" type="text" ng-model="properties.Heading.PropertyValue" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="description-text">@Html.Resource("Text")</label>
+        <textarea id="description-text" class="form-control" rows="3" ng-model="properties.Description.PropertyValue"></textarea>
+        @*<sf-html-field id="description-text" class="kendo-content-block" sf-model="properties.Description.PropertyValue"></sf-html-field>*@
+    </div>
+
+    <div class="form-group">
+        <label for="image-field" class="m-top-sm">Icon</label>
+        <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                        sf-model="properties.ImageId.PropertyValue"
+                        sf-image="selectedImage"
+                        sf-provider="properties.ImageProviderName.PropertyValue"
+                        id="image-field"
+                        sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+    </div>
+
+    <div class="row">
+
+            <label for="image-field" class="m-top-sm">Icon Layout</label>
+            <select id="templateName" ng-model="properties.CssClass.PropertyValue" class="form-control">
+                <option value="icon-left">Icon Left</option>
+                <option value="icon-right">Icon Right</option>
+            </select>
+
+    </div>
+
+    <hr class="side-to-side">
+
+    <expander expander-title="Link One">
+        <div class="form-group">
+            <label for="label-text">
+                Link Text
+            </label>
+            <input id="label-text" type="text" ng-model="properties.ActionName.PropertyValue" class="form-control" />
+            <p class="text-muted">@Html.Resource("LearnMore")</p>
+        </div>
+
+        <div class="form-group">
+            <label>Link Target: </label>
+            <select class="form-control" ng-model="properties.ActionTarget.PropertyValue">
+                <option value="" selected="selected">Same Window</option>
+                <option value="_blank">New Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitle">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitle" type="text" ng-model="properties.ActionTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="true" />
+                    @Html.Resource("PageWithinLabel")
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageId.PropertyValue"
+                                  ng-show="properties.IsPageSelectMode.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="false" />
+                    @Html.Resource("ExternalURL")
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectMode.PropertyValue" ng-model="properties.LinkedUrl.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectMode.PropertyValue">@Html.Resource("Example")</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="IsSpeedbumpOne">Is Speedbump</label>
+            <div class="label-content">
+                <input id="IsSpeedbumpOne" type="checkbox" ng-model="properties.IsActionSpeedbump.PropertyValue" ng-true-value="'True'" ng-false-value="'False'" ng-checked="properties.IsActionSpeedbump.PropertyValue === 'True'" />
+            </div>
+            <label for="SpeedbumpOneText">Speedbump Message</label>
+            <div class="label-content">
+                <input type="text" id="SpeedbumpOneText" class="form-control" ng-model="properties.ActionSpeedbumpMessage.PropertyValue" />
+            </div>
+        </div>
+    </expander>
+
+
+    <expander expander-title="Link Two">
+        <div class="form-group">
+            <label for="linktwoname-text">
+                Link Text
+            </label>
+            <input id="linktwoname-text" type="text" ng-model="properties.ActionTwoName.PropertyValue" class="form-control" />
+            <p class="text-muted">@Html.Resource("LearnMore")</p>
+        </div>
+
+        <div class="form-group">
+            <label>Link Target: </label>
+            <select class="form-control" ng-model="properties.ActionTwoTarget.PropertyValue">
+                <option value="" selected="selected">Same Window</option>
+                <option value="_blank">New Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitle">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitle" type="text" ng-model="properties.ActionTwoTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeTwo.PropertyValue" ng-value="true" />
+                    @Html.Resource("PageWithinLabel")
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageIdTwo.PropertyValue"
+                                  ng-show="properties.IsPageSelectModeTwo.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeTwo.PropertyValue" ng-value="false" />
+                    @Html.Resource("ExternalURL")
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectModeTwo.PropertyValue" ng-model="properties.LinkedUrlTwo.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectModeTwo.PropertyValue">@Html.Resource("Example")</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="IsSpeedbumpTwo">Is Speedbump</label>
+            <div class="label-content">
+                <input id="IsSpeedbumpTwo" type="checkbox" ng-model="properties.IsActionTwoSpeedbump.PropertyValue" ng-true-value="'True'" ng-false-value="'False'" ng-checked="properties.IsActionTwoSpeedbump.PropertyValue === 'True'" />
+            </div>
+            <label for="SpeedbumpTwoText">Speedbump Message</label>
+            <div class="label-content">
+                <input type="text" id="SpeedbumpTwoText" class="form-control" ng-model="properties.ActionTwoSpeedbumpMessage.PropertyValue" />
+            </div>
+        </div>
+    </expander>
+
+    <expander expander-title="Link Three">
+        <div class="form-group">
+            <label for="linkthreename-text">
+                Link Text
+            </label>
+            <input id="linkthreename-text" type="text" ng-model="properties.ActionThreeName.PropertyValue" class="form-control" />
+            <p class="text-muted">@Html.Resource("LearnMore")</p>
+        </div>
+
+        <div class="form-group">
+            <label>Link Target: </label>
+            <select class="form-control" ng-model="properties.ActionThreeTarget.PropertyValue">
+                <option value="" selected="selected">Same Window</option>
+                <option value="_blank">New Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitle">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitle" type="text" ng-model="properties.ActionThreeTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeThree.PropertyValue" ng-value="true" />
+                    @Html.Resource("PageWithinLabel")
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageIdThree.PropertyValue"
+                                  ng-show="properties.IsPageSelectModeThree.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeThree.PropertyValue" ng-value="false" />
+                    @Html.Resource("ExternalURL")
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectModeThree.PropertyValue" ng-model="properties.LinkedUrlThree.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectModeThree.PropertyValue">@Html.Resource("Example")</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="IsSpeedbumpThree">Is Speedbump</label>
+            <div class="label-content">
+                <input id="IsSpeedbumpThree" type="checkbox" ng-model="properties.IsActionThreeSpeedbump.PropertyValue" ng-true-value="'True'" ng-false-value="'False'" ng-checked="properties.IsActionSpeedbumpThree.PropertyValue === 'True'" />
+            </div>
+            <label for="SpeedbumpThreeText">Speedbump Message</label>
+            <div class="label-content">
+                <input type="text" id="SpeedbumpThreeText" class="form-control" ng-model="properties.ActionThreeSpeedbumpMessage.PropertyValue" />
+            </div>
+        </div>
+    </expander>
+
+    <expander expander-title='@Html.Resource("MoreOptions")'>
+        <div class="form-group">
+            <label for="templateName">@Html.Resource("Template")</label>
+            <div class="row">
+                <div class="col-xs-6">
+                    <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                        @foreach (var viewName in Html.GetViewNames("ServiceDetail", @"(?<viewName>^Card.*)$"))
+                        {
+                            <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--<style-dropdown selected-class="properties.CssClass.PropertyValue" view-name="properties.TemplateName.PropertyValue"></style-dropdown>
+        <div class="form-group">
+            <label for="cssClass">
+                @Html.Resource("CssClasses")
+            </label>
+            <input id="cssClass" type="text" ng-model="properties.CssClass.PropertyValue" class="form-control" />
+        </div>-->
+    </expander>
+</form>

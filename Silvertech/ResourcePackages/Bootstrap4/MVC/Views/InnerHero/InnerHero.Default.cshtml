@@ -1,0 +1,48 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+@*@{
+    string currentPageUrl = SiteMapBase.GetActualCurrentNode().Url.ToString().TrimStart('~').TrimEnd('/');
+    var currentUrl = HttpContext.Current.Request.Url.AbsolutePath.TrimStart('~').TrimEnd('/');
+}*@
+
+@*@if (currentPageUrl == currentUrl)
+{*@
+    <section class="hero-inner @Model.CssClass" aria-label="Inner Page Banner">
+        <div class="background"></div>
+
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="caption">
+
+                    <div class="subheadline">@Model.HeadingTwo</div>
+
+                    <h1 class="headline">@Model.Heading</h1>
+
+                    <div class="description">@Model.Description</div>
+
+                    @if (!Model.ActionName.IsNullOrEmpty())
+                    {
+                        <div class="generic-content"><a class="btn btn-quaternary" href="@Model.ActionUrl" title="@Model.ActionTitle" target="@Model.ActionTarget">@Model.ActionName</a></div>
+                    }
+
+                    <div class="icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hero-image">
+            <div class="wrapper">
+                <div class="image" style="background-image:url('@Model.SelectedSizeUrl');"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="hero-scroll-to"></div>
+@*}*@

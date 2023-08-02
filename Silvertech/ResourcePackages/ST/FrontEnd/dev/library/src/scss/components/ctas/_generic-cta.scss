@@ -1,0 +1,45 @@
+.generic-cta {
+	@include greenGradientHorizontal();
+	padding:30px 0;
+	color:#FFF;
+
+	.row {
+		justify-content: space-between;
+		align-items: center;
+	}
+	.headline {
+		@include font-size(35);
+		line-height: 32px;
+		color:#FFF;
+		margin:0 0 10px 0;
+	}
+	.blurb {
+		line-height: 22px;
+	}
+	.cta { 
+		text-align: center;
+		margin-right: 30px; 
+	}
+}
+
+
+
+
+@include media-breakpoint-down(md) {
+	.generic-cta {
+		padding:30px 0 25px 0;
+
+		.info-col {
+			text-align:center;
+		}
+		.headline {
+			@include font-size(24);
+			line-height: 26px;
+		}
+		.blurb {
+			@include font-size(14);
+			margin-bottom: 15px;
+		}
+		.cta { text-align: center; }
+	}
+}

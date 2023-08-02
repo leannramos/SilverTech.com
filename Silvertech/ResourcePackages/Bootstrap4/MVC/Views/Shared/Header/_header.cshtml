@@ -1,0 +1,46 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@model Common.CustomConfig.GlobalConfig
+@using Common.Helpers;
+
+@{
+    var hasPageMenuColor = new CustomPageHelpers().HasCustomPageValue<string>("PageMenuColor", out string menuColor);
+}
+
+<header class="site-header @(hasPageMenuColor ? menuColor : "")">
+
+
+    <div class="open-menu">
+        <a onclick="javascript:void(0);" class="open-menu-btn" title="Toggle Menu">
+            <span class="text">Menu </span>
+            <div class="bars">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </div>
+        </a>
+    </div>
+    <div class="close-menu" tabindex="0" aria-label="close menu" role="button">Close <span class="icon"></span></div>
+    <nav class="main-menu">
+        <div class="wrapper">
+            <div class="menu-content">
+       
+
+                @Html.SfPlaceHolder("HeaderMobileSearch")
+
+                @Html.SfPlaceHolder("HeaderMainNavLinks")
+
+                @Html.SfPlaceHolder("HeaderUtilityLinks")
+
+                @Html.SfPlaceHolder("HeaderDesktopSearch")
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="logo">
+            @Html.SfPlaceHolder("HeaderBrandIconDesktop")
+        </div>
+    </div>
+
+</header>  

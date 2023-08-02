@@ -1,0 +1,29 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<div class="sf-main -list -shrink">
+    <div class="container">
+        <h2>Update Redirect File</h2>
+        <div>
+            <input type="button" onclick="updateRedirect()" value="UpdateRedirects" />
+            <div id="redirectStatus"></div>
+        </div>
+    </div>
+</div>
+        <script type="text/javascript">
+        function updateRedirect() {
+
+            $.ajax({
+                url: window.location.href + '/UpdateRedirects/',
+                async: true,
+                processData: false,
+                type: 'POST',
+                success: function (data) {
+                    $('#redirectStatus').html('Redirects Updated')
+                },
+                error: function (xhr, param) {
+                    alert("An error has occurred")
+       
+                }
+            });
+        }
+    </script>

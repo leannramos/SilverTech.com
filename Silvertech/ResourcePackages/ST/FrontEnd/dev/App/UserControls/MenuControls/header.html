@@ -1,0 +1,33 @@
+<!-- Notes:  add class "blue" to .site-header to change the hover of the menu toggle -->
+<header class="site-header {% if menuToggleBG %}{{menuToggleBG}}{% endif %}">
+
+	<div class="open-menu ">
+		<a onclick="javascript:void();" class="open-menu-btn" title="Toggle Menu">
+			<span class="text">Menu </span>
+			<div class="bars">
+				<span class="bar bar1"></span>
+				<span class="bar bar2"></span>
+				<span class="bar bar3"></span>
+			</div>			
+		</a>
+	</div>
+
+	<div class="close-menu" tabindex="0" aria-label="close menu" role="button">Close 
+		<span class="icon"></span>
+	</div>
+
+	<!-- Menu -->
+	{% include "./menu.html" %}
+
+	<div class="container">	
+		
+		<div class="logo">
+			<a href="/" title="Go back to homepage of Silvertech, Inc">
+				<img src="/library/img/logo.png" alt="Silvertech Logo">
+			</a>
+		</div>
+	</div>
+
+	
+</header>
+

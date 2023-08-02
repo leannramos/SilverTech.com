@@ -1,0 +1,30 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<style>
+    .clearfix {
+        display: block;
+        clear: both;
+    }
+</style>
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            Section Title
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.SectionTitle.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label>Rate Table: </label>
+        <sf-list-selector sf-dynamic-items-selector sf-master="true"
+                          sf-item-type="properties.ItemType.PropertyValue"
+                          sf-selected-item-id="properties.tableId.PropertyValue"
+                          sf-provider="provider" />
+
+        <div class="clearfix"></div>
+    </div>
+
+
+</form>

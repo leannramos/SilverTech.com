@@ -1,0 +1,84 @@
+<!-- Notes:  add class .green or .green-horizontal or .blue for gradient change.  Default is green -->
+<!-- Notes:  add class .blog-detail, .newsletter-detail, .reduce-title, or .blog-listing to <section> to change styling for those pages -->
+<section class="hero-inner {{heroColor}} {{heroCustomClasses}}" aria-label="Inner Page Banner">
+	<div class="background"></div>
+
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="caption">
+
+				{% if heroShowClientLogo != "false" %}
+					<div class="client-logo">
+						<img src="/library/img/{{heroShowClientLogo}}" alt="">
+					</div>
+				{% endif %}
+
+				{% if heroSubheadline != "false" %}
+					<div class="subheadline">{{ heroSubheadline }}</div>
+				{% endif %}
+
+				<h1 class="headline">{{ heroHeadline }}</h1>
+
+				{% if heroShowDescription != "false" %}
+					<div class="description">{{ heroShowDescription }} </div>
+				{% endif %}
+
+				{% if heroShowAuthor != "false" %}
+					<div class="author-dept">
+						<span class="author">by: DJ Hughes</span>
+						<span class="department">Frontend Ninja</span>						
+					</div>
+				{% endif %}
+
+				{% if heroShowDate != "false" %}
+					<div class="date">
+						<div class="date-val">{{heroShowDate}}</div>
+						<div class="icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content"></div>
+					</div>
+				{% endif %}
+
+				{% if heroShowReadTime != "false" %}
+					<div class="read-time">
+						<div class="time">4 min read</div>
+						<div class="icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content"></div>
+					</div>
+				{% endif %}
+
+				{% if heroShowDownArrow != "false" %}
+					//<div class="icon hero-scroll-trigger" tabindex="0" role="button" aria-label="Scroll to content"></div>
+				{% endif %}
+
+			</div>
+			{% if heroShowGenericContent != "false" %}
+				<!-- Notes: "generic-content" container used for WYSIWYG content. Currently only used for case-study-detail inner hero -->
+				<!-- Notes: Using bootstrap utility classes like "font-weight-bold" below to mockup generic WYSIWYG content -->
+				<div class="generic-content">
+					<p class="font-weight-bold">Some of the services we provided:</p>
+					<ul class="font-weight-bold">
+						<li>Buyer Persona Development</li>
+						<li>Personalization Strategy & Implementation</li>
+						<li>Website Redesign</li>
+						<li>Sitecore Content Management Implementation</li>
+						<li>Salesforce Marketing Cloud Implementation</li>
+					</ul>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+	<!-- Hero Image -->
+	<div class="hero-image">
+		<div class="wrapper">
+			{% if heroShowClientLogoOverImage != "false" %}
+				<!-- Notes: Displays the client logo over the hero image instead of in the caption. Currently only used for case-study-detail inner hero -->
+				<div class="client-logo">
+					<img src="/library/img/{{heroShowClientLogoOverImage}}" alt="">
+				</div>
+			{% endif %}
+			<div class="image" style="background-image:url('/library/img/{{heroImage}}');"></div>
+		</div>
+	</div>
+	
+</section>
+
+<div id="hero-scroll-to"></div>

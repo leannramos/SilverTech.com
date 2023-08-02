@@ -1,0 +1,28 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<section class="image-cta image-right" aria-label="Image Call To Action">
+    <div class="container">
+        <div class="row">
+
+            <div class="text-col col-lg-5">
+                <h2 class="headline">@Model.Heading</h2>
+                <div class="description">@Model.Description</div>
+                @if (!Model.ActionName.IsNullOrEmpty())
+                {
+
+                    <div class="cta">
+                        <a href="@Model.ActionUrl" target="@Model.ActionTarget" class="btn btn-primary" title="@Model.ActionTitle">@Model.ActionName</a>
+                    </div>
+                }
+                </div>
+
+            <div class="photo-col col-lg-7">
+                <div class="photo-wrapper">
+                    <div class="photo lazy-load-bg" style="background-image:url('@Model.SelectedSizeUrl');"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,239 @@
+.client-cta {
+	// padding:24px 0;
+	position:relative;
+	height:745px;
+
+	.container { height:100%; }
+	.client-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		height: 100%;
+	}
+	.text-col {
+	    width: calc(55% - 158px);
+		
+		.section-title {
+			margin:0 0 40px 0;
+		}
+		.client-name { margin:0 0 10px 0; }
+		.client-spotlight {
+			margin-bottom: 40px;
+			
+			.headline {
+				@include font-size(20);
+				font-style:italic;
+				margin:0;
+			}
+		}
+		.description { margin-bottom: 10px; }
+		.cta {
+			a {
+				margin-right: 0;
+			}
+		}	
+	}
+	.photo-wrapper {
+		position: absolute;
+		right: 0px;
+		top: 0;
+		width: calc(45% + 158px);
+		height: 100%;
+		overflow:hidden;
+		transform: translateX(0) skew(-12deg);
+		transform-origin: bottom left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-up(md) {
+			&:not(.lazy-load-bg) {
+				animation: imageLoadInFromRight 1050ms forwards;
+			}
+	
+			&.lazy-load-bg {
+				transform: translateX(98%) skew(-12deg);
+			}
+		}
+
+		.photo {
+			position:absolute;
+			left:0px;
+			top:0;
+			width:calc(100% + 158px);
+			height:100%;
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			transform: skew(12deg);
+			transform-origin: bottom left;
+			z-index:1;
+		}
+		.client-logo {
+			position:relative;
+			z-index:2;
+			transform: skew(12deg);
+			transform-origin: bottom left;
+
+			&:before {
+				content:'';
+				position:absolute;
+				top: -50%;
+			    left: -15%;
+			    width: 120%;
+			    height: 200%;
+				border-radius:50%;
+				opacity:.7;
+				z-index:2;
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+62&0.61+0,0+62 */
+				background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.61) 0%, rgba(0,0,0,0) 62%); /* FF3.6-15 */
+				background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.61) 0%,rgba(0,0,0,0) 62%); /* Chrome10-25,Safari5.1-6 */
+				background: radial-gradient(ellipse at center,  rgba(0,0,0,0.61) 0%,rgba(0,0,0,0) 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+			}
+
+			img {
+				position:relative;
+				z-index:3;
+				max-width:375px;
+				max-height:106px;
+			}
+		}
+	}
+	&.image-left {
+		.text-col {
+			left: calc(45% + 158px);
+			width:calc(55% - 158px);
+			position: relative;
+		}
+		.photo-wrapper {
+			right:initial;
+			left: -158px;
+			width:calc(45% + 158px);
+
+			@include media-breakpoint-up(md) {
+				&:not(.lazy-load-bg) {
+					animation: imageLoadInFromLeft 1050ms forwards;
+				}
+	
+				&.lazy-load-bg {
+					transform: translateX(-98%) skew(-12deg);
+				}
+			}
+
+			.photo {
+				left: 0px;
+			}
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(lg) {
+	.client-cta {
+
+		.text-col {
+
+			.section-title { @include font-size(36); }
+			.step {
+				.step-number { @include font-size(150); }
+				.step-title { @include font-size(50); }
+			}
+		}
+	}
+}
+
+
+@include media-breakpoint-down(md) {
+	.client-cta {
+		height:auto;
+		padding-bottom: 400px;
+		margin-bottom: 20px;
+
+		.text-col {
+			width:100%;
+			position:relative;
+			top:405px;
+			left:0%;
+
+			.section-title { margin:0 0 10px 0; }
+			.client-name {
+				@include font-size(20);
+				line-height: 24px;
+			}
+		}
+		.photo-wrapper {
+			width:100%;
+			left:0;
+			right:initial;
+			height:400px;
+		    transform: none;
+
+
+			.photo {
+				width:100%;
+			    transform: none;
+			}
+			&:after {
+				content: '';
+				background: #FFF;
+				height: 117px;
+				position: absolute;
+				left: -50px;
+				bottom: -115px;
+				width: 125%;
+				transform: rotate(5deg);
+				transform-origin: top right;
+				z-index:1;
+			}
+			.client-logo {
+				transform:none;
+				text-align: center;
+
+				&:before {
+					left:0;
+					width:100%;
+					opacity:.6;
+				}
+
+				img {
+					max-width:75%;
+				}
+			}
+		}
+		&.image-left {
+			.text-col {
+				left:0;
+				width:100%;
+			}
+			.photo-wrapper {
+				width:100%;
+				left:0;
+				transform: none;
+
+				.photo {
+					transform: none;
+				}
+				&:after {
+					transform:rotate(-5deg);
+					transform-origin:top left;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@include media-breakpoint-down(xs) {
+	.client-cta {
+		padding-bottom: 240px;
+
+		.text-col { top:245px; }
+		.photo-wrapper { height:229px; }
+	}
+}

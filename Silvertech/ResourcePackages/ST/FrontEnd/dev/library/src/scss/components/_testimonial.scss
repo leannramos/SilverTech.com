@@ -1,0 +1,98 @@
+.testimonials {
+	padding:30px 0;
+	text-align:center;
+
+	.testimonial {
+		padding:70px 0;
+		background:#FFF;
+		color:#000;
+
+		&.whiteBG {
+			background:#FFF;
+			color:#000;
+
+			.quote { font-weight:300; }
+		}
+		&.greenBG {
+			@include greenGradientLight();
+			color:#FFF;
+		}
+	}
+
+	.quote {
+		@include font-size(22);
+		font-weight: 700;
+		font-style: italic;
+		line-height: 38px;
+		margin-bottom:20px;
+		display:flex;
+		justify-content: center;
+		padding:0 120px;
+		position:relative;
+
+		&:before, &:after {
+			font-family: $secondary-font;
+			@include font-size(276);
+			font-weight:400;
+			font-style:normal;
+			position:absolute;
+			top:-30px;
+			color:#000;
+			line-height: 1;	
+			opacity:.13;	
+		}
+		&:before {
+			content:'“';
+			left:-35px;
+		}
+		&:after {
+			content:'”';
+			right:-35px;
+		}
+	}
+	.company {
+		@include font-size(18);
+		font-weight: 900;
+		line-height: 27px;
+	}
+	.name {
+		font-weight: 700;
+		line-height: 27px;
+	}
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.testimonials {
+		padding:15px 0;
+		margin:0;
+
+		.testimonial {
+			padding:30px 0;
+
+			.quote {
+				padding:70px 0 85px 0;
+				@include font-size(18);
+				line-height: 31px;
+
+				&:before, &:after {
+					@include font-size(200);
+					line-height: 100px;
+					left:0;
+				}
+
+				&:before {
+					bottom:initial;
+					top:25px;
+					right:0;
+				}
+				&:after {
+					top:initial;
+					bottom:-60px;
+					right:0;
+				}
+			}
+		}
+	}
+}

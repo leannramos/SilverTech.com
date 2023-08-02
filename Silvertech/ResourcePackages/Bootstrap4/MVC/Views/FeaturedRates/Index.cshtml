@@ -1,0 +1,25 @@
+﻿@model BankCore.Mvc.Models.Rates.FeaturedRateViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Utilities;
+@using Telerik.Sitefinity.Services;
+
+
+
+
+<div class="col-6 col-md-3 rate-preview">
+    <div class="type">
+        <h3>@Model.FeaturedRateTitle</h3>
+    </div>
+    <h4>@Model.RowValue</h4>
+    <div class="unit">@Model.RowTitle</div>
+    @if (!Model.ActionName.IsNullOrEmpty())
+    {
+
+        <div class="cta">
+            <a href="@Model.ActionURL" class="btn btn-secondary" title="@Model.ActionTitle">@Model.ActionName</a>
+        </div>
+    }
+    </div>

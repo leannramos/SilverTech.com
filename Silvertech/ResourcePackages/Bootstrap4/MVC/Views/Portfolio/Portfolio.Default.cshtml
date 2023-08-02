@@ -1,0 +1,57 @@
+@model SitefinityWebApp.Mvc.Models.PortfolioViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Mvc.Models
+
+@Html.Script("/ResourcePackages/ST/FrontEnd/public/library/js/vendor/slick.min.js", "CustomThirdParty")
+
+<!-- Case Studies Slider -->
+<section class="case-study-slider" aria-label="case study carousel">
+    <div class="container">
+        <div class="intro-text">
+            @if (!string.IsNullOrWhiteSpace(Model.Title))
+            {
+                <h2 class="headline">@Model.Title</h2>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <p>
+                    @Model.Description
+                </p>
+            }
+
+            @if (!Model.ActionName.IsNullOrEmpty())
+            {
+
+                <div class="cta">
+                    <a href="@Model.ActionUrl" class="btn btn-primary" target="@Model.ActionTarget" title="@Model.ActionTitle">@Model.ActionName</a>
+                </div>
+            }
+        </div>
+
+        <!-- Slider -->
+        <div class="slider-margin">
+            <div class="portfolio-slider slick">
+                @foreach (PortfolioModel.PortfolioEntry slide in Model.PortfolioEntries)
+                {
+                    <!-- Slide Item -->
+                    <div class="item">
+                        <div class="main-image">
+                            <img src="@slide.SelectedSizeUrl" alt="@slide.ImageAltText">
+                        </div>
+                        <div class="description">
+                            @slide.ImageDescription
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="slider-controls">
+                <ul>
+                    <li><a href="" title="previous slide" class="prevBtn"><i class="fas fa-chevron-left" role="button"></i></a></li>
+                    <li><a href="" title="pause slideshow" class="pauseBtn"><i class="fas fa-pause" role="button"></i></a></li>
+                    <li><a href="" title="play slideshow" class="playBtn"><i class="fas fa-play" role="button"></i></a></li>
+                    <li><a href="" title="next slide" class="nextBtn"><i class="fas fa-chevron-right" role="button"></i></a></li>
+                </ul>
+            </div>
+        </div>
+</section>

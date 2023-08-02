@@ -1,0 +1,64 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+@{
+    string containerClasses = "";
+    bool hasLinks = true;
+
+    if (Model.ActionUrl.IsNullOrEmpty() && Model.ActionUrl.IsNullOrEmpty() && Model.ActionUrl.IsNullOrEmpty())
+    {
+        containerClasses = "no-buttons";
+        hasLinks = false;
+    }
+}
+
+
+<!-- Article Item -->
+<!-- Notes:  add class .icon-left or .icon-right to change layout -->
+<!-- Notes:  If no buttons, don't include .helpful-links markup but add a class .no-buttons on the <article> -->
+<section class="multi-button-cta" aria-label="multiple button call to action">
+    <div class="container">
+        <article class="cta-article @Model.CssClass @containerClasses" aria-label="@Model.Heading">
+            <div class="icon">
+                @if (!Model.SvgMarkup.IsNullOrEmpty())
+                {
+                @Html.Raw(Model.SvgMarkup)
+                }
+                else
+                {
+                <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText" title="@Model.ImageTitle" />
+                }
+            </div>
+
+            <div class="cta-body">
+                <div class="content-box">
+                    <h2 class="headline">@Model.Heading</h2>
+                    <div class="blurb">
+                        @Model.Description
+                    </div>
+                </div>
+
+                @if (hasLinks)
+                {
+                <div class="helpful-links" aria-label="helpful links">
+                    <ul class="sf_colsIn link-list" data-sf-element="links" data-placeholder-label="links" runat="server">
+                        @if (!Model.ActionUrl.IsNullOrEmpty())
+                        {
+                            @Html.Raw($"<li><a href='{ Model.ActionUrl }' target='{ Model.ActionTarget }' class='{ (Model.IsActionSpeedbump ? "speedbump-link" : "") }' data-redirect-message='{ Model.ActionSpeedbumpMessage }' title='{ Model.ActionTitle }'>{ Model.ActionName }</a></li>");
+                        }
+                        @if (!Model.ActionTwoUrl.IsNullOrEmpty())
+                        {
+                            @Html.Raw($"<li><a href='{ Model.ActionTwoUrl }' target='{ Model.ActionTwoTarget }' class='{ (Model.IsActionTwoSpeedbump ? "speedbump-link" : "") }' data-redirect-message='{ Model.ActionTwoSpeedbumpMessage }' title='{ Model.ActionTwoTitle }'>{ Model.ActionTwoName }</a></li>");
+                        }
+                        @if (!Model.ActionThreeUrl.IsNullOrEmpty())
+                        {
+                            @Html.Raw($"<li><a href='{ Model.ActionThreeUrl }' target='{ Model.ActionThreeTarget }' class='{ (Model.IsActionThreeSpeedbump ? "speedbump-link" : "") }' data-redirect-message='{ Model.ActionThreeSpeedbumpMessage }' title='{ Model.ActionThreeTitle }'>{ Model.ActionThreeName }</a></li>");
+                        }
+                    </ul>
+                </div>
+                }
+            </div>
+
+        </article>
+    </div>
+</section>

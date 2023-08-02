@@ -1,0 +1,22 @@
+<section class="download-cta" aria-label="download call to action">
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="info-col col-lg-7">
+				{% if downloadCTA_subheadline != "" %}
+					<div class="subheadline">{{downloadCTA_subheadline}}</div>	
+				{% endif %}
+
+				{% if downloadCTA_headline != "" %}
+					<h2 class="headline">{{downloadCTA_headline}}</h2>				
+				{% endif %}
+			</div>
+
+			<div class="cta-col col-lg-5">
+				<a href="" title="Download Marketing Term Cheat Sheet">{{downloadCTA_btnText}} <span class="icon"></span></a>
+			</div>
+
+		</div>
+	</div>
+</section>

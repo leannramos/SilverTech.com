@@ -1,0 +1,51 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@model Common.CustomConfig.GlobalConfig
+
+<footer class="site-footer">
+    <div class="container-fluid">
+        <div class="row">
+
+            @Html.SfPlaceHolder("FooterMainImage")
+
+            <div class="footer-content">
+
+                <section class="office-locations" aria-label="Silvertech Office Locations">
+
+                    <div class="location">
+                        @Html.SfPlaceHolder("FooterManchesterLocation")
+                    </div>
+
+                    <div class="location">
+                        @Html.SfPlaceHolder("FooterIndianapolisLocation")
+                    </div>
+
+                    @Html.SfPlaceHolder("FooterSubImage")
+
+                </section>
+
+                <section class="quicklinks" aria-label="quick-links">
+
+                    @Html.SfPlaceHolder("FooterQuickLinksLinks")
+
+                </section>
+
+                <!-- Social Icons -->
+                <section class="follow-us" aria-label="follow us on these social sites">
+                    <div class="wrapper">
+                        <h2 class="title">Follow Us On Social!</h2>
+
+                        <div class="social-icons">
+                            @Html.SfPlaceHolder("FooterSocialLinks")
+                        </div>
+                    </div>
+                </section>
+
+                <section class="copyright">
+                    @Html.SfPlaceHolder("FooterCopyright")
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+</footer>

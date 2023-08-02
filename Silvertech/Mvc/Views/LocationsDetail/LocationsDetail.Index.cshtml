@@ -1,0 +1,110 @@
+﻿@model BankCore.Mvc.Models.Locations.LocationsViewModel
+
+@using Common.CustomConfig;
+@using Telerik.Sitefinity.Configuration;
+
+@{
+    var globalConfig = Config.Get<GlobalConfig>();
+}
+
+<div class="container">
+
+    @*TODO: Add Lat Long*@
+    <!-- Location Detail -->
+    <section itemscope="" itemtype="http://schema.org/Place" class="location-detail enable-on-map" data-lat="" data-lng="" data-address="@Model.StreetAddress, @Model.City, @Model.State @Model.Zip" aria-label="@Model.Title Detail">
+        <div class="row">
+
+            <!-- Left Col -->
+            <div class="leftCol col-md-7">
+
+                <h1 class="pageTitle">@Model.Title</h1>
+
+                <!-- Address -->
+                <div class="address location-info">
+                    <h3 class="infoHeadline">Address:</h3>
+                    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="catInfo">
+                        <address>
+                            <span itemprop="streetAddress">@Model.StreetAddress</span><br>
+                            <span itemprop="addressLocality">@Model.City</span>, <span itemprop="addressRegion">@Model.State</span> <span itemprop="postalCode">@Model.Zip</span>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="phone location-info">
+                    <h3 class="infoHeadline">Phone:</h3>
+                    <div class="catInfo">
+                        @*TODO: Replace replaces with regex lol*@
+                        @{var safePhone = $"+1{Model.PhoneNumber.ToString().Replace(".", "").Replace("-", "").Replace("(", "").Replace(")", "")}"; }
+                        <a href="tel:@safePhone" itemprop="telephone">@Model.PhoneNumber</a>
+                    </div>
+                </div>
+                @foreach (var hourSet in Model.HourSets)
+                {
+
+                    <div class="location-info">
+                        <h3 class="infoHeadline">@hourSet.Title:</h3>
+                        @foreach (var hour in hourSet.Hours)
+                        {
+                            <div class="catInfo" itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                                <span itemprop="dayOfWeek">@hour.DaysRepresentation</span>    <span itemprop="opens">@hour.OpenTime</span> - <span itemprop="closes">@hour.CloseTime</span>
+                            </div>
+                        }
+                    </div>
+                }
+
+                @*TODO: what should be the schedule appointment link?*@
+                @if (Model.HasOnlineAppointment)
+                {
+                    <div class="cta">
+                        <a href="@globalConfig.AppointmentBookingUrl" target="_blank" class="btn btn-primary" title="Schedule an Appointment">Schedule an Appointment</a>
+                    </div>
+                }
+
+
+            </div>
+
+            <!-- Right Col -->
+            <div class="rightcol col-md-5">
+                <div class="bank-features bank-features-box">
+                    @{ var hasOtherOfferings = false;
+
+
+                        hasOtherOfferings = Model.HasAtm || Model.HasDriveThrough || Model.HasInstantIssue || Model.HasDepositBox || Model.HasCoinCounter
+                            || Model.HasSharedBranching || Model.HasRepinCards || Model.HasPersonalAutomatedTeller || Model.HasOnlineAppointment;
+                    }
+                    @*TODO: what should be the schedule appointment link?*@
+                    @if (hasOtherOfferings)
+                    {
+                        <div class="info">
+                            <h4>Other Offerings</h4>
+                            @if (Model.HasAtm)
+                            {<p>24 Hour ATM</p>}
+                            @if (Model.HasDriveThrough)
+                            {<p>Drive Up ATM</p>}
+                            @if (Model.HasInstantIssue)
+                            {<p>Instant Issue</p>}
+                            @if (Model.HasDepositBox)
+                            {<p>Deposit Box</p>}
+                            @if (Model.HasCoinCounter)
+                            {<p>Lucy Change (Coin Counter)</p>}
+                            @if (Model.HasSharedBranching)
+                            {<p>Shared Branching</p>}
+                            @if (Model.HasRepinCards)
+                            {<p>Re-pin</p>}
+                            @if (Model.HasPersonalAutomatedTeller)
+                            {<p>Personalized Automated Teller</p>}
+                            @if (Model.HasOnlineAppointment)
+                            {<p><a href="@globalConfig.AppointmentBookingUrl" target="_blank" title="Online Appointment Setting  Available">Online Appointment Setting Available</a></p>}
+                        </div>
+                    }
+
+                    @*TODO: Add Photo*@
+                    <div class="photo">
+                        <img src="@Model.LocationThumbnail.ImageUrl" alt="@Model.LocationThumbnail.ImageAlt">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

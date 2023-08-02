@@ -1,0 +1,37 @@
+// Main Theme Settings
+
+
+// Colors
+$primary:#202945; // midnight blue
+$secondary:#E65300; // orange
+$tertiary:#58C7CC; // light teal
+$quaternary:#087482; // dark teal
+
+// Typography
+$primary-font:'Lato', sans-serif;
+$secondary-font:'Passion One', 'impact', cursive;
+$tertiary-font:'Permanent Marker', cursive;
+$base-font-size:16;
+$base-font-color:#000;
+
+// Headlines
+$htag-font:$secondary-font;
+$htag-color:$primary;
+
+// Links
+$link-color:$primary;
+$link-hover:$secondary;
+
+// Z-indexes:
+$gdp-z-index:13;
+$modal-content-z-index:12;
+$modal-z-index:11;
+$menu-z-index:10;
+$login-z-index:10;
+$header-z-index:9;
+$scrollToTop-z-index:9;
+
+
+// Skews
+// transform: skew(-12deg);
+// transform-origin: bottom left;

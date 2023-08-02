@@ -1,0 +1,6 @@
+@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<a href="@Html.UrlSanitize(Model.ActionUrl)" title="@Model.ActionTitle">
+    <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText">
+</a>

@@ -1,0 +1,89 @@
+@import "utils/bootstrap/bootstrap";  // bootstrap framework
+@import "theme";
+
+// Plugins
+@import "plugins/responsive-tabs";
+@import "plugins/slick";
+@import "plugins/slick-theme";
+
+// Globals
+@import "global/mixins";
+@import "global/buttons";
+@import "global/forms";
+@import "global/custom-checkboxes";
+@import "global/custom-radioboxes";
+@import "global/frontend-template-list";
+@import "global/helpers";
+@import "global/tables";
+@import "global/typography";
+@import "global/buttons";
+@import "global/header";
+@import "global/footer";
+@import "global/gdp";
+@import "global/sf-admin";
+
+// Navigation
+@import "navigation/menu";
+@import "navigation/pagination";
+
+// ** Components **
+@import "components/filters";
+@import "components/logo-previews";
+@import "components/portfolio-detail";
+@import "components/mission-statement";
+@import "components/awards";
+@import "components/about-us";
+@import "components/newsletter";
+@import "components/testimonial";
+@import "components/case-study-slider";
+@import "components/current-openings";
+@import "components/benefits";
+@import "components/follow-social-accounts";
+@import "components/helpful-links";
+@import "components/content-wrapper";
+@import "components/st-tabs";
+
+// Heros
+@import "components/heros/hero-homepage";
+@import "components/heros/hero-inner";
+@import "components/heros/hero-contact";
+@import "components/heros/mosaic-tiles";
+@import "components/heros/hero-compact";
+
+// CTAS
+@import "components/ctas/steps-cta";
+@import "components/ctas/image-cta";
+@import "components/ctas/text-cta";
+@import "components/ctas/client-cta";
+@import "components/ctas/subscribe-cta";
+@import "components/ctas/download-cta";
+@import "components/ctas/full-height-cta";
+@import "components/ctas/generic-cta";
+@import "components/ctas/v-shaped-cta";
+@import "components/ctas/icons-cta";
+@import "components/ctas/multi-button-cta";
+@import "components/ctas//platform-link";
+
+// Blogs
+@import "components/blogs/blog-detail";
+@import "components/blogs/blog-listing";
+@import "components/blogs/featured-blog";
+
+// Cards
+@import "components/cards/industry-cards";
+@import "components/cards/bio-cards";
+@import "components/cards/angle-cards";
+@import "components/cards/instagram-cards";
+@import "components/cards/work-item-card";
+
+
+.sfPageEditor {
+    .container,
+    .linear-gradient-bg {
+        min-height: 120px !important;
+    }
+}
+
+.view-defer {
+    opacity: 1 !important;
+}

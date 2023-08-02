@@ -1,0 +1,108 @@
+.download-cta {
+	background:$primary;
+	padding:45px 0;
+	position: relative;
+	color:#FFF;
+	overflow:hidden;
+
+    &:after {
+    	content: '';
+    	background-image: url(/library/img/dingbat.png);
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: 352px 352px;
+    	display: block;
+    	width: 352px;
+    	height: 352px;
+    	opacity: .6;
+    	position: absolute;
+    	right: 352px;
+    	top: 15px;
+    	z-index: 1;
+    }
+
+    .row {
+    	align-items: center;
+    }
+
+	.subheadline {
+		@include font-size(35);
+		line-height: 32px;
+		font-family: $secondary-font;
+	}
+	.headline {
+		@include font-size(54);
+		line-height: 45PX;
+		color:#FFF;
+	}
+	.info-col {
+		position:relative;
+		z-index:2;
+	}
+	.cta-col {
+		text-align: center;
+		position:relative;
+		z-index:2;
+		padding-bottom: 10px;
+
+		a {
+			color:#FFF;
+			@include font-size(29);
+			font-family: $secondary-font;
+			text-decoration:none;
+			text-transform:uppercase;
+
+			.icon {
+				background: url('/library/img/sprites.png');
+				background-repeat: no-repeat;
+				background-position: -53px -32px;
+				width: 22px;
+				height: 27px;
+				display: inline-block;
+				margin-left: 5px;
+				position: relative;
+				top: 9px;
+			}
+
+			&:hover, &:before {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.download-cta {
+		text-align:center;
+		padding:35px 0;
+
+		&:after {
+			right:0;
+			left:0;
+			top:initial;
+			bottom:-100px;
+			width:184px;
+			height:184px;
+			margin:0 auto;
+			background-size: 184px 184px;
+		}
+
+		.subheadline {
+			@include font-size(24);
+			line-height: 20px;
+			margin-bottom: 25px;
+		}
+		.headline { 
+			@include font-size(36);
+			line-height: 36px;
+			margin:0 0 50px 0; 
+		}
+		.cta-col {
+			a {
+				@include font-size(20);
+			}
+		}
+	}
+}

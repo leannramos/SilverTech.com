@@ -1,0 +1,143 @@
+{% set pageTitle = "About Us Landing" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "blue" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Mug-and-Steves.jpg" %}
+	{% set heroHeadline = "About Us." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "SilverTech provides a wide range of services from design to digital marketing to web development, we have what you need for your business to succeed lorem Ipsum dolor sit amet." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<section class="about-us" aria-label="about silvertech">
+
+		<!-- Steps CTA (right image) -->
+		{% set stepsImageAlign = "image-right" %}
+		{% set stepsExtraClasses = "no-image" %}
+		{% set stepsImage = "" %}
+		{% set stepsNumber = "1" %}
+		{% set stepsTitle = "Who We Are" %}
+		{% set stepsDescription = "We are a digital marketing agency redefining how businesses engage with and understand their customers. Founded in 1996, SilverTech was built on the belief that connected data can yield strategic, actionable insights. Our custom, integrated solutions give a 360-degree view of even the most complex customer journeys. From our offices centered around Boston and Indianapolis, we have helped national and international clients transform their business for the digital age and unlock new possibilities for growth." %}
+		{% set stepsButtonText = "Our Culture" %}
+		{% set stepsButton2Text = "" %}	
+		{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+		<!-- Steps CTA (left image) -->
+		{% set stepsImageAlign = "image-left" %}
+		{% set stepsExtraClasses = "no-image" %}
+		{% set stepsImage = "" %}
+		{% set stepsNumber = "2" %}
+		{% set stepsTitle = "Leadership Team" %}
+		{% set stepsDescription = "SilverTech is a collaborative partner, an extension of your team, and your biggest advocate for success. Our vision is to deliver transformational growth through innovation, creativity & technology. We look forward to becoming an extension of your team and bringing that vision to life!" %}
+		{% set stepsButtonText = "Meet The Crew" %}
+		{% set stepsButton2Text = "" %}	
+		{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+		<!-- Bio Cards-->
+		<section class="bio-cards" aria-label="Our Team">
+			<div class="container">
+				<div class="row">				
+
+					<!-- Team Member -->
+					{% set bioName = "John Doe" %}	
+					{% set bioImage = "john-doe.jpg" %}	
+					{% set bioPosition = "Chief Executive Officer" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}		
+
+					<!-- Team Member -->
+					{% set bioName = "Jane Doe" %}	
+					{% set bioImage = "jane-doe.jpg" %}	
+					{% set bioPosition = "Marketing Rockstar" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}		
+					
+					<!-- Team Member -->
+					{% set bioName = "Baby Doe" %}	
+					{% set bioImage = "baby-doe.jpg" %}	
+					{% set bioPosition = "Junior UI/UX Designer" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}
+
+					<!-- Team Member -->
+					{% set bioName = "Grandma Doe" %}	
+					{% set bioImage = "grandma-doe.jpg" %}	
+					{% set bioPosition = "Director of Quality Assurance" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}		
+
+					<!-- Team Member -->
+					{% set bioName = "Harry Doe" %}	
+					{% set bioImage = "harry-doe.jpg" %}	
+					{% set bioPosition = "Digital Strategist" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}		
+
+					<!-- Team Member -->
+					{% set bioName = "Gifmaster Doe" %}	
+					{% set bioImage = "crazy-doe.jpg" %}	
+					{% set bioPosition = "Digital Overlord" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}
+
+					<!-- Team Member -->
+					{% set bioName = "Slacker Doe" %}	
+					{% set bioImage = "lazy-doe.jpg" %}	
+					{% set bioPosition = "Backend Engineer" %}	
+					{% set bioLinkedInURL = "" %}	
+					{% set bioShortDescription = "" %}
+					{% include "../UserControls/Modules/cards/bio-card.html" %}											
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Steps CTA (right image) -->
+		{% set stepsImageAlign = "image-right" %}
+		{% set stepsExtraClasses = "no-image" %}
+		{% set stepsImage = "" %}
+		{% set stepsNumber = "3" %}
+		{% set stepsTitle = "SilverTech in the Community" %}
+		{% set stepsDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no" %}
+		{% set stepsButtonText = "In our Community" %}
+		{% set stepsButton2Text = "What We're Up To" %}	
+		{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+		<!-- Steps CTA (left image) -->
+		{% set stepsImageAlign = "image-left" %}
+		{% set stepsExtraClasses = "no-image" %}
+		{% set stepsImage = "" %}
+		{% set stepsNumber = "4" %}
+		{% set stepsTitle = "Work With Us" %}
+		{% set stepsDescription = "We leverage strong technology partnerships and industry expertise to empower our clients to create valuable digital experiences for their customers and end users.  Our team’s strength is in our ability to learn about your business, understand your challenges, and provide you with competitive, innovative, and customized solutions. With over 80 full-time digital strategists, designers, and technologists, we align industry expertise with strategic planning while guiding businesses to create profitable customer experiences." %}
+		{% set stepsButtonText = "Careers" %}
+		{% set stepsButton2Text = "" %}	
+		{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+		<!-- Mission Statement -->
+		{% include "../UserControls/Modules/mission-statement.html" %}
+		
+		<!-- Awards -->
+		{% include "../UserControls/Modules/awards.html" %}
+		
+	</section> <!-- end .about-us -->	
+
+
+{% endblock %}

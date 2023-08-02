@@ -1,0 +1,59 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomSubscribe.CustomSubscribeFormViewModel
+
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Services;
+
+@*Add scripts and stylesheets*@
+@Html.Script("//ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js", "bottom", false)
+@Html.Script("//ajax.aspnetcdn.com/ajax/mvc/4.0/jquery.validate.unobtrusive.min.js", "bottom", false)
+
+@{
+    var hasValidationMessage = Html.ValidationMessageFor(m => m.Email) != null;
+    var attributes = new Dictionary<string, object>()
+{
+{ "type", "email" },
+{ "aria-required", "true" },
+{ "placeholder", Model.FieldLabel },
+{ "required", "" },
+{ "id", "newsletterEmail" },
+{ "name", "newsletterEmail" }
+};
+}
+
+<section class="subscribe-cta" aria-label="subscribe to newsletter">
+    <div class="container">
+        <div class="dingbat"></div>
+
+        @using (Html.BeginFormSitefinity("subscribe", "subscribeForm"))
+        {
+            <div class="row">
+                <div class="info-col">
+                    <h2 class="headline">@Model.Heading</h2>
+                </div>
+
+                <div class="form-col">
+                    <label for="newsletterEmail" class="sr-only">@Model.FieldLabel</label>
+                    @Html.TextBoxFor(m => m.Email, attributes)
+                    <button type="submit" class="btn btn-quaternary">@Model.ButtonText</button>
+                </div>
+
+                @if (ViewBag.IsSucceeded == true)
+                {
+                    <div class="alert alert-success" role="alert" aria-live="assertive">
+                        @Html.Resource("ThankYou"). @Html.Resource("ThankYouMessage") (@ViewBag.Email)
+                    </div>
+                }
+
+                @Html.ValidationSummary(true)
+                @if (!string.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <div class="alert alert-warning" role="alert" aria-live="assertive">
+                        @ViewBag.Error
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>

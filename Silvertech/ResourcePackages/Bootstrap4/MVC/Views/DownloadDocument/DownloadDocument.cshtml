@@ -1,0 +1,19 @@
+﻿@model SitefinityWebApp.Mvc.Models.Document.CustomDownloadViewModel
+
+<section class="download-cta" aria-label="download call to action">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="info-col col-lg-7">
+                <div class="subheadline">@Model.LinkSubTitle</div>
+                <h2 class="headline">@Model.LinkTitle</h2>
+            </div>
+
+            <div class="cta-col col-lg-5">
+                <a href="@Model.MediaUrl" target="_blank" title="Download @Model.LinkTitle">@Model.LinkText<span class="icon"></span></a>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,370 @@
+.btn {
+	color:$tertiary;
+	@include font-size(29);
+	line-height: 1;
+	font-family: $secondary-font;
+	text-decoration:none;
+	text-align: left;
+	position:relative;
+	display:inline-block;	
+
+	&.wide { padding:13px 70px; }
+	&.default { 
+		color:$primary !important;
+
+		&:hover, &:focus, &:active { color:$tertiary !important; } 
+	}
+	// Orange Right Arrow Button with animation
+	&.btn-primary {
+		@include font-size(29);
+		background:none !important;
+		border:none;
+		color:$secondary;
+		text-transform:uppercase;
+		padding-left: 0;
+		margin-right:55px;
+
+		&:hover, &:focus, &.active {
+			background:none !important;
+		}
+		&:before {
+			content:'';
+			height:2px;
+			width:26px;				
+			background:$secondary;
+			position:absolute;
+			top:calc(50% - 3px);
+			left:100%;
+			transition:width .3s ease-in;
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			top: calc(50% - 13px);
+		    right: -28px;
+			background: url('/library/img/sprites.png') no-repeat -88px 0;
+			width: 12px;
+			height: 22px;
+			transition:right .3s ease-in;
+		}
+		&:hover, &:focus, &:active {
+			color:$quaternary !important;
+
+			&:before { 
+				width:45px;
+				background:$quaternary;
+			}
+			&:after {
+				right:-48px;
+				background-position: -104px 0;
+			}
+		}
+		&:focus { outline:dotted 1px $quaternary; }
+	}
+	// dark blue Right Arrow Button with animation
+	&.btn-secondary {
+		@include font-size(29);
+		padding-left: 0;
+		background:none !important;
+		border:none;
+		color:$primary;
+		text-transform:uppercase;
+		margin-right:55px;
+
+		&:hover, &:focus, &.active {
+			background:none !important;
+		}
+		&:before {
+			content:'';
+			height:2px;
+			width:26px;				
+			background:$primary;
+			position:absolute;
+			top:calc(50% - 3px);
+			left:100%;
+			transition:width .3s ease-in;
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			top: calc(50% - 13px);
+		    right: -28px;
+			background: url('/library/img/sprites.png') no-repeat -69px 0;
+			width: 12px;
+			height: 22px;
+			transition:right .3s ease-in;
+		}
+		&:hover, &:focus, &:active {
+			color:$quaternary !important;
+
+			&:before { 
+				width:45px;
+				background:$quaternary;
+			}
+			&:after {
+				right:-48px;
+				background-position: -104px 0;
+			}
+		}
+		&:focus { outline:dotted 1px $quaternary; }
+	}
+	// dark blue Left Arrow Button - BACK Btn, no animation
+	&.btn-tertiary {
+		background:none !important;
+		border:none;
+		color:$primary;
+		text-transform:uppercase;
+		margin-left: 26px;
+		@include font-size(18);
+		font-family: $secondary-font;
+		padding-left: 10px;
+
+		&:hover, &:focus, &.active {
+			background:none !important;
+		}
+		&:before {
+			content:'';
+			height:2px;
+			width:26px;				
+			background:$primary;
+			position:absolute;
+			top:calc(50% - 2.4px);
+			right:100%;
+			transition:width .3s ease-in;
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			top: calc(50% - 9px);
+		    right: calc(100% + 19px);
+			background: url('/library/img/sprites.png') no-repeat 0 -59px;
+			width: 9px;
+			height: 15px;
+			transition:left .1s ease-in;
+		}
+		&:hover, &:focus, &:active {
+			color:$quaternary !important;
+
+			&:before { 
+				background:$quaternary;
+			}
+			&:after {
+				background-position: -13px -59px;
+			}
+		}
+		&:focus {
+			outline:dotted 1px $quaternary;
+		}
+		&.white {
+			color:#FFF;
+
+			&:before { background:#FFF; }
+			&:after { background: url('/library/img/sprites.png') no-repeat -41px -59px; }
+
+			&:hover, &:focus, &:active {
+				color:$tertiary !important;
+
+				&:before { 
+					background:$tertiary;
+				}
+				&:after {
+					background-position: -13px -59px;
+				}
+			}
+		}
+	}
+	// White Arrow Button
+	&.btn-quaternary {
+		@include font-size(29);
+		background:none !important;
+		border:none;
+		color:#FFF;
+		text-transform:uppercase;
+		padding-left: 0;
+
+		&:hover, &:focus, &.active {
+			background:none !important;
+		}
+		&:before {
+			content:'';
+			height:2px;
+			width:26px;				
+			background:#FFF;
+			position:absolute;
+			top:calc(50% - 3px);
+			left:100%;
+			transition:width .3s ease-in;
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			top: calc(50% - 13px);
+		    right:-28px;
+			background: url('/library/img/sprites.png') no-repeat -104px -24px;
+			width: 12px;
+			height: 22px;
+			transition:right .3s ease-in;
+		}
+		&:hover, &:focus, &:active {
+			color:#FFF;
+
+			&:before { 
+				width:45px;
+				background:#FFF;
+			}
+			&:after {
+				right:-48px;
+			}
+		}
+		&:focus { outline:dotted 1px #FFF; }
+	}
+
+	&.btn-outline-secondary {
+		border: 1px solid $quaternary;
+		border-radius: 0;
+		font-weight: 800;
+		@include font-size(14);
+		font-family: $primary-font;
+		color: $quaternary;
+		min-width: 95px;
+		text-align: center;
+		padding: 16px 5px;
+
+		&:hover {
+			background: $quaternary;
+			color: #fff;
+		}
+	}
+	
+	&:focus, &:active {
+		box-shadow:none;
+	}
+	&:disabled {
+		background:#969696 !important;
+		color:#FFF !important;
+
+		&:hover, &:focus, &:active {
+			background:#969696 !important;
+			color:#FFF !important;
+			cursor:initial;
+			outline:none !important;
+			border:1px solid transparent;
+		}
+	}
+	svg { margin-right:5px; }
+	
+}
+
+.action-group {
+	margin-bottom: 45px;
+
+	a {
+		margin: 0 9px;
+	}
+}
+
+.process-back-btn {
+	padding:35px 0 0 0;
+
+	
+}
+button { cursor:pointer; }
+.scrollToTop {
+	display:none;
+	position:fixed;
+	right:20px;
+	bottom:25px;
+	cursor:pointer;
+	z-index:$scrollToTop-z-index;
+	color:#FFF;
+
+	&:hover {
+		opacity:.8;
+	}
+
+	@include media-breakpoint-down(sm) {
+		bottom: 48px;
+	}
+}
+.global-chat {
+	position:fixed;
+	right:20px;
+	bottom:80px;
+	z-index:$scrollToTop-z-index;
+
+	&.open {
+		.chat-bubble { display:block; }
+	}
+	.chat-icon {
+
+		&:hover, &:focus, &:active { opacity:.8; }
+	}
+	.chat-bubble {
+		display:none;
+		position:fixed;
+		right:21px;
+		bottom:162px;
+		background: #FFF;
+		padding:20px 25px;
+		color:#000;
+		@include font-size(14);
+		box-shadow:0 3px 6px 0 rgba(0,0,0,.16);
+
+		&:after {
+			content: "\00a0";
+			background: #FFF;
+			display: block;
+			position: absolute;
+			bottom: -10px;
+			right: 21px;
+			width: 20px;
+			height: 21px;
+			transform: rotate(135deg) skew(0deg);
+			box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
+		}
+		.close-btn {
+			position:absolute;
+			top:7px;
+			right:7px;
+			padding:5px;
+			line-height: 1;
+			background: url('/library/img/sprites.png') no-repeat -1px -80px;
+			width: 8px;
+			height: 7px;
+			cursor:pointer;
+
+			&:hover, &:focus, &:active {
+				text-decoration:underline;
+			}
+		}
+		.link {
+			font-family: $secondary-font;
+			@include font-size(23);
+			line-height: 14px;
+			color:$primary;
+			margin:0 0 5px 0;
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(lg) {
+	.back-btn { padding:15px 0 30px 0; }
+}
+
+@include media-breakpoint-down(md) {
+	.global-chat { display: none; }
+}
+
+@include media-breakpoint-down(sm) {
+	.btn {
+
+		@include font-size(20);
+
+		&.btn-tertiary {
+			@include font-size(20);
+		}
+	}
+	.process-back-btn { padding:10px 15px; }
+}

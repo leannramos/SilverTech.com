@@ -1,0 +1,118 @@
+
+.linear-gradient-bg {
+    background-image:
+    linear-gradient(
+      to right, 
+      #202945, #58C7CC
+    );
+    box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.13);
+
+    .container.flex-container {
+        display: flex;
+        justify-content: center;
+
+        & > a, & > div {
+            flex-grow: 1;
+            max-width: 300px;
+        }
+    }
+}
+
+.platform-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    text-decoration: none;
+    min-height: 170px;
+    transition: background 500ms;
+
+    .platform-image {
+        width: 90%;
+        max-width: 145px;  
+
+        img, svg {
+            width: 100%;
+        }
+    }
+
+    .arrow-right-ico {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        color: #fff;
+        margin-left: 15px;
+        width: 15px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            max-width: 9px;
+            max-height: 16px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0;
+            height: 1px;
+            background: #fff;
+            transition: width 500ms;
+        }
+    }
+
+    &:hover {
+        background: #202945;
+
+        .arrow-right-ico {
+            &:before {
+                width: 95%;
+            }
+        }
+    }
+}
+
+.sfPageEditor {
+    .linear-gradient-bg {
+    
+        .container.flex-container {
+            & > a, & > div {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .platform-link {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #fff;
+        min-height: 93px;
+    }
+
+    .linear-gradient-bg {
+        box-shadow: none;
+
+        .container.flex-container {
+            padding: 0;
+            max-width: none;
+            width: 100%;
+            display: block;
+
+            .row .col {
+                padding: 0;
+            }
+
+            & > a, & > div {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

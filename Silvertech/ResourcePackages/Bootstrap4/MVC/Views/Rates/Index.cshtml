@@ -1,0 +1,57 @@
+﻿@model BankCore.Mvc.Models.Rates.TableViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Utilities;
+@using Telerik.Sitefinity.Services;
+
+
+
+<section class="rates" aria-label="Rates Table">
+
+    <div class="container">
+        <a id="@Model.Id"></a>
+        <h2 class="headline">@Model.SectionTitle</h2>
+
+        <div class="divider">
+            <span class="line"></span>
+            <span class="pineapple"><img src="/ResourcePackages/ST/library/img/pineappleSmall.png" alt="Pineapple Icon" role="presentation"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="tableWrapper">
+            <table class="responsiveTable datatable">
+
+                <thead>
+                    <tr>
+                        @foreach (var header in Model.Columns)
+                        {
+                            <th>@header.Title</th>
+                        }
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var row in Model.Rows)
+                    {
+                        <tr>
+                            @foreach (var header in Model.Columns)
+                            {
+                                <td>@(row.Where(x => x.ColId == header.Id).FirstOrDefault()?.Value)</td>
+                            }
+                        </tr>
+                    }
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</section>

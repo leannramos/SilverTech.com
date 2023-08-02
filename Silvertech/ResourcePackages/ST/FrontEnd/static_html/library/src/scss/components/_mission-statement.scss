@@ -1,0 +1,29 @@
+.mission-statement {
+	padding:25px 0;
+	text-align:center;
+
+	.mission-wrapper {
+		width:75%;
+		margin:0 auto;
+		@include font-size(30);
+		font-weight: 300;
+		font-style:italic;
+		line-height: 41px;
+		color:#000;
+
+	}
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.mission-statement {
+		padding:12px 0;
+
+		.mission-wrapper { 
+			width:100%;
+			@include font-size(24);
+			line-height: 36px; 
+		}
+	}
+}

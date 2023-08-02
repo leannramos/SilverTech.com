@@ -1,0 +1,21 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+<div class="col-md-6 col-lg-4">
+    <article class="angle-card @Model.CssClass" aria-label="@Model.Heading">
+
+        <header class="angle-header">
+            <div class="slant"></div>
+            <h2 class="headline">@Model.Heading</h2>
+            <h3 class="subheadline">@Model.HeadingTwo</h3>
+        </header>
+
+        <div class="content">
+            @Html.HtmlSanitize(Model.Description)
+        </div>
+
+    </article>
+</div>

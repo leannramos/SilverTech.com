@@ -1,0 +1,113 @@
+﻿@using System.Web.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Services;
+@using Telerik.Sitefinity.Configuration;
+@using Common.CustomConfig;
+@using Common.Helpers;
+@using SitefinityWebApp.Sitefinity.Public.Admin.Config;
+@using System.Web.Optimization;
+@using Telerik.Sitefinity.Web;
+@using Telerik.Sitefinity.Pages.Model;
+@using Telerik.Sitefinity.Model;
+@using Telerik.Sitefinity.Libraries.Model;
+@using SitefinityWebApp.Mvc.Helpers;
+
+
+@{
+    var SiteConfig = Config.Get<SiteConfig>();
+    var GlobalConfig = Config.Get<GlobalConfig>();
+    var openMenu = SystemManager.IsDesignMode ? "nav-open" : "";
+
+    var currentPage = SiteMapBase.GetActualCurrentNode();
+    var title = currentPage?.Title;
+    var description = currentPage?.Description;
+
+    // The following checks for page-level settings which are set to override global site settings and returns the appropriate value.
+    var CurrentPageHelper = new CustomPageHelpers();
+}
+<!DOCTYPE html>
+<html @Html.RenderLangAttribute()>
+<head>
+    @Html.Raw(SiteConfig.GTMHead)
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#14609d">
+
+    @Html.Section("head")
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ResourcePackages/ST/FrontEnd/Public/library/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Passion+One|Permanent+Marker" rel="preload stylesheet" as="fetch">
+
+    @Html.InlineStyles("~/Content/core-css")
+
+    @if (SystemManager.IsDesignMode)
+    {
+        @Html.InlineStyles("~/Content/designer-css")
+    }
+</head>
+
+<body class="@openMenu">
+    @Html.Raw(SiteConfig.GTMBody)
+    <div class="sfPublicWrapper" id="PublicWrapper">
+
+        @Html.Section("top")
+
+        <a class="sr-only sr-only-focusable" href="#content" title="Skip to main content">Skip to main content</a>
+        
+        @Html.SfPlaceHolder("LayoutTop")
+        <div class="page-wrapper">
+            @Html.Partial("~/ResourcePackages/Bootstrap4/MVC/Views/Shared/Header/_header.cshtml", GlobalConfig)
+
+            <div id="content">
+
+                @Html.SfPlaceHolder("Main")
+
+            </div>
+
+            @Html.Partial("~/ResourcePackages/Bootstrap4/MVC/Views/Shared/Footer/_footer.cshtml", GlobalConfig)
+
+        </div>
+    </div>
+    <script type='application/ld+json'>
+        {"@@context":"https://schema.org/","@@type":"Organization","@@id":"https://www.silvertech.com/#organization","name":"SilverTech, Inc.","url":"https://www.silvertech.com/","sameAs":["https://www.facebook.com/SilverTech","https://www.instagram.com/silvertech_inc/","https://www.linkedin.com/company/silvertech-inc-","https://twitter.com/silvertech"],"logo":{"@@type":"ImageObject","@@id":"https://www.silvertech.com/#logo","url":"@GlobalConfig.SchemaLogo","width":320, "height":132, "caption":"SilverTech, Inc."},"image":{"@@id":"https://www.silvertech.com/#logo"}},{"@@type":"WebSite","@@id":"https://www.silvertech.com/#website","url":"https://www.silvertech.com/","name":"SilverTech","publisher":{"@@id":"https://www.silvertech.com/#organization"}}
+    </script>
+
+    <link rel="stylesheet" href="/ResourcePackages/ST/FrontEnd/public/library/css/app.min.css?ver=@DateTime.Now.ToString("MMddyyhmm")" />
+    @if (!SystemManager.IsDesignMode)
+    {
+        @Html.Script(Url.Content("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"), "top", false)
+    }
+
+    <script src="~/ResourcePackages/ST/FrontEnd/public/library/js/vendor/browser-polyfill.min.js"></script>
+    @Html.Section("CustomThirdParty")
+    @Scripts.Render("~/bundles/main-legacy")
+
+    @Html.Section("bottom")
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+</body>
+</html>

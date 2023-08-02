@@ -1,0 +1,61 @@
+﻿@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+@using Telerik.Sitefinity.Services;
+@using Common.Helpers;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Pages;
+
+
+<nav class="mainMenu businessMenu" aria-label="main Business navigation menu" role="navigation">
+    @{
+                    /**/
+
+
+                    bool isBusinessPage;
+                    var hasValue = new CustomPageHelpers().HasCustomPageValue<Boolean>("IsBusinessPage", out isBusinessPage);
+
+    }
+    @if (SystemManager.IsDesignMode || (hasValue && isBusinessPage))
+    {
+        <ul role="navigation">
+            @foreach (var node in Model.Nodes)
+            {
+                @RenderRootLevelNode(node)
+            }
+        </ul>
+
+    }
+
+    @helper RenderRootLevelNode(NodeViewModel node)
+    {
+                        /**/
+
+
+                        if (node.ChildNodes.Count > 0)
+                        {
+                            <li>
+                                <a href="@node.Url" title="Business @node.Title">@node.Title</a>
+                                <ul>
+                                    @RenderRootChildNodes(node)
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a href="@node.Url" title="Business @node.Title">@node.Title</a></li>
+                        }
+
+    }
+
+    @helper RenderRootChildNodes(NodeViewModel node)
+    {
+                        /**/
+
+
+
+                        foreach (var childNode in node.ChildNodes)
+                        {
+                            <li><a href="@childNode.Url" title="Business @node.Title @childNode.Title">@childNode.Title</a></li>
+                        }
+    }
+</nav>

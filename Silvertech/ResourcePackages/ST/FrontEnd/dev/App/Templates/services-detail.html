@@ -1,0 +1,35 @@
+{% set pageTitle = "Services Detail" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green-horizontal" %}
+	{% set heroCustomClasses = "reduce-title" %}
+	{% set heroImage = "hero-digital-trans.jpg" %}
+	{% set heroHeadline = "Digital transformation." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "Sometimes, you have to throw out the playbook and start over. A fresh perspective and a new digital game plan can radically change your outlook and outcome. This is definitely not the time to call in a rookie. Our seasoned marketing and technology experts have changed the game for organizations by overhauling digital platforms and practices in order to improve online experiences and productivity." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	{% set backBtnURL = "/services.html" %}
+	{% set backBtnText = "Back to Services" %}
+	{% include "../UserControls/Modules/back-btn.html" %}
+
+	<!-- Multi Button CTA -->
+	{% include "../UserControls/Modules/ctas/multi-button-cta.html" %}
+
+
+	<!-- Awards -->
+	{% set awardsHeadline = "Our Digital Marketing Partners." %}
+	{% include "../UserControls/Modules/awards.html" %}
+
+{% endblock %}

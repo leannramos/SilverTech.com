@@ -1,0 +1,266 @@
+.nav-open {
+	width:100%;
+	.main-menu { left:50%; }
+}
+
+.main-menu {
+	position: absolute;
+	left: 130%;
+	width: 50%;
+	height: 755px;
+	top: 0;
+	transition:left .5s ease-in-out;
+	overflow:hidden;
+	transform: skew(-12deg);
+	transform-origin: bottom left;
+	z-index: $menu-z-index;
+
+	&.menu-shorter {
+		height: 575px;
+
+		.search-site.desktop {
+			margin-top: 10px;
+		}
+
+		.nav-links {
+
+			a {
+				margin-bottom: 35px;
+			}
+		}
+	}
+	
+	// counter skew so image isn't distorted
+	.wrapper {
+		position: absolute;
+		z-index: 2;
+		transform: skew(12deg);
+		transform-origin: bottom left;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(255,255,255,.95);
+		padding:50px 30px 100px 170px;
+	}
+	.menu-logo { display:none; }
+	.menu-content {
+		position:relative;
+		z-index:$menu-z-index;
+	}
+	
+	ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	.nav-links {
+		a {
+			color:$tertiary;
+			@include font-size(66);
+			font-family: $secondary-font;
+			line-height: 1;
+			text-decoration:none;
+			position:relative;
+			display:inline-block;
+			padding-bottom: 0px;
+			margin-bottom: 40px;
+
+			&:before {
+				content:'';
+				height:2px;
+				width:100px;				
+				background:$tertiary;
+				position:absolute;
+				top:calc(100% + 8px);
+				left:0;
+				transition:width .2s ease-in .1s;
+			}
+			&:hover::after {
+				content:'';
+				position:absolute;
+				top: calc(100% - 2px);
+				// left: 91px;
+				background: url('/library/img/sprites.png') no-repeat -69px 0;
+				width: 12px;
+				height: 22px;
+				// transition:all .1s ease-in;
+				opacity:0;
+				left:calc(105% - 9px);
+				transition:opacity .1s ease-in 0s;
+			}
+			&:hover, &:focus, &:active {
+				color:#202945;
+
+				&:before { 
+					width:105%;
+					background:$primary;
+					transition:width .2s ease-in 0s;
+				}
+				&:after {
+					opacity:1;
+					transition:opacity .1s ease-in .2s;
+				}
+			}
+		}
+	}
+	.sub-links {
+		display:flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		li {
+			border-right:2px solid #707372;
+			padding-right: 40px;
+			margin-right: 40px;
+
+			&:last-child {
+				border-right:none;
+				padding-right: 0;
+				margin-right: 0;
+			}
+		}
+		a {
+			color:$tertiary;
+			@include font-size(31);
+			font-family: $secondary-font;
+			text-decoration:none;
+
+			&:hover, &:focus {
+				color:#202945;
+			}
+		}
+	}
+	.search-site {
+		margin-top: 30px;
+		width:60%;
+
+		&.mobile { display:none; }
+		input {
+			border:none;
+			border-bottom:1px solid #707372;
+			background:none;
+			color:#707372;
+			@include font-size(16);
+			font-weight: 700;
+			position:relative;
+
+			@include placeholder() {
+				color:#707372;
+			}
+			&:after {
+				content:'\f002';
+				font-family:'Font Awesome 5 Free';
+				position:absolute;
+				right:5px;
+				top:3px;
+			}
+			&:focus {
+			    border-color: $tertiary;
+			    outline:none;
+			    box-shadow:0px 0px 2px 0px $tertiary;
+			}
+		}
+		.icon {
+			background:none;
+			box-shadow:none;
+			border:none;
+			border-bottom:1px solid #707372;
+			color:$quaternary;
+
+			&:focus {
+				border-color: $tertiary;
+				outline:none;
+			    box-shadow:0px 0px 2px 0px $tertiary;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+@include media-breakpoint-down(md) {
+
+	.nav-open {
+		position: fixed;
+		overflow: auto;
+		top: 0;
+		left: 0;
+
+		.main-menu {
+			left:0;
+			width:100%;
+
+			.menu-logo { 
+				display:inline-block; 
+
+				img { width:131px; }
+			}
+		}
+	}
+	.main-menu {
+		height: calc(100vh - 66px);
+		top:66px;
+		left:100%;
+		width:100%;
+		padding:0;
+		transform:skew(0);
+
+		&.menu-shorter {
+			height: calc(100vh - 66px);
+
+			.nav-links {
+				
+				a {
+					margin-bottom: 40px;
+				}
+			}
+		}
+
+		.wrapper {
+			transform:skew(0);
+			background:#FFF;
+			padding:0;
+		}
+		
+		header.menu-header {
+			@include greenGradient();
+			padding:20px 15px;
+		}
+		.nav-links {
+			a {
+				@include font-size(38);
+				padding:0 15px 10px 15px;
+				display:block;
+				border-bottom:1px solid $tertiary;
+				margin-bottom:40px;
+
+				&:before, &:after { display:none; }
+
+			}
+		}
+		.sub-links {
+			padding:0 15px;
+
+			li {
+				padding-right: 15px;
+				margin-right: 15px;
+			}
+			a {
+				@include font-size(24);
+			}
+		}
+		.search-site {
+			width:100%;
+			margin-top: 0;
+			margin-bottom: 30px;
+			padding:0 15px;
+
+			&.desktop { display:none; }
+			&.mobile { display:block; }
+		}
+	}
+}

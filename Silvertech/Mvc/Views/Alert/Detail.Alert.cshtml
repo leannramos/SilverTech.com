@@ -1,0 +1,22 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+
+<section class="alert @Model.Item.Fields.AlertColor" aria-label="Site Wide Alert">
+    <div class="container">
+        <div class="alert-title">
+            <i class="fas fa-exclamation-triangle"></i>
+            @try
+            {
+                @Model.Item.Fields.AlertTitle
+            }
+            catch (Exception e)
+            {
+                Telerik.Sitefinity.Abstractions.Log.Write("Error while retreiving field 'AlertTitle' \n" + e.Message);
+            }
+        </div>
+
+        <div class="alert-description">
+            @Html.Raw(Model.Item.Fields.AlertMessage)
+        </div>
+    </div>
+</section>
+

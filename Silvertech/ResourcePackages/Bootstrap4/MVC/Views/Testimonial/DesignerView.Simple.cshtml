@@ -1,0 +1,48 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            Company Name
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.Heading.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="heading-two-text">
+            Full Client Name
+        </label>
+        <input id="heading-two-text" type="text" class="form-control" ng-model="properties.HeadingTwo.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="description-text">Quote</label>
+        <textarea id="description-text" class="form-control" rows="3" ng-model="properties.Description.PropertyValue"></textarea>
+        @*<sf-html-field id="description-text" class="kendo-content-block" sf-model="properties.Description.PropertyValue"></sf-html-field>*@
+    </div>
+
+    <expander expander-title='@Html.Resource("MoreOptions")'>
+        <div class="form-group">
+            <label for="templateName">@Html.Resource("Template")</label>
+            <div class="row">
+                <div class="col-xs-6">
+                    <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                        @foreach (var viewName in Html.GetViewNames("Testimonial", @"(?<viewName>^Card.*)$"))
+                        {
+                            <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <style-dropdown selected-class="properties.CssClass.PropertyValue" view-name="properties.TemplateName.PropertyValue"></style-dropdown>
+        <div class="form-group">
+            <label for="cssClass">
+                @Html.Resource("CssClasses")
+            </label>
+            <input id="cssClass" type="text" ng-model="properties.CssClass.PropertyValue" class="form-control" />
+            <p class="text-muted">Options: whiteBG or greenBG</p>
+        </div>
+    </expander>
+</form>

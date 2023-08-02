@@ -1,0 +1,51 @@
+<!-- Notes:  add class "image-left" or "image-right" to <section> to change orientation -->
+<section class="client-cta {% if clientCTA_ImageAlign %}{{clientCTA_ImageAlign}}{% endif %}" aria-label="step callouts">
+	<div class="container">
+
+		<div class="client-wrapper">
+			
+			<!-- Text Column -->
+			<div class="text-col">
+
+				<h2 class="section-title">{{clientCTA_SectionTitle}}</h2>
+
+				{% if clientCTA_ClientName != '' %}
+					<h3 class="client-name">{{clientCTA_ClientName}}</h3>
+				{% endif %}
+								
+				<div class="description">
+					{% if showClientSpotlight == "true" %}
+						<div class="client-spotlight">
+							<p class="headline">Client Spotlight:</p>
+							<img src="/library/img/amelia-island.png" alt="amelia island">
+						</div>
+					{% endif %}
+
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 					
+				</div>
+
+				{% if clientCTA_ButtonText != '' %}
+					<div class="cta">
+						<a href="" title="Services" class="btn btn-primary">{{clientCTA_ButtonText}}</a>
+					</div>
+				{% endif %}
+
+			</div>
+
+			<div class="photo-wrapper lazy-load-bg">
+				<div class="photo lazy-load-bg" style="background-image:url(/library/img/{{clientCTA_MainImage}});"></div>
+				{% if clientCTA_clientLogo != '' %}
+					<div class="client-logo">
+						<img
+							class="img-load-lazy"
+							data-src="/library/img/{{clientCTA_clientLogo}}"
+							data-srcset="/library/img/{{clientCTA_clientLogo}} 2x, /library/img/{{clientCTA_clientLogo}} 1x"
+							alt="">
+					</div>
+				{% endif %}
+			</div>
+
+		</div>
+
+	</div>
+</section>

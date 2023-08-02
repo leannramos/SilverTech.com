@@ -1,0 +1,90 @@
+{% set pageTitle = "Generic Inner" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Lora2.jpg" %}
+	{% set heroSubheadline = "" %}
+	{% set heroHeadline = "Inner." %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- WYSIWYG -->
+	<div class="generic-content">
+		<div class="container">
+			<p>
+				If you’ve ever been to Google’s search page on your mobile device then you’ve likely seen the Google discover page. It generates content that is not only timely but also aligns with your interests right below the Google search bar.
+			</p>
+			<h2>WYSIWYG Content Here</h2>
+			<p>
+				Discovery ads will allow you to run your ad campaign on Google’s search page, Gmail, and YouTube. Google developed these ads because they’re a visually impactful ad format that is targeted based on audience data such as interests, in-market, and affinity, instead of search intent alone. This is a great opportunity for people outside of search campaigns to be exposed to your ads. 
+
+			</p>
+			<h3>On-going Digital Marketing Optimization & Management</h3>
+			<p>
+				Using a combination of monthly data analysis, campaign monitoring and optimization techniques, our team knows the right digital mix to help you get positive compounding performance improvements.  
+			</p>
+			<p>
+				Our monthly retainer plans are customized to a client’s needs and budget. Below, we’ve outlined a few ways clients choose to work with us.  If you’d like us to put together a plan based on your unique needs, contact us to chat with one of our Digital Marketing strategists today. 
+			</p>
+		</div>
+	</div>
+
+	<!-- Angle Cards -->
+	{% include "../UserControls/Modules/cards/angle-cards.html" %}
+
+	<!-- Testimonial -->
+	{% include "../UserControls/Modules/testimonial.html" %}
+	
+	<!-- Featured Blog (Right Image) -->
+	{% set featuredBlog_image = "iStock-1065178846.jpg" %}
+	{% set featuredBlog_alignImage = "image-right" %}
+	{% include "../UserControls/Modules/blogs/featured-blog.html" %}
+
+	<!-- Featured Blog (Left Image) -->
+	{% set featuredBlog_image = "iStock-1065178846.jpg" %}
+	{% set featuredBlog_alignImage = "image-left" %}
+	{% include "../UserControls/Modules/blogs/featured-blog.html" %}
+
+	<!-- Image CTA - Right Image -->
+	{% set imageCTA_layout = "image-right" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "john-schnobrich-2FPjlAyMQTA-unsplash.jpg" %}
+	{% set imageCTA_title = "Call To Action" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. " %}
+	{% set imageCTA_btnText = "UI/UX Design" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+
+	<!-- Image CTA - Left Image -->
+	{% set imageCTA_layout = "image-left" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "Lora1.jpg" %}
+	{% set imageCTA_title = "Call to Action" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set imageCTA_btnText = "DIGITAL TRANSFORMATION" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+	
+	<!-- Generic CTA -->
+	{% include "../UserControls/Modules/ctas/generic-cta.html" %}
+
+	<!-- Newsletter CTA -->
+	{% include "../UserControls/Modules/ctas/subscribe-cta.html" %}
+
+	<!-- Download CTA -->
+	{% set downloadCTA_subheadline = "Download Our:" %}
+	{% set downloadCTA_headline = "“Marketing Term Cheat Sheet”" %}
+	{% set downloadCTA_btnText = "Download" %}
+	{% include "../UserControls/Modules/ctas/download-cta.html" %}
+
+
+{% endblock %}

@@ -1,0 +1,203 @@
+{% set pageTitle = "Frontend Templates" %}
+{% set showGDP = "true" %}
+
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Contact -->
+	{% include "../UserControls/Modules/heros/hero-homepage.html" %}
+
+	<div class="container">
+
+		<p>&nbsp;</p>
+
+		<h3>Static HTML Templates</h3>
+		
+		<div class="templateList">
+			
+			<!-- Notes:  Put page comp into photoshop, and resize image and put 300px for height and let width be whatever.   -->
+
+			<a href="/home.html" title="">
+				Homepage<br>
+				<img src="/library/img/comps/homepage.jpg" alt="">
+			</a>
+
+			<a href="/contact-us.html" title="">
+				Contact Us<br>
+				<img src="/library/img/comps/contact-us.jpg" alt="">
+			</a>
+
+			<a href="/blog-listing.html" title="">
+				Blog Listing<br>
+				<img src="/library/img/comps/blog-listing.jpg" alt="">
+			</a>
+				
+			<a href="/blog-detail.html" title="">
+				Blog Detail<br>
+				<img src="/library/img/comps/blog-detail.jpg" alt="">
+			</a>
+
+			<a href="/landing.html" title="">
+				Generic Landing<br>
+				<img src="/library/img/comps/landing.jpg" alt="">
+			</a>
+
+			<a href="/portfolio-landing.html" title="">
+				Portfolio Landing<br>
+				<img src="/library/img/comps/portfolio-landing.jpg" alt="">
+			</a>
+
+			<a href="/case-study-detail.html" title="">
+				Case Study Detail<br>
+				<img src="/library/img/comps/case-study-detail.jpg" alt="">
+			</a>
+			
+			<a href="/portfolio-detail.html" title="">
+				Portfolio Detail (old)<br>
+				<img src="/library/img/comps/portfolio-detail.jpg" alt="">
+			</a>
+
+			<a href="/industry.html" title="">
+				Industry<br>
+				<img src="/library/img/comps/industry.jpg" alt="">
+			</a>
+
+			<a href="/about-us.html" title="">
+				About Us Landing<br>
+				<img src="/library/img/comps/about-us.jpg" alt="">
+			</a>
+
+			<a href="/newsletter.html" title="">
+				Newsletter<br>
+				<img src="/library/img/comps/newsletter.jpg" alt="">
+			</a>
+
+			<a href="/newsletter-archive.html" title="">
+				Newsletter Archive<br>
+				<img src="/library/img/comps/newsletter-archive.jpg" alt="">
+			</a>
+
+			<a href="/newsletter-detail.html" title="">
+				Newsletter Detail<br>
+				<img src="/library/img/comps/newsletter-detail.jpg" alt="">
+			</a>
+
+			<a href="/inner.html" title="">
+				Generic Inner<br>
+				<img src="/library/img/comps/inner.jpg" alt="">
+			</a>
+
+			<a href="/in-our-community.html" title="">
+				In Our Community<br>
+				<img src="/library/img/comps/in-our-community.jpg" alt="">
+			</a>
+
+			<a href="/careers.html" title="">
+				Careers<br>
+				<img src="/library/img/comps/careers.jpg" alt="">
+			</a>
+
+			<a href="/partners.html" title="">
+				Partners<br>
+				<img src="/library/img/comps/partners.jpg" alt="">
+			</a>
+
+			<a href="/services.html" title="">
+				Services<br>
+				<img src="/library/img/comps/services.jpg" alt="">
+			</a>
+
+			<a href="/services-detail.html" title="">
+				Services Detail<br>
+				<img src="/library/img/comps/services-detail.jpg" alt="">
+			</a>
+
+			<a href="/technology.html" title="">
+				Technology<br>
+				<img src="/library/img/comps/technology.jpg" alt="">
+			</a>
+
+			<a href="/work.html" title="">
+				Work<br>
+				<img src="/library/img/comps/work-comp.png" alt="">
+			</a>
+			
+		</div>		
+
+		<hr>
+		<h2 class="center">*** Generic Styles ***</h2>
+
+		<h1>This is an H1</h1>
+		<h2>This is an H2</h2>
+		<h3>This is an H3</h3>
+		<h4>This is an H4</h4>
+		<h5>This is an H5</h5>
+		<h6>This is an H6</h6>
+		<p>
+			This is default body text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias magnam at ipsa iure, eligendi corporis libero vero. Dicta, culpa, dolorum!
+		</p>
+		<a href="">This is default anchor link</a>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<p>Sample of default UL/LI</p>
+				<ul>
+					<li>Default Bullet List</li>
+					<li>Default Bullet List</li>
+					<li>Default Bullet List</li>
+				</ul>			
+			</div>
+			<div class="col-sm-6">
+				<p>Sample of default OL/LI</p>
+				<ol>
+					<li>Default Numbered List</li>
+					<li>Default Numbered List</li>
+					<li>Default Numbered List</li>
+				</ol>			
+			</div>
+		</div>
+
+		<hr>
+		<h2 class="center">*** Button Styles ***</h2>
+
+		<a href="" class="btn btn-primary">.btn-primary</a>
+		<a href="" class="btn btn-secondary">.btn-secondary</a>
+		<a href="" class="btn btn-tertiary">.btn-tertiary</a>
+
+		<hr>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+					<th>Header 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+				<tr>
+					<td>Some data 1</td>
+					<td>Some data 2</td>
+					<td>Some data 3</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		
+	</div>
+
+{% endblock %}

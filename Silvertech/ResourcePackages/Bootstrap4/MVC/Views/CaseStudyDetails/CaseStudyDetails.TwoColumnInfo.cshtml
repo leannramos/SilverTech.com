@@ -1,0 +1,39 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+<section class="project-overview" aria-label="project overview">
+    <div class="container">
+        <div class="row">
+
+            <!-- Project Info Col -->
+            <div class="col-xl-6">
+                @if (!string.IsNullOrEmpty(Model.ActionName))
+                {
+                    <div class="back-btn">
+                        <a href="@Model.ActionUrl" target="@Model.ActionTarget" class="btn btn-tertiary" title="@Model.ActionTitle">@Model.ActionName</a>
+                    </div>
+                }
+
+                    <div class="project-info">
+                        @Html.Raw(Html.HtmlSanitize(Model.Heading))
+                    </div>
+
+
+                </div>
+
+            <!-- Main Objectives Col -->
+            <div class="col-xl-6">
+                <div class="objectives">
+                    <div class="wrapper">
+                        @Html.Raw(Html.HtmlSanitize(Model.HeadingTwo))
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

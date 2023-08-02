@@ -1,0 +1,14 @@
+{% set pageTitle = "Work" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+    {% set heroTitle = "Work." %}
+	{% include "../UserControls/Modules/heros/compact-hero.html" %}
+    
+    <div class="container">
+        {% include "../UserControls/Modules/work/work-tabs.html" %}
+        {% include "../UserControls/Modules/work/work-items.html" %}
+    </div>
+
+{% endblock %}

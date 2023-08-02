@@ -1,0 +1,50 @@
+<!-- Notes:  add class "image-left" or "image-right" to <section> to change orientation -->
+<!-- Notes:  add class "no-image" to <section> to get full width.  You'll still need .image-right or .image-left for text orientation -->
+<section class="steps-cta {% if stepsImageAlign %}{{stepsImageAlign}}{% endif %} {% if stepsExtraClasses != "" %}{{stepsExtraClasses}}{% endif %}" aria-label="step callouts">
+	<div class="container">
+
+		<div class="steps-wrapper">
+			
+			<!-- Text Column -->
+			<div class="text-col">
+				
+				<div class="step">
+					<div class="step-number">{{stepsNumber}}</div>
+					<div class="step-title">{{stepsTitle}}</div>
+				</div>
+
+				<div class="description">
+					{% if showClientSpotlight == "true" %}
+						<div class="client-spotlight">
+							<p class="headline">Client Spotlight:</p>
+							<img src="/library/img/amelia-island.png" alt="amelia island">
+						</div>
+					{% endif %}
+
+					{% if stepsDescription != "" %} 
+						{{ stepsDescription }} 
+					{% else %}
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+					{% endif %}
+				</div>
+
+				<div class="cta">
+					<a href="" class="btn btn-primary" title="{{stepsButtonText}}">{{stepsButtonText}}</a>
+				</div>
+
+				{% if stepsButton2Text != "" %}
+					<div class="cta">
+						<a href="" class="btn btn-primary" title="{{stepsButton2Text}}">{{stepsButton2Text}}</a>
+					</div>
+				{% endif %}
+
+			</div>
+
+			<div class="photo-wrapper lazy-load-bg">
+				<div class="photo lazy-load-bg" style="background-image:url(/library/img/{{stepsImage}});"></div>
+			</div>
+
+		</div>
+
+	</div>
+</section>

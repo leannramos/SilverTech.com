@@ -1,0 +1,55 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+@*@{
+        string currentPageUrl = SiteMapBase.GetActualCurrentNode().Url.ToString().TrimStart('~').TrimEnd('/');
+        var currentUrl = HttpContext.Current.Request.Url.AbsolutePath.TrimStart('~').TrimEnd('/');
+    }*@
+
+@*@if (currentPageUrl == currentUrl)
+    {*@
+<section class="hero-inner case-study-detail @Model.CssClass" aria-label="Inner Page Banner">
+    <div class="background"></div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="caption">
+                <h1 class="headline">@Model.Heading</h1>
+
+                @if (!Model.HeadingTwo.IsNullOrEmpty())
+                {
+                    <div class="description">@Model.HeadingTwo</div>
+                }
+            </div>
+
+            <div class="generic-content">
+                @Html.Raw(Model.Description)
+                @if (!Model.ActionName.IsNullOrEmpty())
+                {
+                    <a class="btn btn-quaternary" href="@Model.ActionUrl" title="@Model.ActionTitle" target="@Model.ActionTarget">@Model.ActionName</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <div class="wrapper">
+            <div class="client-logo">
+                @if (!Model.ImageTwoUrl.IsNullOrEmpty())
+                {
+                    <img src="@Model.ImageTwoUrl" alt="@Model.ImageTwoAlternativeText" title="@Model.ImageTwoTitle">
+                }
+            </div>
+            <div class="image" style="background-image:url('@Model.SelectedSizeUrl');"></div>
+        </div>
+    </div>
+
+</section>
+
+<div id="hero-scroll-to"></div>
+
+@*}*@

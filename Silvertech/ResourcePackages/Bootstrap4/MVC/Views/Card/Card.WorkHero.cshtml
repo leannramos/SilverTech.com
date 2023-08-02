@@ -1,0 +1,11 @@
+@model Telerik.Sitefinity.Frontend.Card.Mvc.Models.Card.CardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<section class="hero-compact @Model.CssClass" aria-label="Banner">
+    <div class="container">
+        <h1>@Html.HtmlSanitize(Model.Heading)</h1>
+        <p>
+            @Html.HtmlSanitize(Model.Description)
+        </p>
+    </div>
+</section>

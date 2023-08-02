@@ -1,0 +1,155 @@
+.image-cta {
+	padding:75px 0;
+
+	.text-col {
+		padding:125px 0;
+		z-index:2;
+	}
+	.date {
+		@include font-size(20);
+		font-style:italic;
+		margin-bottom: 15px;
+	}
+	.headline {
+		margin:0 0 30px 0;
+		line-height: 45px;
+	}
+	.cta { margin-top: 25px; }
+	.photo-wrapper {
+		height:100%;
+	    width: calc(100% - 130px);
+		overflow:hidden;
+		transform: skew(-12deg);
+		transform-origin: bottom left;
+		
+		.photo {
+			height:100%;
+			background-size: cover;
+			background-position: top center;
+			background-repeat: no-repeat;
+			transform: skew(12deg);
+			transform-origin: bottom left;
+			width: calc(100% + 158px);
+		}
+	}
+	// Layout Options
+	&.image-left {
+		.text-col { 
+			order:2; 
+		}
+		.photo.col { order:1; }
+	}
+	// Only 1 angle on image
+	&.no-end-angle {
+		.photo-wrapper {
+			transform:none;
+			width:100%;
+
+			&:before {
+				content:'';
+				position:absolute;
+				left: -115px;
+				top:0;
+				height:100%;
+				width:130px;
+				background:#FFF;
+				transform: skew(-12deg);
+				transform-origin: bottom left;
+			}
+
+			.photo {
+				transform:none;
+			}
+		}
+	}
+}
+
+
+
+
+
+@include media-breakpoint-down(md) {
+	.image-cta {
+		padding:15px 0;
+
+		.headline { 
+			margin:0 0 20px 0;
+		}
+		.description {
+			@include font-size(14);
+			line-height: 24px;
+		}
+		.cta {
+			margin-top: 20px;
+			
+			.btn { @include font-size(20); }
+		}
+		.photo-wrapper { 
+			width:100%; 
+
+			.photo { height:425px; }
+		}
+		&.image-left {
+			.text-col { 
+				order:2; 
+				padding: 25px 15px 0 15px;
+			}
+			.photo-col { order:1; }			
+			.photo-wrapper {
+				transform:none;
+				margin-left:-15px;
+				margin-right:-15px;
+
+				.photo {
+					transform:none;
+					height:425px;
+					width:100%;
+				}
+			}
+		}
+		&.image-right {
+			.text-col { 
+				order:2; 
+				padding:25px 15px 0 15px;
+			}
+			.photo-col { order:1; }			
+			.photo-wrapper {
+				transform:none;
+				margin-left:-15px;
+				margin-right:-15px;
+
+				.photo {
+					transform:none;
+					height:425px;
+					width:100%;
+				}
+			}
+		}
+		&.no-end-angle {
+			.photo-wrapper {
+				&:before { display:none; }
+			}
+		}
+	}
+}
+
+
+
+
+@include media-breakpoint-down(sm) {
+	.image-cta {
+		.headline { line-height:31px; }
+		.photo-col { padding:0; }
+		.photo-wrapper {
+			margin:0;
+			.photo { height:325px; }
+		}
+		&.image-right, &.image-left {
+			.photo-col { padding:0; }
+			.photo-wrapper {
+				margin:0;
+				.photo { height:325px; }
+			}
+		}
+	}
+}

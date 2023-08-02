@@ -1,0 +1,22 @@
+.about-us {
+	position:relative;
+	background-image: 
+	    url('/library/img/dingbat-color.png'),
+	    url('/library/img/dingbat-color.png'),
+	    url('/library/img/dingbat-color.png');
+	background-position:
+	    top 601px left 228px, 
+	    top 1500px right 250px,
+	    bottom 300px left 100px; 
+	background-repeat:
+	    no-repeat; 
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.about-us { 
+		background:none; 
+		
+	}
+}

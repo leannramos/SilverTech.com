@@ -1,0 +1,48 @@
+﻿
+@using System.Web.Mvc;
+@using System.Collections.Generic;
+@model List<BankCore.Mvc.Models.Locations.LocationsViewModel>
+
+@if (string.IsNullOrWhiteSpace(ViewBag.QueryString))
+{
+    
+<div class="locations-listing">
+    @foreach (var item in Model)
+    {
+        var optionsText = item.HasDriveThrough ? "Drive-up & " : "";
+        optionsText += item.HasAtm ? "Walk-up ATM" : " ATM";
+        <div itemscope itemtype="http://schema.org/Organization">
+            <article class="location-item enable-on-map" data-lat="" data-lng="" data-address="@item.StreetAddress,
+                            @item.City, @item.State @item.Zip" aria-label="@item.Title">
+
+                <div class="photo">
+                    <img src="@item.LocationThumbnail.ImageUrl" alt="@item.LocationThumbnail.ImageAlt">
+                </div>
+
+                <div class="bankInfo">
+
+                    <a href="@item.Url" title="View more details on @item.Title">
+                        <h3 class="location-title">@item.Title</h3>
+                    </a>
+
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="bankAddress">
+                        <p  itemprop="streetAddress">@item.StreetAddress</p>
+                        <p><span itemprop="addressLocality">@item.City</span>, <span itemprop="addressRegion">@item.State</span> <span itemprop="postalCode">@item.Zip </span></p>
+                        <p>@optionsText</p>
+                    </div>
+
+                    <div class="options">
+                        Has @optionsText
+                    </div>
+
+                    <div class="ctas">
+                        <a href="@item.GoogleMapsLink" class="btn btn-primary" title="Get Directions to @item.Title" target="_blank">Get Directions</a>
+                        <a href="@item.Url" class="btn btn-tertiary" title="See Details About @item.Title">See Details</a>
+                    </div>
+                </div>
+
+            </article>
+            </div>
+            }
+        </div>
+    }

@@ -1,0 +1,56 @@
+.helpful-links {
+	margin:30px 0;
+	padding:30px 50px;
+	background:$quaternary;
+	color:#FFF;
+
+	.headline {
+		@include font-size(31);
+		line-height: 28px;
+		letter-spacing: 1px;
+		text-align: center;
+		margin:0 0 30px 0;
+	}
+
+	h1,h2,h3,h4,h5,h6,a { color:#FFF; }
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-bottom:20px;
+
+			&:last-child { margin-bottom: 0; }
+			a {
+				display:block;
+				border:1px solid #FFF;
+				padding:20px;
+				text-align: center;
+				text-decoration: none;
+				font-family: $secondary-font;
+				line-height: 21px;
+				text-transform: uppercase;
+				letter-spacing:.5px;
+				line-height: 17px;
+				transition:background .2s ease-in-out, color .2s ease-in-out;
+
+				&:hover, &:focus, &:active {
+					background:#FFF;
+					color:$quaternary;
+				}
+
+			}
+		}
+	}
+
+}
+
+
+
+@include media-breakpoint-down(md) {
+	.helpful-links {
+		margin:15px 0;
+		padding:20px;
+	}
+}

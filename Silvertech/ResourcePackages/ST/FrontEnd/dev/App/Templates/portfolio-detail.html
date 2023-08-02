@@ -1,0 +1,74 @@
+{% set pageTitle = "Portfolio Detail" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "artem-beliaikin-e--geRd5eCQ-unsplash.jpg" %}
+	{% set heroHeadline = "Client Spotlight." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "Website design & development on the Sitecore Web Content and Experience Platform, digital strategy and hyper-personalization." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "cutx-logo.png" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Project Overview (Not using anymore but keeping for now) -->
+	{% include "../UserControls/Modules/portfolio/project-overview.html" %} 
+
+	<div class="container process-back-btn">
+		<div class="back-btn">
+			<a href="/portfolio-landing.html" class="btn btn-tertiary" title="Back to our work">BACK TO OUR WORK</a>
+		</div>
+	</div>
+
+	<!-- The Process (WYSIWYG) -->
+	<section class="portfolio-process">
+		<div class="container">
+			<div class="process-content">
+				
+				<h2 class="headline">The Process</h2>
+				<p>
+					SilverTech worked with CUTX to identify that the best strategy to reach their goals was to determine a path that would create a seamless experience for the user across all touch points on the customer journey. They also, needed to integrate live information, knowledge base articles, data, and live loan rates. Using first, second, and third-party data, CUTX prospects were immediately segmented into personas based on the products and services offered. The segmented personas and personalized Calls to Action drove site visitors down their intended web journey.
+				</p>			
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Client CTA (right image) -->
+	{% set clientCTA_ImageAlign = "image-right" %}
+	{% set clientCTA_SectionTitle = "Objectives" %}
+	{% set clientCTA_MainImage = "girl-and-dog.jpg" %}
+	{% set clientCTA_clientLogo = "" %}
+	{% set clientCTA_ClientName = "" %}
+	{% set clientCTA_ButtonText = "" %}
+	{% include "../UserControls/Modules/ctas/client-cta.html" %}
+
+	<!-- The Process (WYSIWYG) -->
+	<section class="portfolio-process">
+		<div class="container">
+			<div class="process-content">
+				
+				<h2 class="headline">The Results</h2>
+				<p>
+					As a result, CUTX has seen an immediate increase in both leads and fulfilled loan applications based upon the deep personalization and improved website experience. These results conclude that CUTX has not only met their desired expectations for themselves but have exceeded them while collaborating with SilverTech.
+				</p>
+			
+
+			</div>
+		</div>
+	</section>
+
+	<!-- The Results -->
+	{% include "../UserControls/Modules/portfolio/project-results.html" %}
+
+	
+
+{% endblock %}

@@ -1,0 +1,21 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+@{ 
+    var cssClass = !Model.CssClass.IsNullOrEmpty() ? Model.CssClass : "whiteBG";
+}
+
+<article class="testimonial @cssClass" aria-label="testimonial from @Model.HeadingTwo">
+    <div class="container">
+        <div class="quote">
+            @Model.Description
+        </div>
+
+
+        <div class="name">@Model.HeadingTwo</div>
+        <div class="company">@Model.Heading</div>
+    </div>
+</article>

@@ -1,0 +1,90 @@
+﻿@model SitefinityWebApp.Mvc.Models.JobListingsViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using System.Text.RegularExpressions
+
+<!-- Current Openings -->
+<section class="current-openings" aria-label="Current Silvertech Job openings">
+    <div class="container process-back-btn">
+        <div class="back-btn">
+            <a href="/about-us" class="btn btn-tertiary white" title="Back to About">Back to About</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Current Openings.</h2>
+    </div>
+
+    <div class="container">
+        <div class="offices">
+            <div class="row">
+                @if (!Model.Heading.IsNullOrEmpty())
+                {
+                    <div class="col-md-12">
+                        <section class=" office" aria-label="@Model.Heading office job openings">
+                            <h3 class="office-location">@Model.Heading Office:</h3>
+
+                            <!-- Office Positions Available -->
+                            <div class="positions">
+                                @if (Model.Listings.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var jobListing in Model.Listings)
+                                        {
+                                            <li>@Html.HtmlSanitize(Regex.Replace(jobListing.ToString(), @" ?\(.*?\)", string.Empty))</li>
+                                        }
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <div class="no-openings">
+                                        <div class="zilch">No current openings in this location.</div>
+                                        <div class="questions">
+                                            <strong>Have Questions? <a href="mailto:careers@silvertech.com">careers@silvertech.com</a></strong>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </section>
+                    </div>
+                }
+
+                @if (!Model.Heading2.IsNullOrEmpty())
+                {
+                    <div class="col-md-12">
+                        <section class=" office" aria-label="@Model.Heading2 office job openings">
+                            <h3 class="office-location">@Model.Heading2 Office:</h3>
+
+                            <!-- Office Positions Available -->
+                            <div class="positions">
+                                @if (Model.Listings2.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var jobListing in Model.Listings2)
+                                        {
+                                        <li>@Html.HtmlSanitize(Regex.Replace(jobListing.ToString(), @" ?\(.*?\)", string.Empty))</li>
+                                        }
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <div class="no-openings">
+                                        <div class="zilch">No current openings in this location.</div>
+                                        <div class="questions">
+                                            <strong>Have Questions? <a href="mailto:careers@silvertech.com">careers@silvertech.com</a></strong>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </section>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="benefits" aria-label="Game changing benefits">
+    <div class="container">
+        @Html.Raw(Model.Description)
+    </div>
+</section>

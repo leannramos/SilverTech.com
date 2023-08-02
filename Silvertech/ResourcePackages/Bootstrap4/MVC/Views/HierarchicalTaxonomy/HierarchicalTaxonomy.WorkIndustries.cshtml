@@ -1,0 +1,24 @@
+﻿@model Telerik.Sitefinity.Frontend.Taxonomies.Mvc.Models.TaxonomyViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+@{
+    var currentUrl = HttpContext.Current.Request.Url;
+     var isTopLevelActive = Model.Taxa.Any(x => x.Url == currentUrl.ToString());
+}
+
+
+
+<li class="st-tab @(isTopLevelActive ? "active" : "") @Model.CssClass">
+    <a href="#" class="st-tab-toggle" title="View Industry Categories">
+        Industries
+    </a>
+    <div class="st-tab-content">
+        <!-- Add .active if needed to sub links (Ex: pre-showing a category on load) -->
+        @foreach (var taxon in Model.Taxa)
+        {
+            <a href="@taxon.Url" title="Show items tagged @taxon.Title" class="@(taxon.Url == currentUrl.ToString() ? "active" : "")">@taxon.Title</a>
+        }
+    </div>
+</li>
+

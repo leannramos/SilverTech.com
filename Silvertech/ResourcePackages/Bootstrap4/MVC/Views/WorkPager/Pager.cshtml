@@ -1,0 +1,26 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Helpers.ViewModels.PagerViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+@{
+    var hasPrevious = (Model.CurrentPage - 1) > 0;
+    var hasNext = (Model.CurrentPage + 1) <= Model.TotalPagesCount;
+}
+
+<div class="action-group text-center">
+    @if (hasPrevious)
+    {
+        <a href="@String.Format(Model.RedirectUrlTemplate, Model.CurrentPage - 1)" class="btn btn-outline-secondary" title="Previous">
+
+            Previous
+        </a>
+    }
+
+    @if (hasNext)
+    {
+        <a href="@String.Format(Model.RedirectUrlTemplate, Model.CurrentPage + 1)" class="btn btn-outline-secondary" title="Next">
+            Next
+        </a>
+    }
+</div>
+

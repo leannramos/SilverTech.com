@@ -1,0 +1,30 @@
+resources:
+  repositories:
+    - repository: SNHUBitBucketRepo
+      type: bitbucket
+      endpoint: SNHU Katalon Tests Repo
+      name: snhuwebservices/Katalon-Tests
+
+pool:
+  vmImage: windows-2019
+
+steps:
+- checkout: SNHUBitBucketRepo
+#- script: ls $(Build.SourcesDirectory)
+#- powershell: Start-Process -FilePath BrowserStackLocal.exe -ArgumentList "--key j9oJJyN74SFdmmfKfoRM"
+
+
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Test SNHU Browserstack'
+    browserstackLocal: true
+    bsLocalOptions: '{"verbose": true, "forceLocal": true, "key": "j9oJJyN74SFdmmfKfoRM"}'
+
+#- powershell: Stop-Process -Name "BrowserStackLocal"
+#- powershell: cd C:\windows\System32\config\systemprofile
+#- powershell: Start-Process -FilePath BrowserStackLocal.exe -ArgumentList "--version"
+
+- task: katalonTask@0
+  inputs:
+    version: '7.6.2'
+    executeArgs: 'katalonc -noSplash -projectPath="D:\a\1\s\Forms.prj" -g_remoteUrl="http://test:test@hub-cloud.browserstack.com/wd/hub" -g_device="Samsung Galaxy S20" -g_realmobile="true" -g_os="10.0" -retry=0 -testSuitePath="Test Suites/SNHU HomePage Regression Tests" -executionProfile="default" -browserType="Remote" -apiKey="bb151a08-ae1b-4173-b16f-6171ad3ef7a9" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'

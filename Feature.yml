@@ -1,0 +1,44 @@
+pool:
+  vmImage: windows-2019
+  demands:
+  - msbuild
+  - visualstudio
+
+variables:
+  BuildPlatform: 'any cpu'
+  BuildConfiguration: 'release'
+
+steps:
+- powershell: |
+   $commitId= "$env:BUILD_SOURCEVERSION"
+   $definitionName= "$env:BUILD_DEFINITIONNAME"
+   $shortId= $commitId.Substring(0, 8)
+   $date = Get-Date -format "yyyyMMdd"
+   $buildName=$definitionName+"_"+$date+"_"+$shortId
+   Write-Host ("##vso[build.updatebuildnumber]$buildName")
+  displayName: GenerateBuildNumber
+
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 5.3.0'
+  inputs:
+    versionSpec: 5.3.0
+    checkLatest: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: 'Silvertech.sln'
+    feedsToUse: config
+    nugetConfigPath: nuget.config
+
+- task: VSBuild@1
+  displayName: 'Build solution'
+  inputs:
+    solution: 'Silvertech.sln'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(Build.ArtifactStagingDirectory)\\" /p:AutoParameterizationWebConfigConnectionStrings=False'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    clean: true
+    maximumCpuCount: true
+
+

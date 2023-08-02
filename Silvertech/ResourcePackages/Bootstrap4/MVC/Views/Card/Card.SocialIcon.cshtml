@@ -1,0 +1,10 @@
+@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+<li>
+    <a href="@Html.UrlSanitize(Model.ActionUrl)" title="@Model.ActionTitle" target="@Model.ActionTarget" class="@(Model.IsActionSpeedbump ? "speedbump-link" : "")" data-redirect-message="@Model.ActionSpeedbumpMessage">
+        <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText">
+    </a>
+</li>
+
+
+

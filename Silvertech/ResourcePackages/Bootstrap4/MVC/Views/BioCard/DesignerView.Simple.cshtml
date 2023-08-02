@@ -1,0 +1,152 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<form>
+    <div class="form-group">
+        <label for="heading-text">
+            Name
+        </label>
+        <input id="heading-text" type="text" class="form-control" ng-model="properties.Heading.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="heading-two-text">
+            Position
+        </label>
+        <input id="heading-two-text" type="text" class="form-control" ng-model="properties.HeadingTwo.PropertyValue" />
+    </div>
+
+    <div class="form-group">
+        <label for="description-text">Hover Text</label>
+        <textarea id="description-text" class="form-control" rows="3" ng-model="properties.Description.PropertyValue"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="image-field" class="m-top-sm">@Html.Resource("Image")</label>
+        <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                        sf-model="properties.ImageId.PropertyValue"
+                        sf-image="selectedImage"
+                        sf-provider="properties.ImageProviderName.PropertyValue"
+                        id="image-field"
+                        sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+    </div>
+
+    <hr class="side-to-side">
+
+    <expander expander-title='Bio Link'>
+
+        <div class="form-group">
+            <label for="label-text">
+                Link Text
+            </label>
+            <input id="label-text" type="text" ng-model="properties.ActionName.PropertyValue" class="form-control" />
+            <p class="text-muted">@Html.Resource("LearnMore")</p>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitle">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitle" type="text" ng-model="properties.ActionTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="true" />
+                    @Html.Resource("PageWithinLabel")
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageId.PropertyValue"
+                                  ng-show="properties.IsPageSelectMode.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="false" />
+                    @Html.Resource("ExternalURL")
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectMode.PropertyValue" ng-model="properties.LinkedUrl.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectMode.PropertyValue">@Html.Resource("Example")</p>
+                </div>
+            </div>
+        </div>
+    </expander>
+
+    <hr class="side-to-side">
+
+    <expander expander-title='LinkedIn Link'>
+
+        <div class="form-group">
+            <label for="label-Two-text">
+                Link Text
+            </label>
+            <input id="label-Two-text" type="text" ng-model="properties.ActionTwoName.PropertyValue" class="form-control" />
+            <p class="text-muted">@Html.Resource("LearnMore")</p>
+        </div>
+
+        <div class="form-group">
+            <label>Link Target: </label>
+            <select class="form-control" ng-model="properties.ActionTwoTarget.PropertyValue">
+                <option value="" selected="selected">Same Window</option>
+                <option value="_blank">New Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitleTwo">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitleTwo" type="text" ng-model="properties.ActionTwoTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeTwo.PropertyValue" ng-value="true" />
+                    @Html.Resource("PageWithinLabel")
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageIdTwo.PropertyValue"
+                                  ng-show="properties.IsPageSelectModeTwo.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectModeTwo.PropertyValue" ng-value="false" />
+                    @Html.Resource("ExternalURL")
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectModeTwo.PropertyValue" ng-model="properties.LinkedUrlTwo.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectModeTwo.PropertyValue">@Html.Resource("Example")</p>
+                </div>
+            </div>
+        </div>
+    </expander>
+
+    <expander expander-title='@Html.Resource("MoreOptions")'>
+        <div class="form-group">
+            <label for="templateName">@Html.Resource("Template")</label>
+            <div class="row">
+                <div class="col-xs-6">
+                    <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                        @foreach (var viewName in Html.GetViewNames("BioCard", @"(?<viewName>^Card.*)$"))
+                        {
+                            <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <style-dropdown selected-class="properties.CssClass.PropertyValue" view-name="properties.TemplateName.PropertyValue"></style-dropdown>
+        <div class="form-group">
+            <label for="cssClass">
+                @Html.Resource("CssClasses")
+            </label>
+            <input id="cssClass" type="text" ng-model="properties.CssClass.PropertyValue" class="form-control" />
+        </div>
+    </expander>
+</form>

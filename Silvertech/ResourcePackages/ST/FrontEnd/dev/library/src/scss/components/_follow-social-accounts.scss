@@ -1,0 +1,72 @@
+.follow-social-accounts {
+	padding:45px 0 15px 0;
+	text-align: center;
+
+	.row {
+		justify-content: center;		
+	}
+	.headline {
+		margin:0 0 20px 0;
+		@include font-size(35);
+		line-height: 41px;
+	}
+	.account {
+		width:153px;
+		height:153px;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction:column;
+		color:$quaternary;
+		text-decoration: none;
+		margin: 0 50px 20px 0;
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+		transition:background .2s, color .2s, box-shadow .2s, transform .2s;
+
+		// fix for ie11 bug
+	    @media all and (-ms-high-contrast:none) {
+			transition:none;
+	    }
+		&:last-child { margin-right: 0; }
+		&:hover, &:focus {
+			box-shadow:0 0 9px 0 rgba(0,0,0,.7);
+		    transform: scale(1.1);
+		    background:$quaternary;
+		    color:#FFF;
+
+		}
+		.icon { 
+			@include font-size(43);
+			margin-bottom: 10px; 
+		}
+		.handler { 
+			@include font-size(18);
+			font-weight: 700;
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(sm) {
+	.follow-social-accounts {
+		padding:30px 0 10px 0;
+
+		.headline {
+			@include font-size(24);
+			line-height: 20px;
+		}
+		.account {
+			width:78px;
+			height:78px;
+			margin:0 20px 20px 0;
+
+			.icon {
+				@include font-size(24);
+			}
+			.handler {
+				@include font-size(10);
+			}
+		}
+	}
+}

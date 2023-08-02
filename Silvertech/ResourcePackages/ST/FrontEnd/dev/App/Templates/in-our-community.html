@@ -1,0 +1,64 @@
+{% set pageTitle = "In Our Community" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green-horizontal" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "Lora2.jpg" %}
+	{% set heroSubheadline = "" %}
+	{% set heroHeadline = "In Our Community." %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Full Height CTA (Image Right) -->
+	{% set fullHeightCTA_ImageAlign = "image-right" %}
+	{% set fullHeightCTA_Color = "green" %}
+	{% set fullHeightCTA_Image = "LEGO-SEE.jpg" %}
+	{% set fullHeightCTA_logo = "see-science-center.png" %}
+	{% set fullHeightCTA_Headline = "Pro-bono Brand Refresh Website Design, Development And Strategy" %}
+	{% set fullHeightCTA_Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam " %}
+	{% set fullHeightCTA_link = "Test Link" %}
+	{% include "../UserControls/Modules/ctas/full-height-cta.html" %}
+
+	<!-- Full Height CTA (Image Left) -->
+	{% set fullHeightCTA_ImageAlign = "image-left" %}
+	{% set fullHeightCTA_Color = "green" %}
+	{% set fullHeightCTA_Image = "ben-white-4K2lIP0zc_k-unsplash.jpg" %}
+	{% set fullHeightCTA_logo = "moose-on-the-loose.png" %}
+	{% set fullHeightCTA_Headline = "Donation to the New Hampshire Historical Society For Their 4th Grade Curriculum Website, Moose on the Loose" %}
+	{% set fullHeightCTA_Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd" %}
+	{% set fullHeightCTA_link = "" %}
+	{% include "../UserControls/Modules/ctas/full-height-cta.html" %}
+
+	<!-- Full Height CTA (Image Right) -->
+	{% set fullHeightCTA_ImageAlign = "image-right" %}
+	{% set fullHeightCTA_Color = "green" %}
+	{% set fullHeightCTA_Image = "sergei-akulich-w_Z94g8ht8s-unsplash.jpg" %}
+	{% set fullHeightCTA_logo = "boys-and-girls-club.png" %}
+	{% set fullHeightCTA_Headline = "SilverTech Crew Built Bikes For Children over at the Boys And Girls Club of Manchester" %}
+	{% set fullHeightCTA_Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam " %}
+	{% set fullHeightCTA_link = "" %}
+	{% include "../UserControls/Modules/ctas/full-height-cta.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_Headline = "Other organizations we’ve assisted." %}
+	{% set logoPreviews_logo1 = "kentucky-bank.png" %}
+	{% set logoPreviews_logo2 = "ahcu-white-logo.png" %}
+	{% set logoPreviews_logo3 = "ucb-white-logo.png" %}
+	{% set logoPreviews_logo4 = "alcu-white-logo.png" %}
+	{% set logoPreviews_ctaText = "" %}
+	{% set logoPreviews_MultipleRows = "true" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+	
+
+{% endblock %}

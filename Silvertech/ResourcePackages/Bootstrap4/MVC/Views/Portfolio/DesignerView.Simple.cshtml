@@ -1,0 +1,273 @@
+﻿@using Telerik.Sitefinity.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+    <form>
+        <div class="form-group">
+            <label for="heading-text">
+                Title
+            </label>
+            <input id="heading-text" type="text" class="form-control" ng-model="properties.Title.PropertyValue" />
+        </div>
+        <div class="form-group">
+            <label for="desc">
+                Portfolio Description
+            </label>
+            <textarea id="desc" type="text" class="form-control" ng-model="properties.Description.PropertyValue" />
+        </div>
+        <div class="form-group">
+            <label for="label-text">
+                Link Text
+            </label>
+            <input id="label-text" type="text" ng-model="properties.ActionName.PropertyValue" class="form-control" />
+            <p class="text-muted">Example: Learn More</p>
+        </div>
+
+        <div class="form-group">
+            <label>Link Target: </label>
+            <select class="form-control" ng-model="properties.ActionTarget.PropertyValue">
+                <option value="" selected="selected">Same Window</option>
+                <option value="_blank">New Window</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="label-actionTitle">
+                Link ADA Title
+            </label>
+            <input id="label-actionTitle" type="text" ng-model="properties.ActionTitle.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label>Link to...</label>
+            <div class="radio m-top-none">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="true" />
+                    Page Within the Site...
+                </label>
+                <sf-list-selector class="label-content"
+                                  sf-page-selector
+                                  sf-selected-item-id="properties.LinkedPageId.PropertyValue"
+                                  ng-show="properties.IsPageSelectMode.PropertyValue"></sf-list-selector>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="properties.IsPageSelectMode.PropertyValue" ng-value="false" />
+                    External URL...
+                </label>
+                <div class="label-content">
+                    <input type="text" class="form-control" ng-show="!properties.IsPageSelectMode.PropertyValue" ng-model="properties.LinkedUrl.PropertyValue" />
+                    <p class="text-muted" ng-show="!isPageSelectModeproperties.IsPageSelectMode.PropertyValue">Example: https://www.progress.com/sitefinity-cms</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="side-to-side" />
+
+        <div>
+            <label>
+                Carousel Slide Image
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="image-field" class="m-top-sm">Image</label>
+            <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                            sf-model="properties.ImageId.PropertyValue"
+                            sf-image="selectedImage"
+                            sf-provider="properties.ImageProviderName.PropertyValue"
+                            id="image-field"
+                            sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+        </div>
+        <div class="form-group">
+            <label for="image-title">
+                Title
+            </label>
+            <input id="image-title" type="text" class="form-control" ng-model="properties.ImageTitle.PropertyValue" />
+        </div>
+        <div class="form-group">
+            <label for="image-alt">
+                Alt Text
+            </label>
+            <input id="image-alt" type="text" class="form-control" ng-model="properties.ImageAltText.PropertyValue" />
+        </div>
+        <div class="form-group">
+            <label for="image-desc">
+                Description
+            </label>
+            <textarea id="image-desc" type="text" class="form-control" ng-model="properties.ImageDescription.PropertyValue" />
+        </div>
+
+        <hr class="side-to-side">
+
+        <div>
+            <label>
+                Static Portfolio Slides
+            </label>
+        </div>
+
+        <expander expander-title='Slide 1'>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                                sf-model="properties.ImageId1.PropertyValue"
+                                sf-image="selectedImage"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                id="image-field"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+            <div class="form-group">
+                <label for="image-1-title">
+                    Title
+                </label>
+                <input id="image-1-title" type="text" class="form-control" ng-model="properties.ImageTitle1.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-1-alt">
+                    Alt Text
+                </label>
+                <input id="image-1-alt" type="text" class="form-control" ng-model="properties.ImageAltText1.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-1-desc">
+                    Description
+                </label>
+                <textarea id="image-1-desc" type="text" class="form-control" ng-model="properties.ImageDescription1.PropertyValue" />
+            </div>
+        </expander>
+
+        <expander expander-title='Slide 2'>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                                sf-model="properties.ImageId2.PropertyValue"
+                                sf-image="selectedImage"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                id="image-field"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+            <div class="form-group">
+                <label for="image-2-title">
+                    Title
+                </label>
+                <input id="image-2-title" type="text" class="form-control" ng-model="properties.ImageTitle2.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-2-alt">
+                    Alt Text
+                </label>
+                <input id="image-2-alt" type="text" class="form-control" ng-model="properties.ImageAltText2.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-2-desc">
+                    Description
+                </label>
+                <textarea id="image-2-desc" type="text" class="form-control" ng-model="properties.ImageDescription2.PropertyValue" />
+            </div>
+        </expander>
+
+        <expander expander-title='Slide 3'>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                                sf-model="properties.ImageId3.PropertyValue"
+                                sf-image="selectedImage"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                id="image-field"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+            <div class="form-group">
+                <label for="image-3-title">
+                    Title
+                </label>
+                <input id="image-3-title" type="text" class="form-control" ng-model="properties.ImageTitle3.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-3-alt">
+                    Alt Text
+                </label>
+                <input id="image-3-alt" type="text" class="form-control" ng-model="properties.ImageAltText3.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-3-desc">
+                    Description
+                </label>
+                <textarea id="image-3-desc" type="text" class="form-control" ng-model="properties.ImageDescription3.PropertyValue" />
+            </div>
+        </expander>
+
+        <expander expander-title='Slide 4'>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                                sf-model="properties.ImageId4.PropertyValue"
+                                sf-image="selectedImage"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                id="image-field"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+            <div class="form-group">
+                <label for="image-4-title">
+                    Title
+                </label>
+                <input id="image-4-title" type="text" class="form-control" ng-model="properties.ImageTitle4.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-4-alt">
+                    Alt Text
+                </label>
+                <input id="image-4-alt" type="text" class="form-control" ng-model="properties.ImageAltText4.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-4-desc">
+                    Description
+                </label>
+                <textarea id="image-4-desc" type="text" class="form-control" ng-model="properties.ImageDescription4.PropertyValue" />
+            </div>
+        </expander>
+
+        <expander expander-title='Slide 5'>
+            <div class="form-group">
+                <label for="image-field" class="m-top-sm">Image</label>
+                <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                                sf-model="properties.ImageId5.PropertyValue"
+                                sf-image="selectedImage"
+                                sf-provider="properties.ImageProviderName.PropertyValue"
+                                id="image-field"
+                                sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"></sf-image-field>
+            </div>
+            <div class="form-group">
+                <label for="image-5-title">
+                    Title
+                </label>
+                <input id="image-5-title" type="text" class="form-control" ng-model="properties.ImageTitle5.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-5-alt">
+                    Alt Text
+                </label>
+                <input id="image-5-alt" type="text" class="form-control" ng-model="properties.ImageAltText5.PropertyValue" />
+            </div>
+            <div class="form-group">
+                <label for="image-5-desc">
+                    Description
+                </label>
+                <textarea id="image-5-desc" type="text" class="form-control" ng-model="properties.ImageDescription5.PropertyValue" />
+            </div>
+        </expander>
+
+        <hr class="side-to-side">
+
+        <div class="form-group">
+            <label for="templateName">Template</label>
+            <div class="row">
+                <div class="col-xs-6">
+                    <select id="templateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                        @foreach (var viewName in Html.GetViewNames("Card", @"(?<viewName>^Portfolio.*)$"))
+                        {
+                            <option value="@viewName"> @viewName.SplitCamelCase()</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>

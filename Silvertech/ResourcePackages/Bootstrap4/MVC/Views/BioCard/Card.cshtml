@@ -1,0 +1,28 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<div class="col-sm-6 col-md-4 col-lg-3 @Model.CssClass">
+    <div class="bio">
+
+        <a href="@Model.ActionUrl" title="@Model.ActionTitle" target="@Model.ActionTarget" class="photo" style="background-image:url('@Model.SelectedSizeUrl');">
+            <div class="dingbat"></div>
+            <div class="hover-state">
+                <div class="short-description">
+                    @Model.Description
+                </div>
+            </div>
+        </a>
+
+        <div class="caption">
+            <h3 class="name">@Model.Heading</h3>
+            <div class="position">@Model.HeadingTwo</div>
+            @if (!Model.ActionTwoUrl.IsNullOrEmpty())
+            {
+                <div class="social">
+                    <a href="@Model.ActionTwoUrl" title="@Model.ActionTwoTitle" aria-label="@Model.ActionTwoName with @Model.Heading" target="_blank">@Model.ActionTwoName</a>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

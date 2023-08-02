@@ -1,0 +1,65 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Configuration;
+@using Common.CustomConfig;
+@using Telerik.Sitefinity.Taxonomies;
+@using Telerik.Sitefinity.Taxonomies.Model;
+
+@{
+    var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri;
+    TaxonomyManager manager = TaxonomyManager.GetManager();
+    var taxonomies = manager.GetTaxonomies<FlatTaxonomy>().FirstOrDefault(t => t.Name == "tags")?.Taxa;
+    var imageUrl = "";
+    if (Model.Item.Fields.HeroImage != null)
+    {
+        imageUrl = Model.Item.Fields.HeroImage.Fields.MediaUrl;
+    }
+
+    var GlobalConfig = Config.Get<GlobalConfig>();
+}
+
+<section class="hero-inner green newsletter-detail" aria-label="@Model.Item.Fields.Title Blog Details Banner">
+    <div class="background"></div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="caption">
+
+                <h1 class="headline">@Model.Item.Fields.Title</h1>
+
+                @if (!Model.Item.GetDateTime("PublicationDate", "MM/dd/yy").IsNullOrEmpty())
+                {
+                    <div class="date">
+                        <div class="date-val">@Model.Item.GetDateTime("PublicationDate", "MM/dd/yy")</div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <div class="wrapper">
+            <div class="image" style="background-image:url('@imageUrl');"></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="newsletter archive" aria-label="blog detail">
+
+    <div class="page-back-btn row">
+        <div class="container">
+            <a href="@GlobalConfig.NewsletterPageUrl" class="btn btn-tertiary" title="Back to Newsletter">Back to Newsletter</a>
+        </div>
+    </div>
+
+    <div class="generic-content">
+        <div class="container">
+            @Html.HtmlSanitize((string)Model.Item.Fields.Content)
+        </div>
+    </div>
+
+</section>

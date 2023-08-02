@@ -1,0 +1,76 @@
+{% set pageTitle = "Technology Example" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+<!-- Hero Inner -->
+{% set heroColor = "blue" %}
+{% set heroCustomClasses = "" %}
+{% set heroImage = "Lucy1.jpg" %}
+{% set heroHeadline = "Tech." %}
+{% set heroSubheadline = "false" %}
+{% set heroShowDescription = "Tech is complicated. Companies often find themselves tangled in a big messy web of disparate systems and fuzzy data sources. Who loses out? Customers do - with a less-than-stellar online and offline experience. That’s why it’s a good thing tech is our forte." %}
+{% set heroShowAuthor = "false" %}
+{% set heroShowDate = "false" %}
+{% set heroShowReadTime = "false" %}
+{% set heroShowDownArrow = "true" %}
+{% set heroShowClientLogo = "false" %}
+{% set heroShowClientLogoOverImage = "false" %}
+{% set heroShowGenericContent = "false" %}
+{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+<div class="container content-block-wrapper">
+    <h2>Content Management System (CMS) Platforms.</h2>
+    <p>
+        Teamwork makes the dream work. We only want the best of the best on our roster, so we partner with top-class
+        content
+        management system platforms who aren’t afraid to change the game through industry-leading vision and tech.
+    </p>
+</div>
+
+<div class="linear-gradient-bg">
+    <div class="container flex-container">
+        {% set p_icon = "sf-icon.png" %}
+        {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        {% set p_icon = "sitecore-ico.png" %}
+        {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        {% set p_icon = "kentico-ico.png" %}
+        {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        {% set p_icon = "drupal-ico.png" %}
+        {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        {% set p_icon = "wordpress-ico.png" %}
+        {% include "../UserControls/Modules/ctas/platform-link.html" %}
+    </div>
+</div>
+
+<div class="container content-block-wrapper">
+        <h2>Content Management System (CMS) Platforms.</h2>
+        <p>
+            Teamwork makes the dream work. We only want the best of the best on our roster, so we partner with top-class
+            content
+            management system platforms who aren’t afraid to change the game through industry-leading vision and tech.
+        </p>
+    </div>
+    
+    <div class="linear-gradient-bg">
+        <div class="container flex-container">
+            {% set p_icon = "sf-icon.png" %}
+            {% include "../UserControls/Modules/ctas/platform-link.html" %}
+            {% set p_icon = "sitecore-ico.png" %}
+            {% include "../UserControls/Modules/ctas/platform-link.html" %}
+            {% set p_icon = "kentico-ico.png" %}
+            {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        </div>
+        <div class="container flex-container">
+                {% set p_icon = "sf-icon.png" %}
+                {% include "../UserControls/Modules/ctas/platform-link.html" %}
+                {% set p_icon = "sitecore-ico.png" %}
+                {% include "../UserControls/Modules/ctas/platform-link.html" %}
+                {% set p_icon = "kentico-ico.png" %}
+                {% include "../UserControls/Modules/ctas/platform-link.html" %}
+        </div>
+    </div>
+    
+
+{% endblock %}

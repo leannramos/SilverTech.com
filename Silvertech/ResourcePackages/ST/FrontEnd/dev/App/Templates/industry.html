@@ -1,0 +1,36 @@
+{% set pageTitle = "Industry" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "green" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "camila-cordeiro-h5VFu4EyNjw-unsplash.jpg" %}
+	{% set heroSubheadline = "Our client in" %}
+	{% set heroHeadline = "Financial Services." %}
+	{% set heroShowDescription = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam" %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Industry Cards -->
+	{% include "../UserControls/Modules/cards/industry-cards.html" %}
+
+	<!-- Client Logo Previews -->
+	{% set logoPreviews_Headline = "Other Financial Services Clients" %}
+	{% set logoPreviews_logo1 = "kentucky-bank.png" %}
+	{% set logoPreviews_logo2 = "ahcu-white-logo.png" %}
+	{% set logoPreviews_logo3 = "ucb-white-logo.png" %}
+	{% set logoPreviews_logo4 = "alcu-white-logo.png" %}
+	{% set logoPreviews_ctaText = "" %}
+	{% set logoPreviews_MultipleRows = "true" %}
+	{% include "../UserControls/Modules/client-logo-previews.html" %}
+
+
+{% endblock %}

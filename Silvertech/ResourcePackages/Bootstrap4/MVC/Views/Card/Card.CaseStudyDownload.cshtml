@@ -1,0 +1,48 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+<article class="case-study-download-cta" aria-label="Download Case Study">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-lg-7">
+                <h2 class="headline">
+                    <span>@Model.HeadingTwo</span>@Model.Heading
+                </h2>
+
+                <p>
+                    @Model.Description
+                </p>
+
+                <div class="case-study-download-cta__actions">
+                    <a href="@Model.ActionUrl" target="@Model.ActionTarget" class="btn btn-outline-secondary" aria-label="@Model.ActionName">
+                        <i class="fa fa-download"></i> @Model.ActionName
+                    </a>
+                </div>
+            </div>
+
+            <div class="col col-12 col-lg-5">
+                <div class="case-study-download-cta-img">
+                    <div class="case-study-download-cta-img_inner">
+                        <img src="@Model.SelectedSizeUrl"
+                             alt="@Model.ImageAlternativeText">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-download-cta-img_glyph">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227.7 227.9"><defs><style>
+                                                                                        .cls-1 {
+                                                                                            opacity: 0.04;
+                                                                                        }
+
+                                                                                        .cls-2 {
+                                                                                            fill: #202945;
+                                                                                        }
+            </style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g class="cls-1"><circle class="cls-2" cx="210.2" cy="17.7" r="17.2" /><circle class="cls-2" cx="185.7" cy="42.4" r="13.3" /><circle class="cls-2" cx="205.6" cy="71.2" r="13.3" /><circle class="cls-2" cx="214.4" cy="105.3" r="13.3" /><circle class="cls-2" cx="211.5" cy="140.2" r="13.3" /><circle class="cls-2" cx="196.6" cy="171.9" r="13.3" /><circle class="cls-2" cx="172.3" cy="196.6" r="13.3" /><circle class="cls-2" cx="140.4" cy="211.5" r="13.3" /><circle class="cls-2" cx="105" cy="214.6" r="13.3" /><circle class="cls-2" cx="71.4" cy="205.8" r="13.3" /><circle class="cls-2" cx="42.3" cy="185.5" r="13.3" /><circle class="cls-2" cx="22.1" cy="156.5" r="13.3" /><circle class="cls-2" cx="13.3" cy="122.7" r="13.3" /><circle class="cls-2" cx="16.1" cy="88" r="13.3" /><circle class="cls-2" cx="31.2" cy="55.9" r="13.3" /><circle class="cls-2" cx="55.8" cy="31" r="13.3" /><circle class="cls-2" cx="88.1" cy="16.3" r="13.3" /><circle class="cls-2" cx="122.9" cy="13.3" r="13.3" /><circle class="cls-2" cx="156.5" cy="22.3" r="13.3" /><circle class="cls-2" cx="133.9" cy="39.9" r="9.3" /><circle class="cls-2" cx="158" cy="51.3" r="9.3" /><circle class="cls-2" cx="176.7" cy="70.1" r="9.3" /><circle class="cls-2" cx="187.8" cy="94.6" r="9.3" /><circle class="cls-2" cx="190.2" cy="120.9" r="9.3" /><circle class="cls-2" cx="183" cy="146.9" r="9.3" /><circle class="cls-2" cx="168" cy="168.1" r="9.3" /><circle class="cls-2" cx="145.8" cy="183.7" r="9.3" /><circle class="cls-2" cx="120.6" cy="190.1" r="9.3" /><circle class="cls-2" cx="93.8" cy="188.1" r="9.3" /><circle class="cls-2" cx="69.6" cy="176.8" r="9.3" /><circle class="cls-2" cx="50.6" cy="157.5" r="9.3" /><circle class="cls-2" cx="39.8" cy="134" r="9.3" /><circle class="cls-2" cx="37.6" cy="106.8" r="9.3" /><circle class="cls-2" cx="44.6" cy="80.9" r="9.3" /><circle class="cls-2" cx="59.7" cy="59.7" r="9.3" /><circle class="cls-2" cx="81.5" cy="44.4" r="9.3" /><circle class="cls-2" cx="107.5" cy="37.7" r="9.3" /><circle class="cls-2" cx="113.6" cy="61.5" r="7.8" /><circle class="cls-2" cx="150.7" cy="76.9" r="7.8" /><circle class="cls-2" cx="166" cy="113.8" r="7.8" /><circle class="cls-2" cx="151" cy="150.5" r="7.8" /><circle class="cls-2" cx="113.8" cy="166.2" r="7.8" /><circle class="cls-2" cx="77.1" cy="150.8" r="7.8" /><circle class="cls-2" cx="61.7" cy="114.2" r="7.8" /><circle class="cls-2" cx="77.2" cy="77.1" r="7.8" /><circle class="cls-2" cx="133.5" cy="94.4" r="6.2" /><circle class="cls-2" cx="94.3" cy="133.6" r="6.2" /><circle class="cls-2" cx="113.9" cy="114" r="3.8" /></g></g></g></svg>
+        </div>
+    </div>
+</article>

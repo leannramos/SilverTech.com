@@ -1,0 +1,61 @@
+{% set pageTitle = "Home" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Contact -->
+	{% include "../UserControls/Modules/heros/hero-homepage.html" %}
+
+	<div id="Main_C015_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Container">
+		<div>
+			<div>
+				<div style="padding-bottom: -40px">
+					<p style="text-align: center">&nbsp;</p>
+					<h2 style="text-align: center">Change the game.</h2>
+					<h6 style="text-align: center">With big ideas and advanced tech chops, we raise the bar on delivering
+						digital experiences.</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include "../UserControls/Modules/ctas/icons-cta.html" %}
+
+	<!-- Steps CTA (right image) -->
+	{% set stepsImageAlign = "image-right" %}
+	{% set stepsExtraClasses = "no-image" %}
+	{% set stepsImage = "Mug-and-Steves.jpg" %}
+	{% set stepsNumber = "1" %}
+	{% set stepsTitle = "Real Tech" %}
+	{% set stepsDescription = "" %}
+	{% set stepsButtonText = "Check out our services" %}
+	{% set stepsButton2Text = "" %}
+	{% set stepsExtraClasses = "" %}
+	{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+	<!-- Steps CTA (left image) -->
+	{% set stepsImageAlign = "image-left" %}
+	{% set stepsExtraClasses = "no-image" %}
+	{% set stepsImage = "devsHardAtWork3.jpg" %}
+	{% set stepsNumber = "2" %}
+	{% set stepsTitle = "Real People" %}
+	{% set stepsDescription = "" %}
+	{% set stepsButtonText = "Who We Are" %}
+	{% set stepsButton2Text = "" %}
+	{% set stepsExtraClasses = "" %}
+	{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+
+	<!-- Steps CTA (right image) -->
+	{% set stepsImageAlign = "image-right" %}	
+	{% set stepsExtraClasses = "no-image" %}
+	{% set stepsImage = "Lucy1.jpg" %}
+	{% set stepsNumber = "3" %}
+	{% set stepsTitle = "Real Results" %}
+	{% set stepsDescription = "" %}
+	{% set showClientSpotlight = "true" %}
+	{% set stepsButtonText = "Amelia Island Case Study" %}
+	{% set stepsButton2Text = "" %}
+	{% set stepsExtraClasses = "" %}
+	{% include "../UserControls/Modules/ctas/steps-cta.html" %}
+	
+{% endblock %}

@@ -1,0 +1,43 @@
+﻿@model Telerik.Sitefinity.Frontend.Taxonomies.Mvc.Models.TaxonomyViewModel
+@using Telerik.Sitefinity.Web;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+@{var currentUrl = HttpContext.Current.Request.Url; }
+<form action="">
+    <div class="filter-wrapper">
+        <label for="filterByCategory">Filter By:</label>
+        <select name="filterByCategory" id="filterByCategory">
+            <option value="@Url.Content(SiteMapBase.GetActualCurrentNode().Url)">All Categories</option>
+            @foreach (var taxon in Model.Taxa)
+        {
+            if (currentUrl.ToString() == taxon.Url)
+            {
+                <option selected value="@taxon.Url">@taxon.Title</option>
+            }
+            else
+            {
+                <option value="@taxon.Url">@taxon.Title</option>
+            }
+        }
+        </select>
+
+    </div>
+</form>
+
+<script type="text/javascript">
+    const catFilter = document.getElementById('filterByCategory');
+
+    if (catFilter) {
+        catFilter.onchange = function () {
+            var address = catFilter.value;
+
+            if (address != "") {
+                window.location = address;
+            }
+        }
+    }
+</script>
+
+
+
+

@@ -1,0 +1,14 @@
+﻿@model SitefinityWebApp.Mvc.Models.PortfolioViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Mvc.Models
+
+@Html.Script("/ResourcePackages/ST/FrontEnd/public/library/js/vendor/slick.min.js", "CustomThirdParty")
+
+<div class="item">
+    <div class="main-image">
+        <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAltText">
+    </div>
+    <div class="description">
+        @Model.ImageDescription
+    </div>
+</div>

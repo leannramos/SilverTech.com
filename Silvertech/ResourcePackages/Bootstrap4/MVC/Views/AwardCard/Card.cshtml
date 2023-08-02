@@ -1,0 +1,17 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<div class="item @Model.CssClass">
+    @if (!Model.ActionUrl.IsNullOrEmpty())
+    {
+        @:<a href="@Model.ActionUrl" target="@Model.ActionTarget" title="@Model.ActionTitle">
+    }
+
+    <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText">
+
+    @if (!Model.ActionUrl.IsNullOrEmpty())
+    {
+        @:</a>
+    }
+</div>
+

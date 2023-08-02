@@ -1,0 +1,16 @@
+﻿@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Pages;
+
+@if (Model.Nodes.Count > 0)
+{
+    <ul class="footer-nav" role="navigation" title="footer nav">
+        @foreach (var node in Model.Nodes)
+        {
+            <li><a href="@node.Url" title="@node.Title">@node.Title</a></li>
+        }
+    </ul>
+}
+

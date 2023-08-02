@@ -1,0 +1,47 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Configuration;
+@using Common.CustomConfig;
+@using Telerik.Sitefinity.Taxonomies;
+@using Telerik.Sitefinity.Taxonomies.Model;
+
+@{
+    var imageUrl = "";
+    if (Model.Item.Fields.HeroImage != null)
+    {
+        imageUrl = Model.Item.Fields.HeroImage.Fields.MediaUrl;
+    }
+
+    var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(Model.Item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, null);
+}
+
+<section class="featured-blog image-right" aria-label="Featured Blog">
+    <div class="background"></div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="caption">
+
+                <div class="subheadline">From the Playbook.</div>
+                <h1 class="headline">@Model.Item.Fields.Title</h1>
+                <div class="description">
+                    @Html.HtmlSanitize((string)Model.Item.Fields.Summary)
+                </div>
+
+                <div class="cta">
+                    <a href="@navigateUrl" class="btn btn-quaternary" title="Read Post about @Model.Item.Fields.Title">READ POST</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Image -->
+    <div class="blog-image">
+        <div class="wrapper">
+            <div class="image" style="background-image:url('@imageUrl');"></div>
+        </div>
+    </div>
+
+</section>

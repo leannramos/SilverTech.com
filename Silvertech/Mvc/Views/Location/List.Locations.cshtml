@@ -1,0 +1,163 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Common.CustomConfig;
+@using Telerik.Sitefinity.Configuration;
+
+@using System.Web.Mvc;
+@using System.Collections.Generic;
+
+@if (!Request.Url.ToString().Contains("searchQuery="))
+{
+
+    <div class="locations-listing">
+        @foreach (var item in Model.Items)
+        {
+            var hasDriveThrough = false;
+            var hasAtm = false;
+            Boolean.TryParse(item.Fields.HasDriveThrough.ToString(), out hasDriveThrough);
+            Boolean.TryParse(item.Fields.HasAtm.ToString(), out hasAtm);
+            var optionsText = hasDriveThrough ? "Drive-up & " : "";
+            var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+
+            optionsText += hasAtm ? "Walk-up ATM" : " ATM";
+
+            <div itemscope itemtype="http://schema.org/Organization">
+                <article class="location-item enable-on-map" data-lat="" data-lng="" data-address="@item.Fields.StreetAddress,
+                            @item.Fields.City, @item.Fields.State @item.Fields.Zip" aria-label="@item.Fields.Title">
+                    
+              
+                    <div class="photo">
+
+                        @{var thumbnailImage = item.Fields.LocationThumbnail; }
+
+                        @if (thumbnailImage != null)
+                        {
+
+                        <img src="@thumbnailImage.Fields.MediaUrl" alt="@thumbnailImage.Fields.AlternativeText">
+
+                            }
+                    </div>
+
+                    <div class="bankInfo">
+
+
+
+
+                        <a href="@navigateUrl" title="View more details on @item.Fields.Title">
+                <h3 class="location-title">@item.Fields.Title</h3>
+            </a>
+
+                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="bankAddress">
+                            <p itemprop="streetAddress">@item.Fields.StreetAddress</p>
+                            <p><span itemprop="addressLocality">@item.Fields.City</span>, <span itemprop="addressRegion">@item.Fields.State</span> <span itemprop="postalCode">@item.Fields.Zip </span></p>
+                            <p>@optionsText</p>
+                        </div>
+
+                        <div class="options">
+                            Has @optionsText
+                        </div>
+
+                        <div class="ctas">
+                            <a href="@item.Fields.GoogleMapsLink" class="btn btn-primary" title="Get Directions to @item.Fields.Title" target="_blank">Get Directions</a>
+                            <a href="@navigateUrl" class="btn btn-tertiary" title="See Details About @item.Fields.Title">See Details</a>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+        }
+    </div>
+}
+
+
+
+@*<section class="locations-template option-two" aria-label="Locations Listing">
+    <div class="location-search row">
+
+        <!-- Bank Locaitons -->
+        <div class="col-lg-6 locations-pane">
+            <div class="locations">
+
+                <div class="locations-header">
+
+                    @Html.SfPlaceHolder("Breadcrumbs")
+                    @{
+                        var globalConfig = Config.Get<GlobalConfig>();
+                    }
+
+                    <div class="locations-info">
+                        <div class="contactLinks">
+                            <p><a href="" title="Bank Holidays">Bank Holidays</a> - Hours of operation may vary during holidays</p>
+                            <p><a href="" title="Bank Holidays">Find a Shared Branch</a> - CO-OP ATMs and shared branches have you covered coast to coast!</p>
+                            <a href="@globalConfig.AppointmentBookingUrl" target="_blank" class="btn btn-primary" title="Schedule an Appointment">SCHEDULE AN APPPOINTMENT</a>
+                        </div>
+                    </div>
+
+                    <div class="locations-filter">
+                        <label>City Search</label>
+                        <div class="select-box">
+                            <select aria-label="city search">
+                                <option>Select City</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="locations-listings">
+                    @foreach (var item in Model.Items)
+                    {
+
+
+                        var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+                        var hasDriveThrough = false;
+                        var hasAtm = false;
+                        Boolean.TryParse(item.Fields.HasDriveThrough.ToString(), out hasDriveThrough);
+                        Boolean.TryParse(item.Fields.HasAtm.ToString(), out hasAtm);
+                        var optionsText = hasDriveThrough ? "Drive-up & " : "";
+
+                        optionsText += hasAtm ? "Walk-up ATM" : " ATM";
+
+                        <article class="location-item enable-on-map" data-lat="" data-lng="" data-address="@item.Fields.StreetAddress,
+                            @item.Fields.City, @item.Fields.State @item.Fields.Zip" aria-label="@item.Fields.Title">
+
+                            <div class="photo">
+                                <img src="/library/img/bank1.jpg" alt="@item.Fields.Title">
+                            </div>
+
+                            <div class="bankInfo">
+
+                                <a href="@navigateUrl" title="View more details on @item.Fields.Title">
+                                    <h3 class="location-title">@item.Fields.Title</h3>
+                                </a>
+
+                                <div class="bankAddress">
+                                    <p>@item.Fields.StreetAddress</p>
+                                    <p>@item.Fields.City, @item.Fields.State @item.Fields.Zip</p>
+                                    <p>@optionsText</p>
+                                </div>
+
+                                <div class="options">
+                                    Has @optionsText
+                                </div>
+
+                                <div class="ctas">
+                                    <a href="@item.Fields.GoogleMapsLink" class="btn btn-primary" title="Get Directions to @item.Fields.Title" target="_blank">Get Directions</a>
+                                    <a href="@navigateUrl" class="btn btn-tertiary" title="See Details About @item.Fields.Title">See Details</a>
+                                </div>
+                            </div>
+
+                        </article>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="col-lg-6">
+            <div id="map"></div>
+        </div>
+    </div>
+</section>*@

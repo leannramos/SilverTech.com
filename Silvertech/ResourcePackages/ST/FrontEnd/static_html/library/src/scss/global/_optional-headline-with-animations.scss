@@ -1,0 +1,188 @@
+.headlineWrapper {
+	text-align:center;
+	margin-bottom:50px;
+	position:relative;
+	
+	.headline { 
+		display:inline-block; 
+		position:relative;
+
+		.title {
+			position:relative;
+			display:inline-block;
+			padding:0 25px;
+			margin:0;		
+			@include font-size(36);
+			line-height: 39px;
+		}
+		&:before {
+			content:'';
+			height:2px;
+			position:absolute;
+			top:49%;
+			right:-300%;
+			// width:300%;
+			width:0;
+			background:$primary;
+			// animation:beforeHeader_lineRight 1s ease-in 0s 1 forwards ;			
+		}
+		&:after {
+			content:'';
+			height:2px;
+			position:absolute;
+			top:49%;
+			left:100%;
+			width:0;
+			// width:50px;
+			background:$primary;
+			// animation:afterHeader_lineRight .5s ease-in 1s 1 forwards ;			
+		}
+	}
+
+	.verticalLine {
+		width:2px;
+		height:0;
+		background:$primary;
+		position:absolute;
+		left:calc(100% + 50px);
+		top:49%;
+		position:absolute;
+		// animation:afterHeader_lineDown .5s ease-in 1.5s 1 forwards ;
+
+		.arrow {
+			position: absolute;
+			top: calc(100% - 12px);
+			left: -4px;
+			width: 10px;
+			height: 11px;
+			opacity:0;
+			// animation:fadeIn .5s ease-in 2s 1 forwards ;
+		}
+	}
+	.noHeadline {
+		position:relative;
+		width:80%;
+
+		.horizontalLine {
+			display:inline-block;
+			width:0;
+			// width:100%;
+			height:2px;			
+			background:$primary;
+			position:relative;
+			// animation:noHeadline_LineRight 1s ease-in 1s 1 forwards ;
+
+			&:before {
+				content:'';
+				height:2px;
+				position:absolute;
+				top:0;
+				right:300%;
+				width:0;
+				background:$primary;
+				// animation:noHeadline_outsideContainerLineRight 1s ease-in 0s 1 forwards ;
+			}
+		}
+		.verticalLine {
+			left:100%;
+			top:19px;
+		}
+	}
+}
+
+.bottomArrow {
+	width:80%;
+	margin-left:20%;
+
+	.horizontalLine {
+		display:inline-block;
+		width:0%;
+		left:100%;
+		height:2px;			
+		background:$primary;
+		position:relative;
+		// animation:bottomArrow_lineLeft .5s ease-in 2s 1 forwards ;
+
+		&:before {
+			content:'';
+			height:2px;
+			position:absolute;
+			top:0;
+			left:350%;
+			width:300%;
+			background:$primary;
+			// animation:bottomArrow_outsideContainerlineLeft .5s ease-in 1.5s 1 forwards ;
+		}
+		.arrow {
+			position: absolute;
+			top: calc(100% - 5px);
+			left: -9px;
+			width: 10px;
+			height: 11px;
+			opacity:0;
+			// animation:fadeIn .5s ease-in 2.5s 1 forwards ;
+
+			img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+		}
+	}
+}
+// Run animations when module comes into view
+.isVisible {
+	.headlineWrapper {
+		.headline {
+
+			&:before { animation:beforeHeader_lineRight .5s ease-in 0s 1 forwards; }
+			&:after { animation:afterHeader_lineRight .5s ease-in .5s 1 forwards; }			
+		}
+		.verticalLine {
+			animation:afterHeader_lineDown .5s ease-in 1s 1 forwards;
+
+			.arrow { animation:fadeIn .5s ease-in 1.5s 1 forwards; }
+		}
+		.noHeadline {
+
+			.horizontalLine { 
+				animation:noHeadline_LineRight 1s ease-in 1s 1 forwards; 
+
+				&:before { animation:noHeadline_outsideContainerLineRight 1s ease-in 0s 1 forwards; }
+			}			
+		}
+	}
+	.bottomArrow {
+		.horizontalLine { 
+			animation:bottomArrow_lineLeft .5s ease-in 2s 1 forwards; 
+
+			&:before { animation:bottomArrow_outsideContainerlineLeft .5s ease-in 1.5s 1 forwards; }
+			.arrow { animation:fadeIn .5s ease-in 2.5s 1 forwards; }
+		}
+
+	}
+}
+
+
+@include media-breakpoint-down(md) {
+	.headlineWrapper {
+		margin-bottom: 25px;
+
+		.headline {
+
+			&:before, &:after { display:none; }	
+			.title {
+				@include font-size(28);
+				line-height: 33px;
+			}		
+		}
+		.verticalLine { 
+			display:none; 
+
+			.arrow { display:none; }
+		}
+	}
+	.bottomArrow {
+		display:none;
+	}
+}

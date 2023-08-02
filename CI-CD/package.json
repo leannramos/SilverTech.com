@@ -1,0 +1,19 @@
+{
+  "name": "perf",
+  "version": "1.0.0",
+  "description": "perf",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ccc",
+  "license": "ISC",
+  "dependencies": {
+    "applicationinsights": "^1.6.0",
+    "axe-puppeteer": "^1.0.0",
+    "axe-sarif-converter": "^2.3.0",
+    "lighthouse": "^5.6.0",
+    "puppeteer": "^1.20.0"
+  }
+}

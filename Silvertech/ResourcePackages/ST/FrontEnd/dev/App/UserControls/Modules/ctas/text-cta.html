@@ -1,0 +1,34 @@
+<!-- Notes:  add class .box-left or .box-right to <section> to change layouts.  Content will need to also change around based on layout.   -->
+<section class="text-cta {{textCTA_layout}}" aria-label="text call to action">
+	
+	<!-- Green Box -->
+	<div class="box">
+		<div class="box-wrapper">			
+
+		{% if textCTA_layout == "box-left" %}		
+			<h2 class="headline">{{textCTA_title}}</h2>		
+		{% elif textCTA_layout == "box-right" %}
+			<div class="description">{{textCTA_description}}</div>
+			<div class="cta">
+				<a href="" class="btn btn-quaternary" title="{{textCTA_btnText}}">{{textCTA_btnText}}</a>
+			</div>
+		{% endif %}
+
+		</div>
+	</div>
+
+	<!-- Text Column -->
+	<div class="text-content">
+
+		{% if textCTA_layout == "box-left" %}
+			<div class="description">{{textCTA_description}}</div>
+			<div class="cta">
+				<a href="" class="btn btn-quaternary" title="{{textCTA_btnText}}">{{textCTA_btnText}}</a>
+			</div>
+		{% elif textCTA_layout == "box-right" %}
+			<h2 class="headline">{{textCTA_title}}</h2>
+		{% endif %}
+	</div>
+
+
+</section>

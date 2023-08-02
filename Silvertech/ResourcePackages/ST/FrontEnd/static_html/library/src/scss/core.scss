@@ -1,0 +1,50 @@
+@import "theme";
+@import "utils/mixins";
+
+@import "utils/bootstrap/functions";
+@import "utils/bootstrap/variables";
+@import "utils/bootstrap/mixins";
+@import "utils/bootstrap/root";
+@import "utils/bootstrap/reboot";
+@import "utils/bootstrap/type";
+
+
+@import "global/mixins";
+@import "global/helpers";
+@import "global/buttons";
+@import "global/typography";
+
+// Heros
+@import "components/heros/hero-homepage";
+@import "components/heros/hero-inner";
+@import "components/heros/hero-contact";
+@import "components/heros/mosaic-tiles";
+@import "components/heros/hero-compact";
+
+.view-defer, section, .sf_colsIn {
+    opacity: 0 !important;
+    transition: opacity 250ms;
+}
+
+header, footer {
+    display: none;
+}
+
+.hero-compact,
+.hero-contact,
+.hero-homepage,
+.hero-inner,
+.hero-homepage,
+.high-alert,
+.alert-banner {
+    opacity: 1 !important;
+}
+
+// default container css for pre-bootstrap load.
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1172px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

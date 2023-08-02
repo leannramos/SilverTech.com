@@ -1,0 +1,35 @@
+<!-- Notes:  add class .image-right or .image-left to the <section> for layout changes.  default is image right -->
+<!-- Notes:  add class "no-end-angle" to remove angle from 1 side of the image -->
+<section class="image-cta {{imageCTA_layout}} {% if imageCTA_AdditionalClasses %}{{imageCTA_AdditionalClasses}}{% endif %}" aria-label="Image Call To Action">
+	<div class="container">
+		<div class="row">
+			
+			<div class="text-col col-lg-5">
+				
+				{% if imageCTA_date != "" %}
+					<div class="date">{{ imageCTA_date }}</div>
+				{% endif %}
+
+				<h2 class="headline">{{imageCTA_title}}</h2>
+
+				{% if imageCTA_description != "" %}
+					<div class="description">{{imageCTA_description}}</div>
+				{% endif %}
+
+				{% if imageCTA_btnText != "" %}
+					<div class="cta">
+						<a href="" class="btn btn-primary" title="">{{imageCTA_btnText}}</a>
+					</div>
+				{% endif %}
+			</div>			
+
+			<div class="photo-col col-lg-7">
+				<div class="photo-wrapper">
+					<div class="photo lazy-load-bg" style="background-image:url('/library/img/{{imageCTA_imageFile}}');"></div>
+				</div>
+				
+			</div>	
+
+		</div>
+	</div>
+</section>

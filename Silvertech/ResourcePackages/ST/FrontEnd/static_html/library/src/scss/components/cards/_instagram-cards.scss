@@ -1,0 +1,143 @@
+.instagram-cards {
+	padding:30px 0;
+	background:#FAFAFA;
+
+	.feed-col { padding-left:0; }
+
+	.section-title {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		@include font-size(54);
+		line-height: 58px;
+		margin:0 0 40px 0;
+
+		img { margin-right: 10px; }
+	}
+	.profile {
+		text-align: center;
+
+		.icon {
+			max-height:175px;
+			margin-bottom: 10px;
+		}
+		.tag {
+			margin-bottom: 10px;
+			@include font-size(32);
+			line-height: 35px;
+			color:$primary;
+		}
+		.cta {
+			.btn-instagram {
+				background:#3897F0;
+				color:#FFF;
+				text-align: center;
+				border-radius:4px;
+				padding:5px 20px;
+				text-decoration: none;
+
+				&:hover, &:focus, &:active {
+					background:$primary;
+				}
+			}
+		}
+	}
+	.instagram-feed {
+		.instagram_gallery {
+			display:flex;
+
+			a {
+				width:33.33%;
+				background:#FFF;
+				padding:10px 10px 60px 10px;
+				margin:10px;
+				position:relative;
+				display:block;
+				box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+				transition:box-shadow .2s, transform .2s;
+				font-family: $tertiary-font;
+				@include font-size(25);
+				line-height: 33px;
+				text-align: center;
+
+				&:hover {
+					box-shadow:0 0 9px 0 rgba(0,0,0,.7);
+				    transform: translateY(-20px);
+				}
+
+				img {
+					max-height:255px;
+				}
+				&:before {
+					position:absolute;
+					bottom:15px;
+					left:0;
+					right:0;
+					color:$primary;
+					text-align: center;
+				}
+				&:nth-child(1) {
+					&:before { content:'REAL TECH'; }
+				}
+				&:nth-child(2) {
+					&:before { content:'REAL PEOPLE'; }
+				}
+				&:nth-child(3) {
+					&:before { content:'REAL RESULTS'; }
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@include media-breakpoint-down(sm) {
+	.instagram-cards {
+		padding:20px 0;
+
+		.feed-col { padding-left: 15px; }
+		.section-title {
+			flex-direction:column;
+			@include font-size(35);
+			line-height: 31px;
+			text-align: center;
+			margin:0 0 20px 0;
+
+			img { 
+				margin-bottom: 10px;
+				max-height:39px; 
+			}
+		}
+		.profile {
+			margin-bottom: 30px;
+
+			.icon { max-height:120px; }
+			.tag {
+				@include font-size(27);
+				margin-bottom: 5px;
+			}
+		}
+		.instagram-feed {
+			.instagram_gallery {
+				display:block;
+				text-align: center;
+
+				a {
+					width:auto;
+					margin:10px 0;
+					display:inline-block;
+
+					&:hover, &:focus {
+						box-shadow:0 0 9px 0 rgba(0,0,0,.7);
+					    transform: none;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+

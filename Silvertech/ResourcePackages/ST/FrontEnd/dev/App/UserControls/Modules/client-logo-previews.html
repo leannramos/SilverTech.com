@@ -1,0 +1,125 @@
+<section class="logo-previews" aria-label="preview of client logos">
+	<div class="container">
+
+		{% if logoPreviews_Headline %}
+		<h2 class="headline">{{logoPreviews_Headline}}</h2>
+		{% endif %}
+
+		<ul>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo1}}"
+					data-srcset="/library/img/{{logoPreviews_logo1}} 2x, /library/img/{{logoPreviews_logo1}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo2}}"
+					data-srcset="/library/img/{{logoPreviews_logo2}} 2x, /library/img/{{logoPreviews_logo2}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo3}}"
+					data-srcset="/library/img/{{logoPreviews_logo3}} 2x, /library/img/{{logoPreviews_logo3}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo4}}"
+					data-srcset="/library/img/{{logoPreviews_logo4}} 2x, /library/img/{{logoPreviews_logo4}} 1x"
+					alt="client Name Here">
+			</li>
+
+			{% if logoPreviews_MultipleRows == "true" %}
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo1}}"
+					data-srcset="/library/img/{{logoPreviews_logo1}} 2x, /library/img/{{logoPreviews_logo1}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo2}}"
+					data-srcset="/library/img/{{logoPreviews_logo2}} 2x, /library/img/{{logoPreviews_logo2}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo3}}"
+					data-srcset="/library/img/{{logoPreviews_logo3}} 2x, /library/img/{{logoPreviews_logo3}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo4}}"
+					data-srcset="/library/img/{{logoPreviews_logo4}} 2x, /library/img/{{logoPreviews_logo4}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo1}}"
+					data-srcset="/library/img/{{logoPreviews_logo1}} 2x, /library/img/{{logoPreviews_logo1}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo2}}"
+					data-srcset="/library/img/{{logoPreviews_logo2}} 2x, /library/img/{{logoPreviews_logo2}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo3}}"
+					data-srcset="/library/img/{{logoPreviews_logo3}} 2x, /library/img/{{logoPreviews_logo3}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo4}}"
+					data-srcset="/library/img/{{logoPreviews_logo4}} 2x, /library/img/{{logoPreviews_logo4}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo1}}"
+					data-srcset="/library/img/{{logoPreviews_logo1}} 2x, /library/img/{{logoPreviews_logo1}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo2}}"
+					data-srcset="/library/img/{{logoPreviews_logo2}} 2x, /library/img/{{logoPreviews_logo2}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo3}}"
+					data-srcset="/library/img/{{logoPreviews_logo3}} 2x, /library/img/{{logoPreviews_logo3}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo4}}"
+					data-srcset="/library/img/{{logoPreviews_logo4}} 2x, /library/img/{{logoPreviews_logo4}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo1}}"
+					data-srcset="/library/img/{{logoPreviews_logo1}} 2x, /library/img/{{logoPreviews_logo1}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo2}}"
+					data-srcset="/library/img/{{logoPreviews_logo2}} 2x, /library/img/{{logoPreviews_logo2}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo3}}"
+					data-srcset="/library/img/{{logoPreviews_logo3}} 2x, /library/img/{{logoPreviews_logo3}} 1x"
+					alt="client Name Here">
+			</li>
+			<li>
+				<img class="img-load-lazy" data-src="/library/img/{{logoPreviews_logo4}}"
+					data-srcset="/library/img/{{logoPreviews_logo4}} 2x, /library/img/{{logoPreviews_logo4}} 1x"
+					alt="client Name Here">
+			</li>
+			{% endif %}
+
+		</ul>
+
+		{% if logoPreviews_ctaText != '' %}
+		<div class="cta">
+			<a href="/portfolio-detail.html" class="btn btn-quaternary"
+				title="{{logoPreviews_ctaText}}">{{logoPreviews_ctaText}}</a>
+		</div>
+		{% endif %}
+
+	</div>
+
+
+</section>

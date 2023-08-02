@@ -1,0 +1,49 @@
+{% set pageTitle = "Services" %}
+{% set menuToggleBG = "blue" %}
+{% extends "../MasterPages/master.html" %}
+
+{% block content %}
+
+	<!-- Hero Inner -->
+	{% set heroColor = "blue" %}
+	{% set heroCustomClasses = "" %}
+	{% set heroImage = "hero-Katelyn-Intern.jpg" %}
+	{% set heroHeadline = "Services." %}
+	{% set heroSubheadline = "false" %}
+	{% set heroShowDescription = "We are a digital marketing agency that thrives on combining big ideas and creative tech to solve today’s most challenging business problems. Our variety of skillsets and experience are guaranteed to support the aggressive growth plans of your business." %}
+	{% set heroShowAuthor = "false" %}
+	{% set heroShowDate = "false" %}
+	{% set heroShowReadTime = "false" %}
+	{% set heroShowDownArrow = "true" %}
+	{% set heroShowClientLogo = "false" %}
+	{% set heroShowClientLogoOverImage = "false" %}
+	{% set heroShowGenericContent = "false" %}
+	{% include "../UserControls/Modules/heros/hero-inner.html" %}
+
+	<!-- Icons CTA -->
+	{% include "../UserControls/Modules/ctas/icons-cta.html" %}
+	
+	<!-- Text CTA - box-left -->
+	{% set textCTA_layout = "box-left" %}
+	{% set textCTA_title = "Is Your Company Ready for a Fresh, New Website?" %}
+	{% set textCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set textCTA_btnText = "Contact us today" %}
+	{% include "../UserControls/Modules/ctas/text-cta.html" %}
+
+	<!-- Image CTA - Left Image -->
+	{% set imageCTA_layout = "image-left" %}
+	{% set imageCTA_date = "" %}
+	{% set imageCTA_imageFile = "Danielle2.jpg" %}
+	{% set imageCTA_title = "Not Looking For JUST a New Website?" %}
+	{% set imageCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set imageCTA_btnText = "DIGITAL TRANSFORMATION" %}
+	{% include "../UserControls/Modules/ctas/image-cta.html" %}
+
+	<!-- Text CTA - box-right -->
+	{% set textCTA_layout = "box-right" %}
+	{% set textCTA_title = "We Can Help You Re-platform & Manage Your Current Website As Well!" %}
+	{% set textCTA_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est" %}
+	{% set textCTA_btnText = "MANAGED SERVICES" %}
+	{% include "../UserControls/Modules/ctas/text-cta.html" %}
+
+{% endblock %}

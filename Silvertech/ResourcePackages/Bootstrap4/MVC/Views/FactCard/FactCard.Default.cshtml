@@ -1,0 +1,15 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp;
+@using Telerik.Sitefinity.Web;
+
+<div class="col-md-4">
+    <div class="fact">
+        <div class="value">
+            <span class="val">@Model.Heading</span>
+            @Html.Raw(Model.HeadingTwo)
+        </div>
+        <div class="description">@Model.Description</div>
+    </div>
+</div>

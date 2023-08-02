@@ -1,0 +1,28 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+<article class="compCard col-md-6 col-lg-4" aria-label="Account Card">
+    <div class="box">
+        <div class="content">
+
+            <h2 class="title"><a href="@Html.UrlSanitize(Model.ActionUrl)" title="@Html.HtmlSanitize(Model.ActionTitle)" target="@Model.ActionTarget" class="@(Model.IsActionSpeedbump ? "speedbump-link" : "")" data-redirect-message="@Model.ActionSpeedbumpMessage">@Html.HtmlSanitize(Model.ActionName)</a></h2>
+
+            @{var listItems = Model.Description?.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries); }
+            <div class="info">
+                <ul>
+                    @foreach (var listItem in listItems)
+                    {
+                        <li>@listItem</li>
+                    }
+                </ul>
+            </div>
+            @if (!Model.ActionTwoName.IsNullOrEmpty())
+            {
+
+                <div class="cta">
+                    <a href="@Html.UrlSanitize(Model.ActionTwoUrl)" title="@Html.HtmlSanitize(Model.ActionTwoTitle)" target="@Model.ActionTwoTarget" class="@(Model.IsActionTwoSpeedbump ? "speedbump-link" : "")" data-redirect-message="@Model.ActionTwoSpeedbumpMessage">@Html.HtmlSanitize(Model.ActionTwoName)</a>
+                </div>
+            }
+
+            </div>
+    </div>
+</article>

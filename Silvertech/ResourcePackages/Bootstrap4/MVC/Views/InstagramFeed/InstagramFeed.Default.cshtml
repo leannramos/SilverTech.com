@@ -1,0 +1,74 @@
+﻿@model SitefinityWebApp.Mvc.Models.CustomCardViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Services;
+
+@if (!SystemManager.IsDesignMode)
+{
+    @Html.Script("/ResourcePackages/ST/FrontEnd/public/library/js/vendor/jquery.instagramFeed.min.js", "CustomThirdParty")
+}
+
+<!-- Instagram Cards -->
+<section class="instagram-cards" aria-label="latest instagram cards">
+    <div class="container">
+        <h2 class="section-title">
+            <img src="/library/img/instgram-icon.png" alt="instagram icon">
+            @Model.Heading
+        </h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="profile-col col-lg-3">
+                <div class="profile">
+                    <img src="@Model.SelectedSizeUrl" alt="@Model.ImageAlternativeText" class="icon">
+                    <div class="tag">@Html.Raw(Model.ClientSpotlightHeading)</div>
+                    <div class="cta">
+                        <a href="@Model.HeadingTwo" class="btn-instagram" title="Follow us on Instagram" target="_blank">Follow</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-col col-lg-9">
+                <div class="instagram-feed"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (!Model.ActionTarget.ToString().IsNullOrEmpty() || !Model.ActionTwoTarget.ToString().IsNullOrEmpty() || !Model.ActionTitle.ToString().IsNullOrEmpty())
+{
+    <!-- Follow Social Accounts -->
+    <section class="follow-social-accounts" aria-label="follow our other social accounts">
+        <div class="container">
+            <h2 class="headline">Follow our other social accounts</h2>
+        </div>
+
+        <div class="container">
+            <div class="accounts-row row">
+                @if (!Model.ActionTarget.ToString().IsNullOrEmpty())
+                {
+                    <a href="@Model.ActionTarget" class="account" title="Follow us on twitter" target="_blank">
+                        <div class="icon"><i class="fab fa-twitter"></i></div>
+                        <div class="handler">@Html.Raw(Model.ActionName)</div>
+                    </a>
+                }
+
+                @if (!Model.ActionTwoTarget.ToString().IsNullOrEmpty())
+                {
+                    <a href="@Model.ActionTwoTarget" class="account" title="Follow us on facebook" target="_blank">
+                        <div class="icon"><i class="fab fa-facebook"></i></div>
+                        <div class="handler">@Html.Raw(Model.ActionTwoName)</div>
+                    </a>
+                }
+
+                @if (!Model.ActionTitle.ToString().IsNullOrEmpty())
+                {
+                    <a href="@Model.ActionTitle" class="account" title="Follow us on linked in" target="_blank">
+                        <div class="icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div class="handler">@Html.Raw(Model.ActionThreeName)</div>
+                    </a>
+                }
+            </div>
+        </div>
+    </section>
+}

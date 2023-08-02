@@ -1,0 +1,122 @@
+.hero-homepage {
+	color:#FFF;
+	height: 755px;
+	position: relative;
+	margin-top: -94px;
+	padding-top: 94px;
+
+	.background {
+	    position: absolute;
+	    top: 0;
+	    left: 0px;
+	    width: 100%;
+	    height: 100%;
+	    z-index: -1;
+	    @include greenGradientLight();
+	}
+	.content-wrapper {
+		height:100%;
+		display: flex;
+		align-items: center;		
+	}
+	.caption {
+		width:50%;
+	}
+	.headline {
+		color:#FFF;
+		@include font-size(144);
+		line-height: 115px;
+		margin:0 0 40px 0;
+	}
+	.subheadline {
+		color:#FFF;
+		@include font-size(28);
+		line-height: 36px;
+		font-family: $primary-font;
+		font-weight: 900;
+		margin:0 0 25px 0;
+	}
+	.icon.hero-scroll-trigger {
+		background: url('/library/img/sprites.png') no-repeat -53px -32px;
+		width: 22px;
+		height: 27px;
+		margin: 34px 0px 0px 0px;
+		&.hero-scroll-trigger {
+			cursor: pointer;
+		}
+	}
+	.cta {
+		@include font-size(22);
+		line-height: 21px;
+		display:flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		a {
+			text-decoration:none;
+			color:#FFF;
+
+			&:hover, &:focus {
+				color:#202945;
+			}
+		}
+		.icon { margin-right:20px; }
+	}
+}
+
+@media screen and (max-width: 1210px) {
+	.hero-homepage {
+		.headline {
+			@include font-size(80);
+			@include line-height(60);
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.hero-homepage {
+		width: 100%;
+		padding: 166px 0 100px 0;
+		height: auto;
+		margin-top: -66px;
+
+		.background {
+			width:100%;
+			transform:skew(0);
+		}
+		.caption { width:100%; }
+		.headline {
+			@include font-size(60);
+			line-height: 70px;
+			margin:0 0 30px 0;
+		}
+		.subheadline {
+			@include font-size(18);
+			@include line-height(22);
+		}
+		.icon.hero-scroll-trigger {
+			margin-top: 26px;
+		}
+	}
+}
+
+
+
+@include media-breakpoint-down(sm) {
+	.hero-homepage {
+
+		.headline {
+			@include font-size(76);
+			line-height: 61px;
+		}
+		.subheadline {
+			@include font-size(15);
+			font-weight: 900;
+			line-height: 20px;
+		}
+
+		.mosaic-tiles {
+			display: none;
+		}
+	}
+}
